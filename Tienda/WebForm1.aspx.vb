@@ -92,4 +92,8 @@ Public Class WebForm1
     Protected Sub Descripcion_TextChanged(sender As Object, e As EventArgs) Handles Descripcion.TextChanged
 
     End Sub
+
+    Protected Sub Cant_TextChanged(sender As Object, e As EventArgs) Handles Cant.TextChanged
+
+    End Sub
 End Class
