@@ -74,8 +74,7 @@
                 <div class="wrap-input100 bg1 rs1-wrap-input100">
 					<span class="label-input100">Codigo *</span>
 				   <asp:TextBox ID="Codigo" class="input100" type="text"  placeholder="Ingrese el codigo " runat="server"></asp:TextBox>
-                 
-				</div>
+               </div>
 
 				<div class="w-full dis-block js-show-service">
 					<div class="wrap-contact100-form-radio">

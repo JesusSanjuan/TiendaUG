@@ -96,4 +96,8 @@ Public Class WebForm1
     Protected Sub Cant_TextChanged(sender As Object, e As EventArgs) Handles Cant.TextChanged
 
     End Sub
+
+    Protected Sub Lacantidad_TextChanged(sender As Object, e As EventArgs) Handles Lacantidad.TextChanged
+
+    End Sub
 End Class
