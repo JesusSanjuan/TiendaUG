@@ -1,0 +1,10 @@
+CREATE TABLE [dbo].[UG] (
+    [Id_codigo]   INT        IDENTITY (1, 1) NOT NULL,
+    [Cantidad]    NCHAR (10) NULL,
+    [Descripcion] TEXT       NULL,
+    [Precio]      FLOAT (53) NULL,
+    [Color]       NCHAR (30) NULL,
+    [Talla]       INT        NULL,
+    [id_imagen] VARBINARY(MAX) NULL, 
+    PRIMARY KEY CLUSTERED ([Id_codigo] ASC)
+);
