@@ -41,13 +41,13 @@ Partial Public Class WebForm2
     Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''Control TextBox1.
+    '''Control idenPrinc.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents idenPrinc As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Control Codigo.
@@ -68,13 +68,13 @@ Partial Public Class WebForm2
     Protected WithEvents Descripcion As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control Lacantidad.
+    '''Control Prec.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Lacantidad As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Prec As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Control Cant.
@@ -131,6 +131,15 @@ Partial Public Class WebForm2
     Protected WithEvents radio4 As Global.System.Web.UI.HtmlControls.HtmlInputRadioButton
     
     '''<summary>
+    '''Control Image1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Image1 As Global.System.Web.UI.WebControls.Image
+    
+    '''<summary>
     '''Control FileUpload1.
     '''</summary>
     '''<remarks>
@@ -140,20 +149,20 @@ Partial Public Class WebForm2
     Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
     
     '''<summary>
-    '''Control Button2.
+    '''Control Mod.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Button2 As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents [Mod] As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
-    '''Control Button1.
+    '''Control Borrar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents Borrar As Global.System.Web.UI.HtmlControls.HtmlButton
 End Class

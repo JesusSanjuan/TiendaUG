@@ -31,6 +31,7 @@
     <link href="Content/bootstrap.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="Plantilla/css/util.css">
 	<link rel="stylesheet" type="text/css" href="Plantilla/css/main.css">
+    <link rel="stylesheet" type="text/css" href="Plantilla/css/login.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -66,11 +67,11 @@
                 
                  <div class="wrap-input100 bg1 rs1-wrap-input100">
 					<span class="label-input100">ID </span>
-				   <asp:TextBox ID="TextBox1" class="input100" type="text"  placeholder="" runat="server"></asp:TextBox>
+				   <asp:TextBox ID="idenPrinc" class="input100" type="text"  placeholder="" runat="server"></asp:TextBox>
                </div>
                 <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Ingrese el codigo">
 					<span class="label-input100">Codigo *</span>
-				   <asp:TextBox ID="Codigo" class="input100" type="text"  placeholder="Ingrese el codigo " disabled="disabled"  runat="server"></asp:TextBox>
+				   <asp:TextBox ID="Codigo" class="input100" type="text"  placeholder="Ingrese el codigo "   runat="server"></asp:TextBox>
                </div>
                 <div class="wrap-input100 validate-input bg1" data-validate="Porfavor ingrese la descripcion del producto">
 					<span class="label-input100"> DESCRIPCION DEL PRODUCTO*</span>
@@ -78,7 +79,7 @@
 				</div>
                 <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Por favor ingrese el precio del producto">
 					    <span class="label-input100">Precio *</span>
-				            <asp:TextBox ID="Lacantidad" class="input100" type="text"  placeholder="Ingrese el precio del producto " runat="server"></asp:TextBox>
+				            <asp:TextBox ID="Prec" class="input100" type="text"  placeholder="Ingrese el precio del producto " runat="server"></asp:TextBox>
                 </div>
                 <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Por favor ingrese la cantidad de producto">
 					<span class="label-input100">Cantidad *</span>
@@ -130,10 +131,17 @@
 				</div>
                 <div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
 					<span class="label-input100">Imagen</span>
+                    <asp:Image ID="Image1" runat="server" />
+				</div>
+                
+
+
+                <div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
+					<span class="label-input100">Imagen</span>
                     <asp:FileUpload ID="FileUpload1" class="input100" runat="server" />
 				</div>
                 <div class="container-contact100-form-btn" >
-					<button ID="Button2" class="contact100-form-btn" runat="server" >
+					<button ID="Mod" class="contact100-form-btn" runat="server" >
 						<span>
 							Modificar
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
@@ -141,7 +149,7 @@
 					</button>
 				</div>
                 <div class="container-contact100-form-btn" >
-					<button ID="Button1" class="contact100-form-btn" runat="server" >
+					<button ID="Borrar" class="contact100-form-btn" runat="server" >
 						<span>
 							Borrar
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>

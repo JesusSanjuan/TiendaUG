@@ -100,4 +100,8 @@ Public Class WebForm1
     Protected Sub Lacantidad_TextChanged(sender As Object, e As EventArgs) Handles Lacantidad.TextChanged
 
     End Sub
+
+    Protected Sub Col_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Col.SelectedIndexChanged
+
+    End Sub
 End Class
