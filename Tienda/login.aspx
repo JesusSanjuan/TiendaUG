@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="login.aspx.vb" Inherits="Tienda.WebForm3" %>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="Scripts/bootstrap.min.js"></script>
-<script src="Scripts/jquery-3.3.1.min.js"></script>
+
 <!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
@@ -52,7 +51,9 @@
 						<span>
 							Inicio de Sesion							
 						</span>
-					</button>
+					   </button>
+
+                        <button id="Prueba" type="button">Click Me!</button>
 
 
 					</div>
@@ -69,5 +70,11 @@
 		</div>
 	</div>
 </div>
+<script src="Scripts/bootstrap.min.js"></script>
+<script src="Scripts/jquery-3.3.1.min.js"></script>
+<script src="Scripts/Ejecucion/login.js"></script>
+
+  
+
 </body>
 </html>

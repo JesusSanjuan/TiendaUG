@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Web.Services
+Imports System.Web.Script.Services
 
 Public Class WebForm3
     Inherits System.Web.UI.Page
@@ -52,6 +54,15 @@ Public Class WebForm3
 
 
     End Sub
+    <System.Web.Services.WebMethod()>
+    Public Shared Function FunctionName(ByVal Valor As String) As String
+        ' The following statement immediately transfers control back  
+        ' to the calling code and returns the value of Expression.  
+        Return Valor
+    End Function
 
 
+    <WebMethod()> Public Shared Function testmethod() As Integer
+        Return 5
+    End Function
 End Class
