@@ -12,4 +12,31 @@ Option Explicit On
 
 
 Partial Public Class WebForm3
+    
+    '''<summary>
+    '''Control usert.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents usert As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control password.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents password As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control Inicio.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Inicio As Global.System.Web.UI.HtmlControls.HtmlButton
 End Class

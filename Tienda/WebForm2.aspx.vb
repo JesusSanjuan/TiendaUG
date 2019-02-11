@@ -116,4 +116,8 @@ Public Class WebForm2
     Protected Sub Cant_TextChanged(sender As Object, e As EventArgs) Handles Cant.TextChanged
 
     End Sub
+
+    Protected Sub idenPrinc_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

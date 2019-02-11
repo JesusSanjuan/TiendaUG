@@ -30,26 +30,31 @@
 					<span><i class="fab fa-twitter-square"></i></span>
 				</div>
 			</div>
-			<div class="card-body">
-				<form>
+			<div class="card-body" >
+				<form runat="server">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="Nombre de usuario">
-						
+						 <asp:TextBox ID="usert" class="form-control" type="text"  placeholder="Nombre de usuario" runat="server"></asp:TextBox>
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="Contraseña">
+                         <asp:TextBox ID="password" class="form-control"  type="password"  placeholder="Contraseña " runat="server"></asp:TextBox>
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Recordarme
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Inicio de Sesion" class="btn float-right login_btn">
+                        <button ID="Inicio" class="btn float-right login_btn"  runat="server" >
+						<span>
+							Inicio de Sesion							
+						</span>
+					</button>
+
+
 					</div>
 				</form>
 			</div>
