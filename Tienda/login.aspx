@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Page</title>
+	<title>Inicio de Sesion Tienda UG</title>
    <!--Made with love by Mutiullah Samim -->
    
 	<!--Bootsrap 4 CDN-->
@@ -23,7 +23,7 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>Inicio de Secion</h3>
+				<h3>Inicio de Sesion</h3>
 				<div class="d-flex justify-content-end social_icon">
 					<span><i class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-google-plus-square"></i></span>
@@ -49,7 +49,7 @@
 						<input type="checkbox">Recordarme
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Iniciar Secion" class="btn float-right login_btn">
+						<input type="submit" value="Inicio de Sesion" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>
