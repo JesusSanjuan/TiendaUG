@@ -10,10 +10,12 @@
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             async: false,
-            data: JSON.stringify(data),
+            data: JSON.stringify({ Valor: "Hola ke hace"}),
             success: function (result) {
+                
                 var meses = JSON.parse(result.d); 
                 alert(meses);
+              //  alert(meses);
             },
             error: function (result) {
                 console.log(result.responseText);
@@ -27,3 +29,5 @@
         
 
     });
+
+
