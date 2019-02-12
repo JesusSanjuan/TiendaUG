@@ -10,13 +10,13 @@ Public Class WebForm3
     Dim ds As New DataSet
     Dim da As OleDb.OleDbDataAdapter
 
-    Public conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
+    Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
     Public cmd As SqlCommand
     Public dr As SqlDataReader
-    Public Function conectar() As SqlConnection
+    Public Shared Function conectar() As SqlConnection
         Try
             conn.Open()
-            'MsgBox("Conectado")
+            MsgBox("Conectado")
         Catch ex As Exception
             MsgBox("Error")
         End Try
@@ -60,6 +60,10 @@ Public Class WebForm3
 
     <WebMethod()>
     Public Shared Function testmethod(ByVal Valor As String) As Object
+
+        conectar()
+
+
 
         Dim obj As String
         obj = JsonConvert.SerializeObject(Valor)

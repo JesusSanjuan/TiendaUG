@@ -1,8 +1,7 @@
 ﻿
-    $('#Prueba').on('click', function () {//obtener datos cuando el periodo cambie
+$('#Inicio').on('click', function () {//obtener datos cuando el periodo cambie
 
-        var data = {};
-        data.param1 = "Hola";
+        
 
         $.ajax({
             type: "POST",

@@ -52,10 +52,6 @@
 							Inicio de Sesion							
 						</span>
 					   </button>
-
-                        <button id="Prueba" type="button">Click Me!</button>
-
-
 					</div>
 				</form>
 			</div>
