@@ -34,13 +34,17 @@ Public Class WebForm3
         cmd = New SqlCommand(consulta, conn)
         dr = cmd.ExecuteReader()
 
-        Dim obj As String = "Sin registro en base de datos"
+        Dim obj As String = "SU"
         Dim ResultConsulta(2) As String
 
-        If dr.HasRows Then
+        If dr.HasRows = True Then
             dr.Read()
             ResultConsulta(0) = dr.GetSqlInt32(0)
             ResultConsulta(1) = dr.GetString(1)
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        ElseIf dr.HasRows = False Then
+            ResultConsulta(0) = "0"
+            ResultConsulta(1) = "SU"
             obj = JsonConvert.SerializeObject(ResultConsulta)
         End If
         cerrar()

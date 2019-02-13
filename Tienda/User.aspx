@@ -1,10 +1,10 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Admin2.aspx.vb" Inherits="Tienda.WebForm2" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="User.aspx.vb" Inherits="Tienda.WebForm4" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<title>Tienda UG Administrador</title>
+<title>Tienda UG Usuario</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -65,81 +65,6 @@
 					Informacion cargada
 				</span>
                 
-                 <div class="wrap-input100 bg1 rs1-wrap-input100">
-					<span class="label-input100">ID </span>
-				   <asp:TextBox ID="idenPrinc" class="input100" type="text"  placeholder="" runat="server"></asp:TextBox>
-               </div>
-                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Ingrese el codigo">
-					<span class="label-input100">Codigo *</span>
-				   <asp:TextBox ID="Codigo" class="input100" type="text"  placeholder="Ingrese el codigo "   runat="server"></asp:TextBox>
-               </div>
-                <div class="wrap-input100 validate-input bg1" data-validate="Porfavor ingrese la descripcion del producto">
-					<span class="label-input100"> DESCRIPCION DEL PRODUCTO*</span>
-                    <asp:TextBox ID="Descripcion" class="input100" type="text"  placeholder="Describa el producto... " runat="server"></asp:TextBox>
-				</div>
-                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Por favor ingrese el precio del producto">
-					    <span class="label-input100">Precio *</span>
-				            <asp:TextBox ID="Prec" class="input100" type="text"  placeholder="Ingrese el precio del producto " runat="server"></asp:TextBox>
-                </div>
-                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Por favor ingrese la cantidad de producto">
-					<span class="label-input100">Cantidad *</span>
-				    <asp:TextBox ID="Cant" class="input100" type="text"  placeholder="Ingrese la cantidad de producto " runat="server"></asp:TextBox>
-                </div>
-                <div class="wrap-input100 bg1 rs1-wrap-input100">
-					<span class="label-input100">Color *</span>
-					    <div>
-                            <asp:DropDownList ID="Col"  class="js-select2" runat="server">
-                                <asp:ListItem Enabled="true" Text="Seleccione el color del producto" Value="-1"></asp:ListItem>
-                                <asp:ListItem Text="Azul" Value="Azul"></asp:ListItem>
-                                <asp:ListItem Text="Rojo" Value="Rojo"></asp:ListItem>
-                                <asp:ListItem Text="Amarillo" Value="Amarillo"></asp:ListItem>
-                            </asp:DropDownList>
-						    <div class="dropDownSelect2"></div>
-					    </div>
-				</div>
-                <div class="w-full dis-block js-show-service">
-					<div class="wrap-contact100-form-radio">
-						<span class="label-input100">De que talla es el producto?</span>
-
-						<div class="contact100-form-radio m-t-15">
-							<input class="input-radio100" id="radio1" type="radio" name="type-product" value="chica" runat="server">
-							<label class="label-radio100" for="radio1">
-								Chica
-							</label> 
-						</div>
-
-						<div class="contact100-form-radio">
-							<input class="input-radio100" id="radio2" type="radio" name="type-product" value="mediana" runat="server">
-							<label class="label-radio100" for="radio2">
-								Mediana
-							</label>
-						</div>
-
-						<div class="contact100-form-radio">
-							<input class="input-radio100" id="radio3" type="radio" name="type-product" value="grande" runat="server">
-							<label class="label-radio100" for="radio3">
-								Grande
-							</label>
-						</div>
-                        <div class="contact100-form-radio">
-							<input class="input-radio100" id="radio4" type="radio" name="type-product" value="extragrande" runat="server">
-							<label class="label-radio100" for="radio4">
-								Extra-Grande
-							</label>
-						</div>
-					</div>
-				</div>
-                <div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
-					<span class="label-input100">Imagen</span>
-                    <asp:Image ID="Image1" runat="server" />
-				</div>
-                
-
-
-                <div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
-					<span class="label-input100">Imagen</span>
-                    <asp:FileUpload ID="FileUpload1" class="input100" runat="server" />
-				</div>
                 <div class="container-contact100-form-btn" >
 					<button ID="Mod" class="contact100-form-btn" runat="server" >
 						<span>

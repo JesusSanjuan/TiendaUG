@@ -17,14 +17,24 @@ $('#Inicio').on('click', function () {//obtener datos cuando el periodo cambie
                 var tipo_user = valor[1];
                 alert(id_user);
                 alert(tipo_user);
-                if (tipo_user == "Administrador") {
-                    window.location.href = 'Admin1.aspx';
-                    alert("mal rediririr");
+
+
+                switch (tipo_user) {
+                    case "Administrador":
+                        window.location.href = 'Admin1.aspx';
+                        break;
+                    case "Usuario":
+                        window.location.href = 'User.aspx';
+                        break;
+                    case "SU":
+                        break;
+                    default:
+                        document.getElementById('Validacion').innerHTML = 'Nuevo valor';
+                        document.getElementById('val').innerHTML = 'Nuevo valor';
+                    // code block
                 }
-                else
-                {
-                    location.href = "http://www.pagina1.com";
-                }
+
+
                 var sId = tipo_user;
                 writeCookie('sessionId', sId, 1);
             },

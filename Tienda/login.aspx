@@ -47,10 +47,13 @@
 						<input type="checkbox">Recordarme
 					</div>
 					<div class="form-group">
-
-                        <input type="button" class="btn float-right login_btn" value="Inicio de Sesion" id="Inicio">
-                       
+                        <input type="button" class="btn float-right login_btn" value="Inicio de Sesion" id="Inicio">                    
 					</div>
+                    <div class="form-group">
+                        <asp:Label ID="Validacion" runat="server" Text="Label"></asp:Label>   
+                        <label id="val" > </label>
+					</div>
+                      
 				</form>
 			</div>
 			<div class="card-footer">
