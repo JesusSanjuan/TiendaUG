@@ -1,74 +1,51 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Web.Services
 Imports Newtonsoft.Json
-Imports System.Web.Script.Services
 
 Public Class WebForm3
     Inherits System.Web.UI.Page
 
-    Dim ids As String
-    Dim ds As New DataSet
-    Dim da As OleDb.OleDbDataAdapter
-
     Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
-    Public cmd As SqlCommand
-    Public dr As SqlDataReader
+    Public Shared cmd As SqlCommand
+    Public Shared dr As SqlDataReader
     Public Shared Function conectar() As SqlConnection
         Try
             conn.Open()
-            MsgBox("Conectado")
+            'MsgBox("Conectado")
         Catch ex As Exception
-            MsgBox("Error")
+            MsgBox("Error con la conexion de base de datos")
         End Try
         Return conn
     End Function
 
-    Public Function cerrar() As SqlConnection
+    Public Shared Function cerrar() As SqlConnection
         conn.Close()
         Return conn
     End Function
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        Session.Add("Mykey", "Hola")
     End Sub
 
-    Private Sub Inicio_ServerClick(sender As Object, e As EventArgs) Handles Inicio.ServerClick
-
+    <WebMethod()>
+    Public Shared Function testmethod(ByVal User As String, ByVal Password As String) As Object
         conectar()
-        ' MsgBox("INSERT INTO UG(Cantidad,Descripcion,Precio,Color,Talla,Id_imagen) VALUES('" + Cantidad + "','" + Descrip + "','" + Precio + "','" + Color + "','" + Talla + "','imagen_" + aStr + ".jpg')")
-        Dim Name As String = usert.Text
-        Dim Pass As String = password.Text
-        'Se genera el String de la Consulta
-        Dim consulta As String = "SELECT Id_usuario,Tipo_user FROM  Users WHERE UserName = '" + Name + "' and  Contrasena='" + Pass + "'"
-        'Agregamos la sentencia SQL y la conexion
+        Dim consulta As String = "SELECT Id_usuario,Tipo_user FROM  Users WHERE UserName = '" + User + "' and  Contrasena='" + Password + "'"
         cmd = New SqlCommand(consulta, conn)
-
         dr = cmd.ExecuteReader()
+
+        Dim obj As String = "Sin registro en base de datos"
+        Dim ResultConsulta(2) As String
 
         If dr.HasRows Then
             dr.Read()
-            MsgBox(dr.GetString(1))
-
+            ResultConsulta(0) = dr.GetSqlInt32(0)
+            ResultConsulta(1) = dr.GetString(1)
+            obj = JsonConvert.SerializeObject(ResultConsulta)
         End If
-
         cerrar()
-
-
-    End Sub
-
-
-
-    <WebMethod()>
-    Public Shared Function testmethod(ByVal Valor As String) As Object
-
-        conectar()
-
-
-
-        Dim obj As String
-        obj = JsonConvert.SerializeObject(Valor)
-
-
         Return obj
     End Function
+
+
 End Class

@@ -47,11 +47,9 @@
 						<input type="checkbox">Recordarme
 					</div>
 					<div class="form-group">
-                        <button ID="Inicio" class="btn float-right login_btn"  runat="server" >
-						<span>
-							Inicio de Sesion							
-						</span>
-					   </button>
+
+                        <input type="button" class="btn float-right login_btn" value="Inicio de Sesion" id="Inicio">
+                       
 					</div>
 				</form>
 			</div>

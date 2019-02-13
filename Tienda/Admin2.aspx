@@ -1,17 +1,16 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="WebForm1.aspx.vb" Inherits="Tienda.WebForm1" %>
-
-<%@ Register assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI.DataVisualization.Charting" tagprefix="asp" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Admin2.aspx.vb" Inherits="Tienda.WebForm2" %>
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Tienda UG</title>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title>Tienda UG</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="Plantilla/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	 <link href="Content/bootstrap.min.css" rel="stylesheet" />   
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />    
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="Plantilla/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
@@ -21,7 +20,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
@@ -29,31 +28,64 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/noui/nouislider.min.css">
 <!--===============================================================================================-->
+    <link href="Content/bootstrap.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="Plantilla/css/util.css">
 	<link rel="stylesheet" type="text/css" href="Plantilla/css/main.css">
+    <link rel="stylesheet" type="text/css" href="Plantilla/css/login.css">
 <!--===============================================================================================-->
 </head>
 <body>
-
-
-	<div class="container-contact100">
+    <div class="container-contact100">
 		<div class="wrap-contact100">
 			<form id="form1" class="contact100-form validate-form" runat="server"> 
 				<span class="contact100-form-title">
-					Tienda UG
+					Tienda UG					
 				</span>
+                <div class="wrap-input100 validate-input bg1" data-validate="Porfavor ingrese la descripcion del producto">
+					<span class="label-input100"> Consulta de informacion</span>                        
+                             <asp:GridView ID="GridView1" CssClass="alt table table-bordered"  runat="server" AutoGenerateColumns="False" DataKeyNames="Id_codigo" DataSourceID="SqlDataSource1" AlternatingRowStyle-CssClass="alt">
+<AlternatingRowStyle ></AlternatingRowStyle> 
+                                    <Columns>
+                                        <asp:CommandField  ButtonType="Image" SelectImageUrl="images/icon/favicon.icon"   ShowSelectButton="True"/>
+                                        <asp:BoundField DataField="Id_codigo" HeaderText="Id_codigo" InsertVisible="False" ReadOnly="True" SortExpression="Id_codigo" />
+                                        <asp:BoundField DataField="Codigo" HeaderText="Codigo" SortExpression="Codigo" />
+                                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />
+                                        <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
+                                        <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
+                                        <asp:BoundField DataField="Color" HeaderText="Color" SortExpression="Color" />
+                                        <asp:BoundField DataField="Talla" HeaderText="Talla" SortExpression="Talla" />
+                                        <asp:BoundField DataField="id_imagen" HeaderText="id_imagen" SortExpression="id_imagen" />
+                                    </Columns>
+                          </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TiendaUGConnectionString %>" SelectCommand="SELECT * FROM [UG]"></asp:SqlDataSource>
+        
+                </div>
 
-				<div class="wrap-input100 validate-input bg1" data-validate="Porfavor ingrese la descripcion del producto">
+                <span class="contact100-form-title">
+					Informacion cargada
+				</span>
+                
+                 <div class="wrap-input100 bg1 rs1-wrap-input100">
+					<span class="label-input100">ID </span>
+				   <asp:TextBox ID="idenPrinc" class="input100" type="text"  placeholder="" runat="server"></asp:TextBox>
+               </div>
+                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Ingrese el codigo">
+					<span class="label-input100">Codigo *</span>
+				   <asp:TextBox ID="Codigo" class="input100" type="text"  placeholder="Ingrese el codigo "   runat="server"></asp:TextBox>
+               </div>
+                <div class="wrap-input100 validate-input bg1" data-validate="Porfavor ingrese la descripcion del producto">
 					<span class="label-input100"> DESCRIPCION DEL PRODUCTO*</span>
                     <asp:TextBox ID="Descripcion" class="input100" type="text"  placeholder="Describa el producto... " runat="server"></asp:TextBox>
 				</div>
-
-				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Por favor ingrese la cantidad de producto">
+                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Por favor ingrese el precio del producto">
+					    <span class="label-input100">Precio *</span>
+				            <asp:TextBox ID="Prec" class="input100" type="text"  placeholder="Ingrese el precio del producto " runat="server"></asp:TextBox>
+                </div>
+                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Por favor ingrese la cantidad de producto">
 					<span class="label-input100">Cantidad *</span>
 				    <asp:TextBox ID="Cant" class="input100" type="text"  placeholder="Ingrese la cantidad de producto " runat="server"></asp:TextBox>
                 </div>
-
-				<div class="wrap-input100 bg1 rs1-wrap-input100">
+                <div class="wrap-input100 bg1 rs1-wrap-input100">
 					<span class="label-input100">Color *</span>
 					    <div>
                             <asp:DropDownList ID="Col"  class="js-select2" runat="server">
@@ -65,18 +97,7 @@
 						    <div class="dropDownSelect2"></div>
 					    </div>
 				</div>
-
-			     <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Por favor ingrese el precio del producto">
-					    <span class="label-input100">Precio *</span>
-				            <asp:TextBox ID="Lacantidad" class="input100" type="text"  placeholder="Ingrese el precio del producto " runat="server"></asp:TextBox>
-                </div>
-
-                <div class="wrap-input100 bg1 rs1-wrap-input100">
-					<span class="label-input100">Codigo *</span>
-				   <asp:TextBox ID="Codigo" class="input100" type="text"  placeholder="Ingrese el codigo " runat="server"></asp:TextBox>
-               </div>
-
-				<div class="w-full dis-block js-show-service">
+                <div class="w-full dis-block js-show-service">
 					<div class="wrap-contact100-form-radio">
 						<span class="label-input100">De que talla es el producto?</span>
 
@@ -108,21 +129,32 @@
 						</div>
 					</div>
 				</div>
+                <div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
+					<span class="label-input100">Imagen</span>
+                    <asp:Image ID="Image1" runat="server" />
+				</div>
+                
 
 
-				<div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
+                <div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
 					<span class="label-input100">Imagen</span>
                     <asp:FileUpload ID="FileUpload1" class="input100" runat="server" />
 				</div>
-
-				<div class="container-contact100-form-btn" >
-					<button ID="Button2" class="contact100-form-btn" runat="server" >
+                <div class="container-contact100-form-btn" >
+					<button ID="Mod" class="contact100-form-btn" runat="server" >
 						<span>
-							Actualizar
+							Modificar
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 						</span>
 					</button>
-				    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+				</div>
+                <div class="container-contact100-form-btn" >
+					<button ID="Borrar" class="contact100-form-btn" runat="server" >
+						<span>
+							Borrar
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
 				</div>
 			</form>
 		</div>
@@ -133,9 +165,9 @@
 <!--===============================================================================================-->
 	<script src="Scripts/jquery-3.3.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="Plantilla/vendor/animsition/js/animsition.min.js"></script>
+	<script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
-	<script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/popper.js"></script>
 <!--===============================================================================================-->
 	<script src="Plantilla/vendor/select2/select2.min.js"></script>
@@ -153,35 +185,7 @@
 	<script src="Plantilla/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
 	<script src="Plantilla/vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="Plantilla/vendor/noui/nouislider.min.js"></script>
-	<script>
-	    var filterBar = document.getElementById('filter-bar');
-
-	    noUiSlider.create(filterBar, {
-	        start: [ 1500, 7500 ],
-	        connect: true,
-	        range: {
-	            'min': 1500,
-	            'max': 7500
-	        }
-	    });
-
-	    var skipValues = [
-	    document.getElementById('value2')
-	    ];
-
-	    filterBar.noUiSlider.on('update', function( values, handle ) {
-	        skipValues[handle].innerHTML = Math.round(values[handle]);
-            $('.contact100-form-range-value input[name="from-value"]').val($('#value2').html());
-        
-        });        
-    });
-
-
-	</script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
+	<script src="Plantilla/js/main.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
@@ -192,6 +196,5 @@
 
   gtag('config', 'UA-23581568-13');
 </script>
-
 </body>
 </html>
