@@ -43,25 +43,22 @@
                 <span class="navbar-toggler-icon"></span>
           </button>
  
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-     
-        <ul class="navbar-nav mr-auto">       
-             <li class="nav-item">
-                    <a class="nav-link" href="#">INICIO <span class="sr-only">(current)</span></a>
-             </li>       
-            <li class="nav-item">
-                    <a class="nav-link" href="#">BLOG</a>
-            </li> 
-        </ul> 
-        <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Buscar ..." aria-label="Buscar ...">
-              <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">BUSCAR</button>
-        </form> 
-              <a class="btn btn-outline-success d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="#">REGISTRATE</a>
-              <a class="btn btn-outline-info d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="#">INGRESAR</a>
- 
-          </div>
- 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">     
+            <ul class="navbar-nav mr-auto">       
+                 <li class="nav-item">
+                        <a class="nav-link" href="#">INICIO <span class="sr-only">(current)</span></a>
+                 </li>       
+                <li class="nav-item">
+                        <a class="nav-link" href="#">BLOG</a>
+                </li> 
+            </ul> 
+            <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Buscar ..." aria-label="Buscar ...">
+                  <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">BUSCAR</button>
+            </form> 
+            <a class="btn btn-outline-success d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="#">REGISTRATE</a>
+            <a class="btn btn-outline-info d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="#">INGRESAR</a> 
+         </div> 
       </div> 
 </nav>
 
