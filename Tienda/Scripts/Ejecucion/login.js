@@ -7,7 +7,7 @@ $('#Inicio').on('click', function () {//obtener datos cuando el periodo cambie
     {
         $(document).ready(function () {
             $('#myModal').modal({ show: true });
-            $('#imgmodal').html('<img src="../Scripts/imagenes/alerta.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
+            $('#imgmodal').html('<img src="../Scripts/imagenes/pregunta.png" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
             $('#txtmodatitle').html("<strong style='vertical - align: middle;'> Credenciales</strong>");
             $('#texmodal').html("<strong style='vertical - align: middle;'> Ingrese sus credenciales </strong>");
         });

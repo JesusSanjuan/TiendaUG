@@ -50,4 +50,8 @@ Public Class WebForm3
         cerrar()
         Return obj
     End Function
+
+    Protected Sub password_TextChanged(sender As Object, e As EventArgs) Handles password.TextChanged
+
+    End Sub
 End Class
