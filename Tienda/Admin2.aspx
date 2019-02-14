@@ -20,8 +20,6 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/daterangepicker/daterangepicker.css">
@@ -44,10 +42,7 @@
         </button>
  
     <div class="collapse navbar-collapse" id="navbarSupportedContent">     
-        <ul class="navbar-nav mr-auto">       
-                <li class="nav-item">
-                    <a class="nav-link" href="Admin1.aspx">INICIO <span class="sr-only">(current)</span></a>
-                </li>       
+        <ul class="navbar-nav mr-auto">      
             <li class="nav-item">
                     <a class="nav-link" href="Admin1.aspx">Alta</a>
             </li> 
@@ -194,27 +189,14 @@
 <!--===============================================================================================-->
 	<script src="Scripts/jquery-3.3.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/popper.js"></script>
-<!--===============================================================================================-->
-	<script src="Plantilla/vendor/select2/select2.min.js"></script>
-	<script>
-		$(".js-select2").each(function(){
-			$(this).select2({
-				minimumResultsForSearch: 20,
-				dropdownParent: $(this).next('.dropDownSelect2')
-			});
-			
-		})
-	</script>
-<!--===============================================================================================-->
 	<script src="Plantilla/vendor/daterangepicker/moment.min.js"></script>
 	<script src="Plantilla/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
 	<script src="Plantilla/vendor/countdowntime/countdowntime.js"></script>
 	<script src="Plantilla/js/main.js"></script>
+<!--===============================================================================================-->
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>

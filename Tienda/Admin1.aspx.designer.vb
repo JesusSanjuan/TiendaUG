@@ -113,20 +113,11 @@ Partial Public Class WebForm1
     Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
     
     '''<summary>
-    '''Control Button2.
+    '''Control Alta.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Button2 As Global.System.Web.UI.HtmlControls.HtmlButton
-    
-    '''<summary>
-    '''Control TextBox1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Alta As Global.System.Web.UI.HtmlControls.HtmlButton
 End Class

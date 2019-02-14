@@ -50,6 +50,4 @@ Public Class WebForm3
         cerrar()
         Return obj
     End Function
-
-
 End Class

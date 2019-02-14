@@ -29,6 +29,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/noui/nouislider.min.css">
 <!--===============================================================================================-->
+    <link href="Content/bootstrap.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="Plantilla/css/util.css">
 	<link rel="stylesheet" type="text/css" href="Plantilla/css/main.css">
     <link rel="stylesheet" type="text/css" href="Plantilla/css/login.css">
@@ -36,7 +37,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">   
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark menu">   
     <div class="container">
           <a class="navbar-brand" href="Admin1.aspx"><b>TIENDA UG</b></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,10 +45,7 @@
           </button>
  
         <div class="collapse navbar-collapse" id="navbarSupportedContent">     
-            <ul class="navbar-nav mr-auto">       
-                 <li class="nav-item">
-                        <a class="nav-link" href="Admin1.aspx">INICIO <span class="sr-only">(current)</span></a>
-                 </li>       
+            <ul class="navbar-nav mr-auto">    
                 <li class="nav-item">
                         <a class="nav-link" href="Admin1.aspx">Alta</a>
                 </li> 
@@ -144,13 +142,12 @@
 				</div>
 
 				<div class="container-contact100-form-btn" >
-					<button ID="Button2" class="contact100-form-btn" runat="server" >
+					<button ID="Alta" class="contact100-form-btn" runat="server" >
 						<span>
 							Actualizar
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 						</span>
 					</button>
-				    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 				</div>
 			</form>
 		</div>
@@ -165,6 +162,8 @@
 <!--===============================================================================================-->
 	<script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/popper.js"></script>
+    <script src="Plantilla/vendor/daterangepicker/moment.min.js"></script>
+	<script src="Plantilla/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
 	<script src="Plantilla/vendor/select2/select2.min.js"></script>
 	<script>
@@ -177,39 +176,10 @@
 		})
 	</script>
 <!--===============================================================================================-->
-	<script src="Plantilla/vendor/daterangepicker/moment.min.js"></script>
-	<script src="Plantilla/vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
 	<script src="Plantilla/vendor/countdowntime/countdowntime.js"></script>
+    <script src="Plantilla/js/main.js"></script>
 <!--===============================================================================================-->
-	<script src="Plantilla/vendor/noui/nouislider.min.js"></script>
-	<script>
-	    var filterBar = document.getElementById('filter-bar');
-
-	    noUiSlider.create(filterBar, {
-	        start: [ 1500, 7500 ],
-	        connect: true,
-	        range: {
-	            'min': 1500,
-	            'max': 7500
-	        }
-	    });
-
-	    var skipValues = [
-	    document.getElementById('value2')
-	    ];
-
-	    filterBar.noUiSlider.on('update', function( values, handle ) {
-	        skipValues[handle].innerHTML = Math.round(values[handle]);
-            $('.contact100-form-range-value input[name="from-value"]').val($('#value2').html());
-        
-        });        
-    });
-
-
-	</script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
+	
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>

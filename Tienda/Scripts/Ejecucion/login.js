@@ -3,45 +3,48 @@ $('#Inicio').on('click', function () {//obtener datos cuando el periodo cambie
 
     var usuarioLogin = document.getElementById("usert").value;
     var passwordLogin = document.getElementById("password").value;
-
+    if (usuarioLogin.length == 0 || passwordLogin.length == 0)
+    {
+        $(document).ready(function () {
+            $('#myModal').modal({ show: true });
+            $('#imgmodal').html('<img src="../Scripts/imagenes/alerta.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
+            $('#txtmodatitle').html("<strong style='vertical - align: middle;'> Credenciales</strong>");
+            $('#texmodal').html("<strong style='vertical - align: middle;'> Ingrese sus credenciales </strong>");
+        });
+    }
+    else
+    {
         $.ajax({
             type: "POST",
             url: "login.aspx/testmethod",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             async: false,
-            data: JSON.stringify({ User: usuarioLogin, Password: passwordLogin}),
+            data: JSON.stringify({ User: usuarioLogin, Password: passwordLogin }),
             success: function (result) {
-
-                
-                var valor = JSON.parse(result.d);  
+                var valor = JSON.parse(result.d);
                 var id_user = valor[0];
                 var tipo_user = valor[1];
+                var sId = tipo_user;
                 switch (tipo_user) {
                     case "Administrador":
                         window.location.href = 'Admin1.aspx';
+                        
+                        writeCookie('sessionId', sId, 1);
+
                         break;
                     case "Usuario":
                         window.location.href = 'User.aspx';
                         break;
                     case "SU":
-                        document.getElementById('Validacion').innerHTML = 'Nuevo valor';
-
                         $(document).ready(function () {
-
                             $('#myModal').modal({ show: true });
-
-
+                            $('#imgmodal').html('<img src="../Scripts/imagenes/alerta.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
+                            $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Verifique sus credenciales</strong>");
+                            $('#texmodal').html("<strong style='vertical - align: middle;'> Verifique sus credenciales </strong>");
                         });
                         break;
-                    default:
-                       
-                    // code block
-                }
-
-
-                var sId = tipo_user;
-                writeCookie('sessionId', sId, 1);
+                }                
             },
             error: function (result) {
                 console.log(result.responseText);
@@ -51,8 +54,8 @@ $('#Inicio').on('click', function () {//obtener datos cuando el periodo cambie
             console.log(data);
         }).fail(function (data) {
             console.log("Error: " + data);
-            });
-        
+        });
+    }
 
 });
 

@@ -30,13 +30,4 @@ Partial Public Class WebForm3
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents password As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control Validacion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Validacion As Global.System.Web.UI.WebControls.Label
 End Class

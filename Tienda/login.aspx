@@ -51,10 +51,6 @@
 					<div class="form-group">
                         <input type="button" class="btn float-right login_btn" value="Inicio de Sesion" id="Inicio">                    
 					</div>
-                    <div class="form-group">
-                        <asp:Label ID="Validacion" runat="server" Text="Label"></asp:Label>   
-                        <label id="val" > </label>
-					</div>
                       
 				</form>
 			</div>
@@ -72,28 +68,27 @@
 
 
 
-
 <div class="modal" id="myModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
+        <h5 class="modal-title" id="txtmodatitle"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Modal body text goes here.</p>
+        <div class="row">
+                <div class="col-3" id="imgmodal"></div>
+                <div class="col-9" id="texmodal"></div>                                                                        
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
-
-
     
     <script src="Scripts/Ejecucion/login.js"></script>
   

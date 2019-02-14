@@ -35,7 +35,7 @@ Public Class WebForm1
     End Sub
 
 
-    Private Sub Button2_ServerClick(sender As Object, e As EventArgs) Handles Button2.ServerClick
+    Private Sub Button2_ServerClick(sender As Object, e As EventArgs) Handles Alta.ServerClick
         Dim Descrip As String
         Dim Codig As String
         Dim Cantidad As String
