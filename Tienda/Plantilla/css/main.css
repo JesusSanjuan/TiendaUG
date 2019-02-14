@@ -725,3 +725,10 @@ textarea.input100 {
     padding: 15px 0px 0 0px;
   }
 }
+
+
+.header{ height:0px; width:100%;}
+.menu{ width:100%;}
+.wrapper{ width:100%; }
+
+.fixed{position:fixed; top:0;  z-index: 50;}

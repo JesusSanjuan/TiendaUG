@@ -33,32 +33,35 @@
 <!--===============================================================================================-->
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">   
-<div class="container">
-        <a class="navbar-brand" href="Admin1.aspx"><b>TIENDA UG</b></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<div class="header">
+</div>
+<div class="menu">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">   
+    <div class="container">
+            <a class="navbar-brand" href="Admin1.aspx"><b>TIENDA UG</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">     
-        <ul class="navbar-nav mr-auto">      
-            <li class="nav-item">
-                    <a class="nav-link" href="Admin1.aspx">Alta</a>
-            </li> 
-            <li class="nav-item">
-                    <a class="nav-link" href="Admin2.aspx">Consulta..</a>
-            </li> 
-        </ul> 
-        <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Buscar ..." aria-label="Buscar ...">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">BUSCAR</button>
-        </form> 
-        <a class="btn btn-outline-info d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="login.aspx">CERRAR SESION</a> 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">     
+            <ul class="navbar-nav mr-auto">      
+                <li class="nav-item">
+                        <a class="nav-link" href="Admin1.aspx">Alta</a>
+                </li> 
+                <li class="nav-item">
+                        <a class="nav-link" href="Admin2.aspx">Consulta..</a>
+                </li> 
+            </ul> 
+            <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar ..." aria-label="Buscar ...">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">BUSCAR</button>
+            </form> 
+            <a class="btn btn-outline-info d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="login.aspx">CERRAR SESION</a> 
+            </div> 
         </div> 
-    </div> 
-</nav>
-
+    </nav>
+</div>
+<div class="wrapper">
     <div class="container-contact100">
 		<div class="wrap-contact100">
 			<form id="form1" class="contact100-form validate-form" runat="server"> 
@@ -183,7 +186,7 @@
 			</form>
 		</div>
 	</div>
-
+</div>
 
 
 <!--===============================================================================================-->
