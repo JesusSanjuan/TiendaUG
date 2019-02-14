@@ -39,22 +39,4 @@ Partial Public Class WebForm4
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
-    '''Control Mod.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents [Mod] As Global.System.Web.UI.HtmlControls.HtmlButton
-    
-    '''<summary>
-    '''Control Borrar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Borrar As Global.System.Web.UI.HtmlControls.HtmlButton
 End Class

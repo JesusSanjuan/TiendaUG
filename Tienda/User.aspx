@@ -35,6 +35,35 @@
 <!--===============================================================================================-->
 </head>
 <body>
+
+    
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">   
+    <div class="container">
+          <a class="navbar-brand" href="User.aspx"><b>TIENDA UG</b></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+          </button>
+ 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">     
+            <ul class="navbar-nav mr-auto">       
+                 <li class="nav-item">
+                        <a class="nav-link" href="User.aspx">INICIO <span class="sr-only">(current)</span></a>
+                 </li>       
+                <li class="nav-item">
+                        <a class="nav-link" href="#">Opcion 1</a>
+                </li> 
+                <li class="nav-item">
+                        <a class="nav-link" href="#">Opcion 2</a>
+                </li> 
+            </ul> 
+            <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Buscar ..." aria-label="Buscar ...">
+                  <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">BUSCAR</button>
+            </form> 
+            <a class="btn btn-outline-info d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="login.aspx">CERRAR SESION</a> 
+         </div> 
+      </div> 
+</nav>
     <div class="container-contact100">
 		<div class="wrap-contact100">
 			<form id="form1" class="contact100-form validate-form" runat="server"> 
@@ -64,23 +93,6 @@
                 <span class="contact100-form-title">
 					Informacion cargada
 				</span>
-                
-                <div class="container-contact100-form-btn" >
-					<button ID="Mod" class="contact100-form-btn" runat="server" >
-						<span>
-							Modificar
-							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-						</span>
-					</button>
-				</div>
-                <div class="container-contact100-form-btn" >
-					<button ID="Borrar" class="contact100-form-btn" runat="server" >
-						<span>
-							Borrar
-							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-						</span>
-					</button>
-				</div>
 			</form>
 		</div>
 	</div>
