@@ -12,10 +12,12 @@
 	<!--Bootsrap 4 CDN-->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <!--Fontawesome CDN-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<!--Custom styles-->
 	<link rel="stylesheet" type="text/css" href="Plantilla/css/login.css">
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/esm/popper.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -67,10 +69,33 @@
 		</div>
 	</div>
 </div>
-<script src="Scripts/bootstrap.min.js"></script>
-<script src="Scripts/jquery-3.3.1.min.js"></script>
-<script src="Scripts/Ejecucion/login.js"></script>
 
+
+
+
+<div class="modal" id="myModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    
+    <script src="Scripts/Ejecucion/login.js"></script>
   
 
 </body>

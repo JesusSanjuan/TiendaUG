@@ -12,13 +12,11 @@ $('#Inicio').on('click', function () {//obtener datos cuando el periodo cambie
             async: false,
             data: JSON.stringify({ User: usuarioLogin, Password: passwordLogin}),
             success: function (result) {
+
+                
                 var valor = JSON.parse(result.d);  
                 var id_user = valor[0];
                 var tipo_user = valor[1];
-                alert(id_user);
-                alert(tipo_user);
-
-
                 switch (tipo_user) {
                     case "Administrador":
                         window.location.href = 'Admin1.aspx';
@@ -27,10 +25,17 @@ $('#Inicio').on('click', function () {//obtener datos cuando el periodo cambie
                         window.location.href = 'User.aspx';
                         break;
                     case "SU":
+                        document.getElementById('Validacion').innerHTML = 'Nuevo valor';
+
+                        $(document).ready(function () {
+
+                            $('#myModal').modal({ show: true });
+
+
+                        });
                         break;
                     default:
-                        document.getElementById('Validacion').innerHTML = 'Nuevo valor';
-                        document.getElementById('val').innerHTML = 'Nuevo valor';
+                       
                     // code block
                 }
 
