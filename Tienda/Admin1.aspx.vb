@@ -1,20 +1,14 @@
 ﻿Imports System.Data.SqlClient
-Imports System                 'Nos ayuda a tener el control de las carpetas del servidor.
-Imports System.IO              'Nos ayuda a tener el control de las carpetas del servidor.
-Imports System.Web
-
-
-
-
+Imports System.Web.Services
+Imports Newtonsoft.Json
 
 Public Class WebForm1
 
     Inherits System.Web.UI.Page
-    Private tempfolder As String = New String("~/archivos")
-    Public conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
-    Public cmd As SqlCommand
-    Public dr As SqlDataReader
-    Public Function conectar() As SqlConnection
+    Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
+    Public Shared cmd As SqlCommand
+    Public Shared dr As SqlDataReader
+    Public Shared Function conectar() As SqlConnection
         Try
             conn.Open()
             'MsgBox("Conectado")
@@ -24,7 +18,7 @@ Public Class WebForm1
         Return conn
     End Function
 
-    Public Function cerrar() As SqlConnection
+    Public Shared Function cerrar() As SqlConnection
         conn.Close()
         Return conn
     End Function
@@ -33,8 +27,6 @@ Public Class WebForm1
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
     End Sub
-
-
     Private Sub Button2_ServerClick(sender As Object, e As EventArgs) Handles Alta.ServerClick
         Dim Descrip As String
         Dim Codig As String
@@ -88,20 +80,28 @@ Public Class WebForm1
         'se Cierra la conexion
         cerrar()
     End Sub
+    <WebMethod()>
+    Public Shared Function testmethod(ByVal Cantidad As String, ByVal Codig As String, ByVal Descrip As String) As Object
+        conectar()
+        Dim consulta As String = "SELECT Id_usuario,Tipo_user FROM  Users WHERE UserName = '" + User + "' and  Contrasena='" + Password + "'"
+        cmd = New SqlCommand(consulta, conn)
+        dr = cmd.ExecuteReader()
 
-    Protected Sub Descripcion_TextChanged(sender As Object, e As EventArgs) Handles Descripcion.TextChanged
+        Dim obj As String = "SU"
+        Dim ResultConsulta(2) As String
 
-    End Sub
+        If dr.HasRows = True Then
+            dr.Read()
+            ResultConsulta(0) = dr.GetSqlInt32(0)
+            ResultConsulta(1) = dr.GetString(1)
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        ElseIf dr.HasRows = False Then
+            ResultConsulta(0) = "0"
+            ResultConsulta(1) = "SU"
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        End If
+        cerrar()
+        Return obj
+    End Function
 
-    Protected Sub Cant_TextChanged(sender As Object, e As EventArgs) Handles Cant.TextChanged
-
-    End Sub
-
-    Protected Sub Lacantidad_TextChanged(sender As Object, e As EventArgs) Handles Lacantidad.TextChanged
-
-    End Sub
-
-    Protected Sub Col_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Col.SelectedIndexChanged
-
-    End Sub
 End Class

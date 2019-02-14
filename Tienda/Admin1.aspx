@@ -82,7 +82,7 @@
 				    <asp:TextBox ID="Cant" class="input100" type="text"  placeholder="Ingrese la cantidad de producto " runat="server"></asp:TextBox>
                 </div>
 
-				<div class="wrap-input100 bg1 rs1-wrap-input100">
+				<div class="wrap-input100 bg1 validate-input rs1-wrap-input100" data-validate = "Seleccione el color">
 					<span class="label-input100">Color *</span>
 					    <div>
                             <asp:DropDownList ID="Col"  class="js-select2" runat="server">
@@ -100,7 +100,7 @@
 				            <asp:TextBox ID="Lacantidad" class="input100" type="text"  placeholder="Ingrese el precio del producto " runat="server"></asp:TextBox>
                 </div>
 
-                <div class="wrap-input100 bg1 rs1-wrap-input100">
+                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Por favor ingrese el codigo">
 					<span class="label-input100">Codigo *</span>
 				   <asp:TextBox ID="Codigo" class="input100" type="text"  placeholder="Ingrese el codigo " runat="server"></asp:TextBox>
                </div>
@@ -147,7 +147,13 @@
 				<div class="container-contact100-form-btn" >
 					<button ID="Alta" class="contact100-form-btn" runat="server" >
 						<span>
-							Actualizar
+							Alta de producto
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+                    <button ID="Button1" class="contact100-form-btn" runat="server" >
+						<span>
+							Alta de producto
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 						</span>
 					</button>
@@ -167,6 +173,7 @@
     <script src="Scripts/popper.js"></script>
     <script src="Plantilla/vendor/daterangepicker/moment.min.js"></script>
 	<script src="Plantilla/vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="Scripts/Ejecucion/admin1.js"></script>
 <!--===============================================================================================-->
 	<script src="Plantilla/vendor/select2/select2.min.js"></script>
 	<script>
