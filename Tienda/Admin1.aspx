@@ -71,6 +71,9 @@
 				<span class="contact100-form-title">
 					Tienda UG
 				</span>
+                <span class="contact100-form-title">
+					Alta de producto
+				</span>
 
 				<div class="wrap-input100 validate-input bg1" data-validate="Porfavor ingrese la descripcion del producto">
 					<span class="label-input100"> DESCRIPCION DEL PRODUCTO*</span>
@@ -86,7 +89,7 @@
 					<span class="label-input100">Color *</span>
 					    <div>
                             <asp:DropDownList ID="Col"  class="js-select2" runat="server">
-                                <asp:ListItem Enabled="true" Text="Seleccione el color del producto" Value="-1"></asp:ListItem>
+                                <asp:ListItem Enabled="true" Text="Seleccione el color del producto" Value=""></asp:ListItem>
                                 <asp:ListItem Text="Azul" Value="Azul"></asp:ListItem>
                                 <asp:ListItem Text="Rojo" Value="Rojo"></asp:ListItem>
                                 <asp:ListItem Text="Amarillo" Value="Amarillo"></asp:ListItem>

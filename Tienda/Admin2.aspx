@@ -66,7 +66,10 @@
 		<div class="wrap-contact100">
 			<form id="form1" class="contact100-form validate-form" runat="server"> 
 				<span class="contact100-form-title">
-					Tienda UG					
+					Tienda UG
+				</span>
+                <span class="contact100-form-title">
+					Consulta, Modifiacion y eliminacion de los productos
 				</span>
                 <div class="wrap-input100 validate-input bg1" data-validate="Porfavor ingrese la descripcion del producto">
 					<span class="label-input100"> Consulta de informacion</span>                        
