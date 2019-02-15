@@ -34,6 +34,8 @@
 	<link rel="stylesheet" type="text/css" href="Plantilla/css/main.css">
     <link rel="stylesheet" type="text/css" href="Plantilla/css/login.css">
     <link href="Scripts/Folepond/filepond.css" rel="stylesheet" />
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+
 <!--===============================================================================================-->
 </head>
 <body>
@@ -143,12 +145,7 @@
 				</div>
                 <div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
                     <span class="label-input100">Imagen</span>
-	<input type="file" 
-       class="filepond"
-       name="filepond"
-       multiple
-       data-max-file-size="3MB"
-       data-max-files="3" />
+	                    <input type="file" name="filepond" multiple data-max-file-size="3MB" data-max-files="2" required>
 				</div>
                 
 				<div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
@@ -216,10 +213,8 @@
 	<script src="Plantilla/vendor/countdowntime/countdowntime.js"></script>
     <script src="Plantilla/js/main.js"></script>
     <script src="Scripts/Folepond/filepond-plugin-file-rename.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
     <script src="Scripts/Folepond/filepond.js"></script>
-    <script>
-        FilePond.parse(document.body);      
-  </script>
 
     <script src="Scripts/Ejecucion/admin1.js"></script>
 <!--===============================================================================================-->
