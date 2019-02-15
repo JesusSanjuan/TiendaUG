@@ -74,4 +74,13 @@ $(document).ready(function () {
 
     });
 
+
 }); 
+
+
+FilePond.setOptions({
+    fileRenameFunction: (file) => {
+        alert(`my_new_name${file.extension}`);
+        return `my_new_name${file.extension}`;
+    }
+});

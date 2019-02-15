@@ -8,6 +8,7 @@ Public Class WebForm1
     Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
     Public Shared cmd As SqlCommand
     Public Shared dr As SqlDataReader
+
     Public Shared Function conectar() As SqlConnection
         Try
             conn.Open()
@@ -22,6 +23,7 @@ Public Class WebForm1
         conn.Close()
         Return conn
     End Function
+
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -39,6 +41,7 @@ Public Class WebForm1
         'Establecemos una variable auxiliar  para determinar si la consulta se ejecuta bien o no
         Dim i As Integer = cmd.ExecuteNonQuery()
         'compara si la consulta fue hecha bien si esta es mayor que 1
+
         If i > 0 Then
             'Si la consulta es correcta manda este mensaje
             ResultConsulta(0) = "true"

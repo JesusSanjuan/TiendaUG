@@ -137,6 +137,13 @@
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
     <Content Include="login.aspx" />
+    <Content Include="Scripts\Folepond\filepond-plugin-file-rename.js" />
+    <Content Include="Scripts\Folepond\filepond.css" />
+    <Content Include="Scripts\Folepond\filepond.esm.js" />
+    <Content Include="Scripts\Folepond\filepond.esm.min.js" />
+    <Content Include="Scripts\Folepond\filepond.js" />
+    <Content Include="Scripts\Folepond\filepond.min.css" />
+    <Content Include="Scripts\Folepond\filepond.min.js" />
     <Content Include="User.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

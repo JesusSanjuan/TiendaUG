@@ -21,7 +21,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
@@ -33,6 +33,7 @@
 	<link rel="stylesheet" type="text/css" href="Plantilla/css/util.css">
 	<link rel="stylesheet" type="text/css" href="Plantilla/css/main.css">
     <link rel="stylesheet" type="text/css" href="Plantilla/css/login.css">
+    <link href="Scripts/Folepond/filepond.css" rel="stylesheet" />
 <!--===============================================================================================-->
 </head>
 <body>
@@ -140,8 +141,16 @@
 						</div>
 					</div>
 				</div>
-
-
+                <div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
+                    <span class="label-input100">Imagen</span>
+	<input type="file" 
+       class="filepond"
+       name="filepond"
+       multiple
+       data-max-file-size="3MB"
+       data-max-files="3" />
+				</div>
+                
 				<div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
 					<span class="label-input100">Imagen</span>
                     <asp:FileUpload ID="FileUpload1" class="input100" runat="server" />
@@ -191,8 +200,7 @@
 	<script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/popper.js"></script>
     <script src="Plantilla/vendor/daterangepicker/moment.min.js"></script>
-	<script src="Plantilla/vendor/daterangepicker/daterangepicker.js"></script>
-    <script src="Scripts/Ejecucion/admin1.js"></script>
+	<script src="Plantilla/vendor/daterangepicker/daterangepicker.js"></script>    
 <!--===============================================================================================-->
 	<script src="Plantilla/vendor/select2/select2.min.js"></script>
 	<script>
@@ -207,6 +215,13 @@
 <!--===============================================================================================-->
 	<script src="Plantilla/vendor/countdowntime/countdowntime.js"></script>
     <script src="Plantilla/js/main.js"></script>
+    <script src="Scripts/Folepond/filepond-plugin-file-rename.js"></script>
+    <script src="Scripts/Folepond/filepond.js"></script>
+    <script>
+        FilePond.parse(document.body);      
+  </script>
+
+    <script src="Scripts/Ejecucion/admin1.js"></script>
 <!--===============================================================================================-->
 	
 
