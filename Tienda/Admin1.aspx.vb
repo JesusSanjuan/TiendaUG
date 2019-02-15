@@ -55,4 +55,12 @@ Public Class WebForm1
         Return obj
     End Function
 
+
+    <WebMethod()>
+    Public Function Prueba(ByVal Cantidad As String) As Object
+        MsgBox("Hola Mundo")
+        Dim obj As String = "SU"
+        Dim filepath As String = Server.MapPath("\Upload")
+        Return obj
+    End Function
 End Class

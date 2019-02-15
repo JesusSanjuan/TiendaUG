@@ -90,14 +90,15 @@ $(document).ready(function () {
     console.log(pond.files);
    
 
-    FilePond.setOptions({ 
+    FilePond.setOptions(
+        { 
         allowDrop: false,
         allowReplace: false,
         instantUpload: false,
         server: {
-            url: 'http://192.168.33.10'
+            url: 'Admin1.aspx/prueba'
         },
-        fileRenameFunction: file => new Promise(resolve => {
+        fileRenameFunction: file => new Promise(resolve => {            
             resolve(window.prompt('Enter new filename', file.name));
         })
     });
