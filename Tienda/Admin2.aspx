@@ -8,28 +8,28 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="Plantilla/images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="Scripts/Plantilla/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />    
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="Plantilla/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="Plantilla/fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/fonts/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/vendor/animate/animate.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="Plantilla/vendor/noui/nouislider.min.css">
+	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/vendor/noui/nouislider.min.css">
 <!--===============================================================================================-->
     <link href="Content/bootstrap.css" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="Plantilla/css/util.css">
-	<link rel="stylesheet" type="text/css" href="Plantilla/css/main.css">
-    <link rel="stylesheet" type="text/css" href="Plantilla/css/login.css">
+	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">
+	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/main.css">
+    <link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/login.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -67,6 +67,7 @@
 			<form id="form1" class="contact100-form validate-form" runat="server"> 
 				<span class="contact100-form-title">
 					Tienda UG
+				</span>
 				</span>
                 <span class="contact100-form-title">
 					Consulta, Modifiacion y eliminacion de los productos
@@ -197,11 +198,11 @@
 <!--===============================================================================================-->
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/popper.js"></script>
-	<script src="Plantilla/vendor/daterangepicker/moment.min.js"></script>
-	<script src="Plantilla/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="Scripts/Plantilla/vendor/daterangepicker/moment.min.js"></script>
+	<script src="Scripts/Plantilla/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
-	<script src="Plantilla/vendor/countdowntime/countdowntime.js"></script>
-	<script src="Plantilla/js/main.js"></script>
+	<script src="Scripts/Plantilla/vendor/countdowntime/countdowntime.js"></script>
+	<script src="Scripts/Plantilla/js/main.js"></script>
 <!--===============================================================================================-->
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
