@@ -63,4 +63,8 @@ Public Class WebForm1
         Dim filepath As String = Server.MapPath("\Upload")
         Return obj
     End Function
+
+    Protected Sub Descripcion_TextChanged(sender As Object, e As EventArgs) Handles Descripcion.TextChanged
+
+    End Sub
 End Class
