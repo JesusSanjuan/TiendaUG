@@ -77,7 +77,7 @@
                              <asp:GridView ID="GridView1" CssClass="alt table table-bordered"  runat="server" AutoGenerateColumns="False" DataKeyNames="Id_codigo" DataSourceID="SqlDataSource1" AlternatingRowStyle-CssClass="alt">
 <AlternatingRowStyle ></AlternatingRowStyle> 
                                     <Columns>
-                                        <asp:CommandField  ButtonType="Image" SelectImageUrl="images/icon/favicon.icon"   ShowSelectButton="True"/>
+                                        <asp:CommandField  ButtonType="Image"  ShowSelectButton="True"/>
                                         <asp:BoundField DataField="Id_codigo" HeaderText="Id_codigo" InsertVisible="False" ReadOnly="True" SortExpression="Id_codigo" />
                                         <asp:BoundField DataField="Codigo" HeaderText="Codigo" SortExpression="Codigo" />
                                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />

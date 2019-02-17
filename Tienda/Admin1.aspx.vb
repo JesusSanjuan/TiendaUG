@@ -54,7 +54,7 @@ Public Class WebForm1
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        Dim cadenaConexion As String = NombreClase.GetConnectionString("MiCadenaConexion")
+        '  Dim cadenaConexion As String = NombreClase.GetConnectionString("MiCadenaConexion")
 
     End Sub
 

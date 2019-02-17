@@ -16,7 +16,6 @@
 	<!--Custom styles-->
 	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/login.css">
     <script src="Scripts/jquery-3.3.1.min.js"></script>
-    <script src="Scripts/esm/popper.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
 </head>
 <body>
