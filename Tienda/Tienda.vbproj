@@ -144,6 +144,10 @@
     <Content Include="Scripts\Folepond\filepond.js" />
     <Content Include="Scripts\Folepond\filepond.min.css" />
     <Content Include="Scripts\Folepond\filepond.min.js" />
+    <Content Include="Scripts\imagenes\alerta.gif" />
+    <Content Include="Scripts\imagenes\correcto.gif" />
+    <Content Include="Scripts\imagenes\favicon.ico" />
+    <Content Include="Scripts\imagenes\pregunta.png" />
     <Content Include="Scripts\Plantilla\css\544750.jpg" />
     <Content Include="Scripts\Plantilla\css\login.css" />
     <Content Include="Scripts\Plantilla\css\main.css" />
@@ -185,6 +189,7 @@
     <Content Include="Scripts\Plantilla\vendor\select2\select2.min.css" />
     <Content Include="Scripts\Plantilla\vendor\select2\select2.min.js" />
     <Content Include="User.aspx" />
+    <Content Include="Scripts\imagenes\desktop.ini" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
