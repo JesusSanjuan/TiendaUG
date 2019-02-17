@@ -1,13 +1,39 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Web.Services
 Imports Newtonsoft.Json
+Imports System.Configuration
 
 Public Class WebForm1
+
+
+
 
     Inherits System.Web.UI.Page
     Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
     Public Shared cmd As SqlCommand
     Public Shared dr As SqlDataReader
+    Friend Shared Function GetConnectionString(nameConnectionString As String) As String
+
+        ' Obtenemos el archivo de configuración de la aplicación. 
+        ' 
+        Dim config As Configuration =
+       ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)
+
+        ' Devolvemos la cadena de conexión que se corresponda con el nombre especificado.
+        '
+        Dim cs As ConnectionStringSettings = config.ConnectionStrings.ConnectionStrings(nameConnectionString)
+
+        If (cs Is Nothing) Then _
+        Throw New ArgumentNullException("nameConnectionString", "No se ha especificado la cadena de conexión.")
+
+        Dim connString As String = cs.ConnectionString
+        If (connString = String.Empty) Then _
+       Throw New ArgumentNullException("nameConnectionString", "No se ha especificado la cadena de conexión.")
+
+        Return connString
+
+    End Function
+
 
     Public Shared Function conectar() As SqlConnection
         Try
@@ -28,10 +54,14 @@ Public Class WebForm1
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        Dim cadenaConexion As String = NombreClase.GetConnectionString("MiCadenaConexion")
+
     End Sub
 
     <WebMethod()>
     Public Shared Function altaproducto(ByVal Cantidad As String, ByVal Codig As String, ByVal Descrip As String, ByVal Precio As String, ByVal Color As String, ByVal Talla As String) As Object
+
+
         conectar()
         Dim obj As String = "SU"
         Dim ResultConsulta(1) As String
