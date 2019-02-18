@@ -190,6 +190,7 @@
     <Content Include="Scripts\Plantilla\vendor\select2\select2.min.js" />
     <Content Include="User.aspx" />
     <Content Include="Scripts\imagenes\desktop.ini" />
+    <None Include="My Project\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
