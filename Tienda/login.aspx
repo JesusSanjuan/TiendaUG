@@ -1,22 +1,14 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="login.aspx.vb" Inherits="Tienda.WebForm3" %>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
-<!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Inicio de Sesion Tienda UG</title>
-   <!--Made with love by Mutiullah Samim -->
-   
-	<!--Bootsrap 4 CDN-->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <!--Fontawesome CDN-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-	<!--Custom styles-->
-	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/login.css">
-    <script src="Scripts/jquery-3.3.1.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
+    <!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/login.css">    
 </head>
 <body>
 <div class="container">
@@ -88,7 +80,8 @@
     </div>
   </div>
 </div>
-    
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/Ejecucion/login.js"></script>
   
 

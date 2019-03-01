@@ -12,29 +12,6 @@ Public Class WebForm1
     Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
     Public Shared cmd As SqlCommand
     Public Shared dr As SqlDataReader
-    Friend Shared Function GetConnectionString(nameConnectionString As String) As String
-
-        ' Obtenemos el archivo de configuración de la aplicación. 
-        ' 
-        Dim config As Configuration =
-       ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)
-
-        ' Devolvemos la cadena de conexión que se corresponda con el nombre especificado.
-        '
-        Dim cs As ConnectionStringSettings = config.ConnectionStrings.ConnectionStrings(nameConnectionString)
-
-        If (cs Is Nothing) Then _
-        Throw New ArgumentNullException("nameConnectionString", "No se ha especificado la cadena de conexión.")
-
-        Dim connString As String = cs.ConnectionString
-        If (connString = String.Empty) Then _
-       Throw New ArgumentNullException("nameConnectionString", "No se ha especificado la cadena de conexión.")
-
-        Return connString
-
-    End Function
-
-
     Public Shared Function conectar() As SqlConnection
         Try
             conn.Open()
@@ -50,18 +27,19 @@ Public Class WebForm1
         Return conn
     End Function
 
-
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        ' Dim script As String = "AnoActual();"
+        ' ScriptManager.RegisterStartupScript(Page, GetType(Page), "anioactual", script, True)
 
-        '  Dim cadenaConexion As String = NombreClase.GetConnectionString("MiCadenaConexion")
-
+        If System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Usuario" Then
+            Response.Redirect("Admin1.aspx")
+        ElseIf System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "SU" Then
+            Response.Redirect("login.aspx")
+        End If
     End Sub
 
     <WebMethod()>
     Public Shared Function altaproducto(ByVal Cantidad As String, ByVal Codig As String, ByVal Descrip As String, ByVal Precio As String, ByVal Color As String, ByVal Talla As String) As Object
-
-
         conectar()
         Dim obj As String = "SU"
         Dim ResultConsulta(1) As String
@@ -84,8 +62,6 @@ Public Class WebForm1
         cerrar()
         Return obj
     End Function
-
-
     <WebMethod()>
     Public Function Prueba(ByVal Cantidad As String) As Object
         MsgBox("Hola Mundo")
@@ -94,7 +70,4 @@ Public Class WebForm1
         Return obj
     End Function
 
-    Protected Sub Descripcion_TextChanged(sender As Object, e As EventArgs) Handles Descripcion.TextChanged
-
-    End Sub
 End Class

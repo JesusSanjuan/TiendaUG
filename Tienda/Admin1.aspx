@@ -58,11 +58,14 @@
                             <a class="nav-link" href="Admin2.aspx">Consulta..</a>
                     </li> 
                 </ul> 
-                <form class="form-inline my-2 my-lg-0">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Buscar ..." aria-label="Buscar ...">
-                      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">BUSCAR</button>
-                </form> 
-                <a class="btn btn-outline-info d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="login.aspx">CERRAR SESION</a> 
+               <ul class="navbar-nav ml-auto"> 
+                     <li class="nav-item">
+                        <a class="nav-link btn btn-outline-info d-lg-inline-block mb-3 mb-md-0 ml-md-3" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fas fa-sign-out-alt"></i>
+                            Cerrar Sesion
+                        </a>
+                    </li>
+                </ul> 
              </div> 
           </div> 
     </nav>
@@ -188,6 +191,24 @@
   </div>
 </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Te vas tan rapido?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Cancelar">
+            <span aria-hidden="true">×</span>
+        </button>
+        </div>
+        <div class="modal-body">Seleccione "Cerrar sesión" a continuación, si está listo para finalizar su sesión actual.</div>
+        <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>     
+        <button class="btn btn-primary" type="button" data-dismiss="modal">Cerrar sesion</button> 
+        </div>
+    </div>
+    </div>
+</div>
+
 
 <!--===============================================================================================-->
 	<script src="Scripts/jquery-3.3.1.min.js"></script>
@@ -195,7 +216,6 @@
 	<script src="Scripts/Plantilla/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
 	<script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/popper.js"></script>
     <script src="Scripts/Plantilla/vendor/daterangepicker/moment.min.js"></script>
 	<script src="Scripts/Plantilla/vendor/daterangepicker/daterangepicker.js"></script>    
 <!--===============================================================================================-->

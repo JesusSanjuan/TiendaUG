@@ -84,10 +84,10 @@ $(document).ready(function () {
     const pond = FilePond.create(inputElement);
 
     // attributes have been set to pond options
-    console.log(pond.name);  // 'filepond'
+   /* console.log(pond.name);  // 'filepond'
     console.log(pond.maxFiles); // 10
     console.log(pond.required); // true
-    console.log(pond.files);
+    console.log(pond.files);*/
    
 
     FilePond.setOptions(
@@ -101,8 +101,11 @@ $(document).ready(function () {
         fileRenameFunction: file => new Promise(resolve => {            
             resolve(window.prompt('Enter new filename', file.name));
         })
-    });
+        });
 
 }); 
+
+
+
 
 
