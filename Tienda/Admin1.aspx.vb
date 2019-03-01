@@ -10,7 +10,7 @@ Public Class WebForm1
 
     Inherits System.Web.UI.Page
     Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
-    ' Public conn As SqlConnection = New SqlConnection("Data Source=.;Initial Catalog=TiendaUG;User ID=Sa;Password=Jesus1993")
+    'Public Shared conn As SqlConnection = New SqlConnection("Data Source=.;Initial Catalog=TiendaUG;User ID=Sa;Password=Jesus1993")
     Public Shared cmd As SqlCommand
     Public Shared dr As SqlDataReader
     Public Shared Function conectar() As SqlConnection

@@ -6,8 +6,8 @@ Public Class WebForm2
     Dim ds As New DataSet
     Dim da As OleDb.OleDbDataAdapter
 
-    Public conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
-    ' Public conn As SqlConnection = New SqlConnection("Data Source=.;Initial Catalog=TiendaUG;User ID=Sa;Password=Jesus1993")
+    Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
+    'Public Shared conn As SqlConnection = New SqlConnection("Data Source=.;Initial Catalog=TiendaUG;User ID=Sa;Password=Jesus1993")
     Public cmd As SqlCommand
     Public dr As SqlDataReader
     Public Function conectar() As SqlConnection
