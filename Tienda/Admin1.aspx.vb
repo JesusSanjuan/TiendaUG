@@ -10,6 +10,7 @@ Public Class WebForm1
 
     Inherits System.Web.UI.Page
     Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
+    ' Public conn As SqlConnection = New SqlConnection("Data Source=.;Initial Catalog=TiendaUG;User ID=Sa;Password=Jesus1993")
     Public Shared cmd As SqlCommand
     Public Shared dr As SqlDataReader
     Public Shared Function conectar() As SqlConnection
@@ -30,7 +31,6 @@ Public Class WebForm1
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ' Dim script As String = "AnoActual();"
         ' ScriptManager.RegisterStartupScript(Page, GetType(Page), "anioactual", script, True)
-
         If System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Usuario" Then
             Response.Redirect("Admin1.aspx")
         ElseIf System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "SU" Then
