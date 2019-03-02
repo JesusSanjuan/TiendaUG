@@ -10,7 +10,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="Content/bootstrap.min.css" rel="stylesheet" />
 <link href="Scripts/littlecloset/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="Scripts/littlecloset/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="Scripts/littlecloset/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="Scripts/littlecloset/plugins/OwlCarousel2-2.2.1/animate.css">
