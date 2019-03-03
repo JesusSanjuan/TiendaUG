@@ -106,6 +106,8 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cart.aspx" />
+    <Content Include="checkout.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -178,7 +180,7 @@
     <Content Include="Scripts\Plantilla\vendor\select2\select2.js" />
     <Content Include="Scripts\Plantilla\vendor\select2\select2.min.css" />
     <Content Include="Scripts\Plantilla\vendor\select2\select2.min.js" />
-    <Content Include="User.aspx" />
+    <Content Include="category.aspx" />
     <Content Include="Scripts\imagenes\desktop.ini" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -193,6 +195,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Usuario.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -200,6 +203,20 @@
     <Content Include="Admin2.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cart.aspx.designer.vb">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cart.aspx.vb">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="checkout.aspx.designer.vb">
+      <DependentUpon>checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="checkout.aspx.vb">
+      <DependentUpon>checkout.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -245,11 +262,18 @@
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="User.aspx.designer.vb">
-      <DependentUpon>User.aspx</DependentUpon>
+    <Compile Include="category.aspx.designer.vb">
+      <DependentUpon>category.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User.aspx.vb">
-      <DependentUpon>User.aspx</DependentUpon>
+    <Compile Include="category.aspx.vb">
+      <DependentUpon>category.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Usuario.aspx.designer.vb">
+      <DependentUpon>Usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.aspx.vb">
+      <DependentUpon>Usuario.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

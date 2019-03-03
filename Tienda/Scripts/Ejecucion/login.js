@@ -34,7 +34,7 @@ $('#Inicio').on('click', function () {//obtener datos cuando el periodo cambie
 
                         break;
                     case "Usuario":
-                        window.location.href = 'User.aspx';
+                        window.location.href = 'category.aspx';
                         break;
                     case "SU":
                         $(document).ready(function () {
