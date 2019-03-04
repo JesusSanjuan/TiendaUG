@@ -3,16 +3,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Cart</title>
+<title>Cararrito</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Tienda UG">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="Scripts/Plantilla/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
 
 <link href="Content/bootstrap.min.css" rel="stylesheet" />
 <link href="Scripts/littlecloset/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="Scripts/littlecloset/styles/cart.css">
 <link rel="stylesheet" type="text/css" href="Scripts/littlecloset/styles/cart_responsive.css">
+<link href="Content/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">
 </head>
 <body>
 
@@ -52,7 +57,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="super_container">
 
 	<!-- Header -->
@@ -61,7 +65,7 @@
 		<div class="header_overlay"></div>
 		<div class="header_content d-flex flex-row align-items-center justify-content-start">
 			<div class="logo">
-				<a href="#">
+				<a href="tiendaug.aspx">
 					<div class="d-flex flex-row align-items-center justify-content-start">
 						<div><img src="Scripts/littlecloset/images/logo_1.png" alt=""></div>
 						<div>Tienda UG</div>
@@ -86,9 +90,11 @@
 					</form>
 				</div>
 				<!-- User -->
-				<div class="user"><a href="#"><div><img src="Scripts/littlecloset/images/user.svg" alt="https://www.flaticon.com/authors/freepik"><div>1</div></div></a></div>
+				<div class="user"><a href="usuario.aspx"><div><img src="Scripts/littlecloset/images/user.svg" alt="https://www.flaticon.com/authors/freepik"><div>1</div></div></a></div>
 				<!-- Cart -->
-				<div class="cart"><a href="carrito.aspx"><div><img src="Scripts/littlecloset/images/cart.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
+				<div class="cart"><a href="carrito.aspx"><div><img class="svg" src="Scripts/littlecloset/images/cart.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
+				<!-- Cart -->
+				<div class="user"><a data-toggle="modal" data-target="#exampleModal"><div><img src="Scripts/littlecloset/images/logout.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
 				<!-- Phone -->
 				<div class="header_phone d-flex flex-row align-items-center justify-content-start">
 					<div><div><img src="Scripts/littlecloset/images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
@@ -338,10 +344,27 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 				</div>
 			</div>
 		</footer>
-	</div>
-		
+	</div>		
 </div>
-
+<!-- Cerrar -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Te vas tan rapido?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Cancelar">
+            <span aria-hidden="true">×</span>
+        </button>
+        </div>
+        <div class="modal-body">Seleccione "Cerrar sesión",está listo para finalizar su sesión actual?</div>
+        <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>     
+        <button class="btn btn-primary" type="button" data-dismiss="modal">Cerrar sesion</button> 
+        </div>
+    </div>
+    </div>
+</div>
+<!-- Cerrar -->
 <script src="Scripts/jquery-3.3.1.min.js"></script>
 <script src="Scripts/popper.js"></script>
 <script src="Scripts/bootstrap.min.js"></script>

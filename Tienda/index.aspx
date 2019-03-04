@@ -9,7 +9,7 @@
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="Scripts/Plantilla/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />    
 <!--===============================================================================================-->
     <link href="Scripts/Plantilla/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 <!--===============================================================================================-->
@@ -22,6 +22,8 @@
     <link href="Scripts/Plantilla/css/main.css" rel="stylesheet" />
     <link href="Scripts/Plantilla/css/util.css" rel="stylesheet" />
 <!--===============================================================================================-->
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">
 </head>
 <body>
 	
@@ -37,8 +39,8 @@
 						Inicio de Sesion
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "El Email requiere el siguiente formato: ex@abc.xyz">
-						<input id="usert" class="input100" type="text" name="email" placeholder="Email">
+					<div class="wrap-input100 validate-input" data-validate = "Ingrese el nombre de usuario">
+						<input id="usert" class="input100" type="text" name="email" placeholder="Usuario">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
