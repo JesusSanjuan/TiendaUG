@@ -1,9 +1,9 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="cart.aspx.vb" Inherits="Tienda.cart" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="pago.aspx.vb" Inherits="Tienda.checkout" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Cart</title>
+<title>Checkout</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Tienda UG">
@@ -11,8 +11,8 @@
 
 <link href="Content/bootstrap.min.css" rel="stylesheet" />
 <link href="Scripts/littlecloset/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="Scripts/littlecloset/styles/cart.css">
-<link rel="stylesheet" type="text/css" href="Scripts/littlecloset/styles/cart_responsive.css">
+<link rel="stylesheet" type="text/css" href="Scripts/littlecloset/styles/checkout.css">
+<link rel="stylesheet" type="text/css" href="Scripts/littlecloset/styles/checkout_responsive.css">
 </head>
 <body>
 
@@ -23,7 +23,7 @@
 	<!-- Search -->
 	<div class="menu_search">
 		<form action="#" id="menu_search_form" class="menu_search_form">
-			<input type="text" class="search_input" placeholder="Buscar Articulo" required="required">
+			<input type="text" class="search_input" placeholder="Search Item" required="required">
 			<button class="menu_search_button"><img src="Scripts/littlecloset/images/search.png" alt=""></button>
 		</form>
 	</div>
@@ -71,24 +71,25 @@
 			<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
 			<nav class="main_nav">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li><a href="#">Dama</a></li>
-			        <li><a href="#">Caballero</a></li>
-			        <li><a href="#">Niños</a></li>
-			        <li><a href="#">Contacto</a></li>
+					<li><a href="#">Women</a></li>
+					<li><a href="#">Men</a></li>
+					<li><a href="#">Kids</a></li>
+					<li><a href="#">Home Deco</a></li>
+					<li><a href="#">Contact</a></li>
 				</ul>
 			</nav>
 			<div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
 				<!-- Search -->
 				<div class="header_search">
 					<form action="#" id="header_search_form">
-						<input type="text" class="search_input" placeholder="Buscar Articulo" required="required">
+						<input type="text" class="search_input" placeholder="Search Item" required="required">
 						<button class="header_search_button"><img src="Scripts/littlecloset/images/search.png" alt=""></button>
 					</form>
 				</div>
 				<!-- User -->
-				<div class="user"><a href="#"><div><img src="Scripts/littlecloset/images/user.svg" alt="https://www.flaticon.com/authors/freepik"><div>1</div></div></a></div>
+				<div class="user"><a href="usuario.aspx"><div><img src="Scripts/littlecloset/images/user.svg" alt="https://www.flaticon.com/authors/freepik"><div>1</div></div></a></div>
 				<!-- Cart -->
-				<div class="cart"><a href="cart.aspx"><div><img src="Scripts/littlecloset/images/cart.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
+				<div class="cart"><a href="carrito.aspx"><div><img src="Scripts/littlecloset/images/cart.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
 				<!-- Phone -->
 				<div class="header_phone d-flex flex-row align-items-center justify-content-start">
 					<div><div><img src="Scripts/littlecloset/images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
@@ -106,131 +107,133 @@
 		<div class="home">
 			<div class="home_container d-flex flex-column align-items-center justify-content-end">
 				<div class="home_content text-center">
-					<div class="home_title">Tu Carrito de Compras</div>
+					<div class="home_title">Pago de Compra</div>
 					<div class="breadcrumbs d-flex flex-column align-items-center justify-content-center">
 						<ul class="d-flex flex-row align-items-start justify-content-start text-center">
-							<li><a href="category.aspx">Inicio</a></li>
-							<li>Tu Carrito</li>
+							<li><a href="tiendaug.aspx">Inicio</a></li>
+							<li>Verifica tu Compra</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- Cart -->
+		<!-- Checkout -->
 
-		<div class="cart_section">
+		<div class="checkout">
 			<div class="container">
 				<div class="row">
-					<div class="col">
-						<div class="cart_container">
-							
-							<!-- Cart Bar -->
-							<div class="cart_bar">
-								<ul class="cart_bar_list item_list d-flex flex-row align-items-center justify-content-end">
-									<li class="mr-auto">Producto</li>
-									<li>Color</li>
-									<li>Talla</li>
-									<li>Precio</li>
-									<li>Cantidad</li>
-									<li>Total</li>
-								</ul>
-							</div>
-
-							<!-- Cart Items -->
-							<div class="cart_items">
-								<ul class="cart_items_list">
-
-									<!-- Cart Item -->
-									<li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-end justify-content-start">
-										<div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
-											<div><div class="product_number">1</div></div>
-											<div><div class="product_image"><img src="Scripts/littlecloset/images/cart_item_1.jpg" alt=""></div></div>
-											<div class="product_name_container">
-												<div class="product_name"><a href="product.html">Cool Flufy Clothing without Stripes</a></div>
-												<div class="product_text">Second line for additional info</div>
-											</div>
-										</div>
-										<div class="product_color product_text"><span>Color: </span>beige</div>
-										<div class="product_size product_text"><span>Size: </span>L</div>
-										<div class="product_price product_text"><span>Price: </span>$3.99</div>
-										<div class="product_quantity_container">
-											<div class="product_quantity ml-lg-auto mr-lg-auto text-center">
-												<span class="product_text product_num">1</span>
-												<div class="qty_sub qty_button trans_200 text-center"><span>-</span></div>
-												<div class="qty_add qty_button trans_200 text-center"><span>+</span></div>
-											</div>
-										</div>
-										<div class="product_total product_text"><span>Total: </span>$3.99</div>
-									</li>
-								</ul>
-							</div>
-
-							<!-- Cart Buttons -->
-							<div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
-								<div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
-									<div class="button button_clear trans_200"><a href="categories.html">Limpiar Carrito de Compras</a></div>
-									<div class="button button_continue trans_200"><a href="category.aspx">Continuar Comprando</a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row cart_extra_row">
+					
+					<!-- Billing -->
 					<div class="col-lg-6">
-						<div class="cart_extra cart_extra_1">
-							<div class="cart_extra_content cart_extra_coupon">
-								<div class="cart_extra_title">Codigo Promocional</div>
-								<div class="coupon_form_container">
-									<form action="#" id="coupon_form" class="coupon_form">
-										<input type="text" class="coupon_input" required="required">
-										<button class="coupon_button">Aplicar</button>
-									</form>
-								</div>
-								<div class="coupon_text">Phasellus sit amet nunc eros. Sed nec congue tellus. Aenean nulla nisl, volutpat blandit lorem ut.</div>
-								<div class="shipping">
-									<div class="cart_extra_title">Metodo de Compra</div>
-									<ul>
-										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
-											<label class="radio_container">
-												<input type="radio" id="radio_1" name="shipping_radio" class="shipping_radio">
-												<span class="radio_mark"></span>
-												<span class="radio_text">Entrega del Dia Siguiente</span>
-											</label>
-											<div class="shipping_price ml-auto">$180.00</div>
-										</li>
-										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
-											<label class="radio_container">
-												<input type="radio" id="radio_2" name="shipping_radio" class="shipping_radio">
-												<span class="radio_mark"></span>
-												<span class="radio_text">Entrega Estandar</span>
-											</label>
-											<div class="shipping_price ml-auto">$105.00</div>
-										</li>
-										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
-											<label class="radio_container">
-												<input type="radio" id="radio_3" name="shipping_radio" class="shipping_radio" checked>
-												<span class="radio_mark"></span>
-												<span class="radio_text">Recoleccion Personal</span>
-											</label>
-											<div class="shipping_price ml-auto">Gratuito</div>
-										</li>
-									</ul>
-								</div>
+						<div class="billing">
+							<div class="checkout_title">Facturacion</div>
+							<div class="checkout_form_container">
+								<form action="#" id="checkout_form" class="checkout_form">
+									<div class="row">
+										<div class="col-lg-6">
+											<!-- Name -->
+											<input type="text" id="checkout_name" class="checkout_input" placeholder="Nombre" required="required">
+										</div>
+										<div class="col-lg-6">
+											<!-- Last Name -->
+											<input type="text" id="checkout_last_name" class="checkout_input" placeholder="Apellido" required="required">
+										</div>
+									</div>
+									<div>
+										<!-- Company -->
+										<input type="text" id="checkout_company" placeholder="Compañia" class="checkout_input">
+									</div>
+									<div>
+										<!-- Country -->
+										<select name="checkout_country" id="checkout_country" class="dropdown_item_select checkout_input" require="required">
+											<option>Pais</option>
+                                            <option>mexico</option>
+											<option>Lithuania</option>
+											<option>Sweden</option>
+											<option>UK</option>
+											<option>Italy</option>
+										</select>
+									</div>
+									<div>
+										<!-- Address -->
+										<input type="text" id="checkout_address" class="checkout_input" placeholder="Direccion Linea 1" required="required">
+										<input type="text" id="checkout_address_2" class="checkout_input checkout_address_2" placeholder="Direccion Linea 2" required="required">
+									</div>
+									<div>
+										<!-- Zipcode -->
+										<input type="text" id="checkout_zipcode" class="checkout_input" placeholder="Codigo Postal" required="required">
+									</div>
+									<div>
+										<!-- City / Town -->
+										<select name="checkout_city" id="checkout_city" class="dropdown_item_select checkout_input" require="required">
+											<option>Ciudad</option>
+											<option>Oaxaca</option>
+											<option>Guanajuato</option>
+											<option>Ciudad de Mexico</option>
+											<option>Guerrero</option>
+										</select>
+									</div>
+									<div>
+										<!-- Province -->
+										<select name="checkout_province" id="checkout_province" class="dropdown_item_select checkout_input" require="required">
+											<option>Provincia</option>
+											<option>Provincia</option>
+											<option>Provincia</option>
+											<option>Provincia</option>
+											<option>Provincia</option>
+										</select>
+									</div>
+									<div>
+										<!-- Phone no -->
+										<input type="phone" id="checkout_phone" class="checkout_input" placeholder="Numero Telefonico" required="required">
+									</div>
+									<div>
+										<!-- Email -->
+										<input type="phone" id="checkout_email" class="checkout_input" placeholder="Correo Electronico" required="required">
+									</div>
+									<div class="checkout_extra">
+										<ul>
+											<li class="billing_info d-flex flex-row align-items-center justify-content-start">
+												<label class="checkbox_container">
+													<input type="checkbox" id="cb_1" name="billing_checkbox" class="billing_checkbox">
+													<span class="checkbox_mark"></span>
+													<span class="checkbox_text">Terminos y Condiciones</span>
+												</label>
+											</li>
+											<li class="billing_info d-flex flex-row align-items-center justify-content-start">
+												<label class="checkbox_container">
+													<input type="checkbox" id="cb_2" name="billing_checkbox" class="billing_checkbox">
+													<span class="checkbox_mark"></span>
+													<span class="checkbox_text">Crear una Cuenta</span>
+												</label>
+											</li>
+											<li class="billing_info d-flex flex-row align-items-center justify-content-start">
+												<label class="checkbox_container">
+													<input type="checkbox" id="cb_3" name="billing_checkbox" class="billing_checkbox">
+													<span class="checkbox_mark"></span>
+													<span class="checkbox_text">Suscríbete a nuestro boletín</span>
+												</label>
+											</li>
+										</ul>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-6 cart_extra_col">
-						<div class="cart_extra cart_extra_2">
+
+					<!-- Cart Total -->
+					<div class="col-lg-6 cart_col">
+						<div class="cart_total">
 							<div class="cart_extra_content cart_extra_total">
-								<div class="cart_extra_title">Carrito Total</div>
+								<div class="checkout_title">Total</div>
 								<ul class="cart_extra_total_list">
 									<li class="d-flex flex-row align-items-center justify-content-start">
 										<div class="cart_extra_total_title">Subtotal</div>
 										<div class="cart_extra_total_value ml-auto">$29.90</div>
 									</li>
 									<li class="d-flex flex-row align-items-center justify-content-start">
-										<div class="cart_extra_total_title">Compra</div>
+										<div class="cart_extra_total_title">Shipping</div>
 										<div class="cart_extra_total_value ml-auto">Gratuito</div>
 									</li>
 									<li class="d-flex flex-row align-items-center justify-content-start">
@@ -238,7 +241,36 @@
 										<div class="cart_extra_total_value ml-auto">$29.90</div>
 									</li>
 								</ul>
-								<div class="checkout_button trans_200"><a href="checkout.aspx">Pasar por la Caja</a></div>
+								<div class="payment_options">
+									<div class="checkout_title">Pago</div>
+									<ul>
+										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+											<label class="radio_container">
+												<input type="radio" id="radio_1" name="payment_radio" class="payment_radio">
+												<span class="radio_mark"></span>
+												<span class="radio_text">Paypal</span>
+											</label>
+										</li>
+										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+											<label class="radio_container">
+												<input type="radio" id="radio_2" name="payment_radio" class="payment_radio">
+												<span class="radio_mark"></span>
+												<span class="radio_text">Contra Reembolso</span>
+											</label>
+										</li>
+										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+											<label class="radio_container">
+												<input type="radio" id="radio_3" name="payment_radio" class="payment_radio" checked>
+												<span class="radio_mark"></span>
+												<span class="radio_text">Tarjeta de Credito</span>
+											</label>
+										</li>
+									</ul>
+								</div>
+								<div class="cart_text">
+									<p> Comprando en la Tienda UG tiene grandes beneficios.</p>
+								</div>
+								<div class="checkout_button trans_200"><a href="pago.aspx">Realizar Pedido</a></div>
 							</div>
 						</div>
 					</div>
@@ -265,7 +297,7 @@
 									</a>		
 								</div>
 								<div class="footer_about_text">
-									<p>Aplicacion desarrollada para la unidad de aprendizaje, Tecnologias .NET.</>
+									<p>Aplicacion desarrollada para la unidad de aprendizaje, Tecnologias .NET.</p>
 								</div>
 							</div>
 						</div>
@@ -293,6 +325,8 @@
 								</ul>
 							</div>
 						</div>
+
+
 						<!-- Footer Contact -->
 						<div class="col-lg-4 footer_col">
 							<div class="footer_contact">
@@ -323,15 +357,13 @@
 						<div class="col">
 							<div class="footer_bar_content d-flex flex-md-row flex-column align-items-center justify-content-start">
 								<div class="copyright order-md-1 order-2"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Este diseño fue desarrollado <i class="fa fa-heart-o" aria-hidden="true"></i> por <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 								<nav class="footer_nav ml-md-auto order-md-2 order-1">
 									<ul class="d-flex flex-row align-items-center justify-content-start">
-										<li><a href="category.html">Women</a></li>
-										<li><a href="category.html">Men</a></li>
-										<li><a href="category.html">Kids</a></li>
-										<li><a href="category.html">Home Deco</a></li>
-										<li><a href="#">Contact</a></li>
+										<li><a href="#">Dama</a></li>
+										<li><a href="#">Caballero</a></li>
+										<li><a href="#">Contacto</a></li>
 									</ul>
 								</nav>
 							</div>
@@ -354,6 +386,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="Scripts/littlecloset/plugins/greensock/ScrollToPlugin.min.js"></script>
 <script src="Scripts/littlecloset/plugins/easing/easing.js"></script>
 <script src="Scripts/littlecloset/plugins/parallax-js-master/parallax.min.js"></script>
-<script src="Scripts/littlecloset/js/cart.js"></script>
+<script src="Scripts/littlecloset/js/checkout.js"></script>
 </body>
 </html>

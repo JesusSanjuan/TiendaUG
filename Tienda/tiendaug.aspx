@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="category.aspx.vb" Inherits="Tienda.WebForm4" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="tiendaug.aspx.vb" Inherits="Tienda.WebForm4" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -89,9 +89,9 @@
 					</form>
 				</div>
 				<!-- User -->
-				<div class="user"><a href="#"><div><img src="Scripts/littlecloset/images/user.svg" alt="https://www.flaticon.com/authors/freepik"><div>1</div></div></a></div>
+				<div class="user"><a href="usuario.aspx"><div><img src="Scripts/littlecloset/images/user.svg" alt="https://www.flaticon.com/authors/freepik"><div>1</div></div></a></div>
 				<!-- Cart -->
-				<div class="cart"><a href="cart.aspx"><div><img class="svg" src="Scripts/littlecloset/images/cart.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
+				<div class="cart"><a href="carrito.aspx"><div><img class="svg" src="Scripts/littlecloset/images/cart.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
 				<!-- Phone -->
 				<div class="header_phone d-flex flex-row align-items-center justify-content-start">
 					<div><div><img src="Scripts/littlecloset/images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
@@ -112,7 +112,7 @@
 					<div class="home_title">Bienvenido a la Tienda UG</div>
 					<div class="breadcrumbs d-flex flex-column align-items-center justify-content-center">
 						<ul class="d-flex flex-row align-items-start justify-content-start text-center">
-							<li><a href="category.aspx">Inicio</a></li>
+							<li><a href="tiendaug.aspx">Inicio</a></li>
 							<li><a href="#">Nuevos Productos</a></li>
 						</ul>
 					</div>
@@ -172,7 +172,7 @@
 									<div>
 										<div>
 											<div class="product_name"><a href="product.html">Cool Clothing with Brown Stripes</a></div>
-											<div class="product_category">In <a href="category.html">Category</a></div>
+											<div class="product_category">In <a href="#">Category</a></div>
 										</div>
 									</div>
 									<div class="ml-auto text-right">
@@ -203,7 +203,7 @@
 									<div>Scripts/littlecloset/images
 										<div>
 											<div class="product_name"><a href="product.html">Hype Grey Shirt</a></div>
-											<div class="product_category">In <a href="category.html">Category</a></div>
+											<div class="product_category">In <a href="#">Category</a></div>
 										</div>
 									</div>
 									<div class="ml-auto text-right">
@@ -234,7 +234,7 @@
 									<div>
 										<div>
 											<div class="product_name"><a href="product.html">Long Sleeve Jacket</a></div>
-											<div class="product_category">In <a href="category.html">Category</a></div>
+											<div class="product_category">In <a href="#">Category</a></div>
 										</div>
 									</div>
 									<div class="ml-auto text-right">
@@ -265,7 +265,7 @@
 									<div>
 										<div>
 											<div class="product_name"><a href="product.html">Denim Men Shirt</a></div>
-											<div class="product_category">In <a href="category.html">Category</a></div>
+											<div class="product_category">In <a href="#">Category</a></div>
 										</div>
 									</div>
 									<div class="ml-auto text-right">
@@ -296,7 +296,7 @@
 									<div>
 										<div>
 											<div class="product_name"><a href="product.html">Long Red Shirt</a></div>
-											<div class="product_category">In <a href="category.html">Category</a></div>
+											<div class="product_category">In <a href="#">Category</a></div>
 										</div>
 									</div>
 									<div class="ml-auto text-right">
@@ -327,7 +327,7 @@
 									<div>
 										<div>
 											<div class="product_name"><a href="product.html">Short Sleeve Shirt</a></div>
-											<div class="product_category">In <a href="category.html">Category</a></div>
+											<div class="product_category">In <a href="#">Category</a></div>
 										</div>
 									</div>
 									<div class="ml-auto text-right">
@@ -358,7 +358,7 @@
 									<div>
 										<div>
 											<div class="product_name"><a href="product.html">Red Stripped Dress</a></div>
-											<div class="product_category">In <a href="category.html">Category</a></div>
+											<div class="product_category">In <a href="#">Category</a></div>
 										</div>
 									</div>
 									<div class="ml-auto text-right">
@@ -389,7 +389,7 @@
 									<div>
 										<div>
 											<div class="product_name"><a href="product.html">White Cotton Shirt</a></div>
-											<div class="product_category">In <a href="category.html">Category</a></div>
+											<div class="product_category">In <a href="#">Category</a></div>
 										</div>
 									</div>
 									<div class="ml-auto text-right">
@@ -420,7 +420,7 @@
 									<div>
 										<div>
 											<div class="product_name"><a href="product.html">Black Short Sleeve Dress</a></div>
-											<div class="product_category">In <a href="category.html">Category</a></div>
+											<div class="product_category">In <a href="#">Category</a></div>
 										</div>
 									</div>
 									<div class="ml-auto text-right">
@@ -536,15 +536,13 @@
 						<div class="col">
 							<div class="footer_bar_content d-flex flex-md-row flex-column align-items-center justify-content-start">
 								<div class="copyright order-md-1 order-2"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Este diseño fue desarrollado <i class="fa fa-heart-o" aria-hidden="true"></i> por <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 								<nav class="footer_nav ml-md-auto order-md-2 order-1">
 									<ul class="d-flex flex-row align-items-center justify-content-start">
-										<li><a href="category.html">Women</a></li>
-										<li><a href="category.html">Men</a></li>
-										<li><a href="category.html">Kids</a></li>
-										<li><a href="category.html">Home Deco</a></li>
-										<li><a href="#">Contact</a></li>
+										<li><a href="#">Dama</a></li>
+										<li><a href="#">Caballero</a></li>
+										<li><a href="#">Contacto</a></li>
 									</ul>
 								</nav>
 							</div>

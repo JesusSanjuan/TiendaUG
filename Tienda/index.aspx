@@ -34,7 +34,7 @@
 
 				<form class="login100-form validate-form">
 					<span class="login100-form-title">
-						Inicio de Secion
+						Inicio de Sesion
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "El Email requiere el siguiente formato: ex@abc.xyz">
@@ -54,8 +54,8 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" id="Inicio">
-							Login
+						<button class="login100-form-btn" id="Inicio">							
+                                Iniciar sesión
 						</button>
 					</div>
 

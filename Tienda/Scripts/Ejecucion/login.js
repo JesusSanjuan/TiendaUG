@@ -33,7 +33,7 @@ $('#Inicio').on('click', function () {//obtener datos cuando el periodo cambie
 
                         break;
                     case "Usuario":
-                        window.location.href = 'category.aspx';
+                        window.location.href = 'tiendaug.aspx';
                         break;
                     case "SU":
                         $(document).ready(function () {

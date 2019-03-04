@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Usuario.aspx.vb" Inherits="Tienda.Usuario" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="usuario.aspx.vb" Inherits="Tienda.Usuario" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,11 +71,10 @@
 			<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
 			<nav class="main_nav">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li><a href="#">Women</a></li>
-					<li><a href="#">Men</a></li>
-					<li><a href="#">Kids</a></li>
-					<li><a href="#">Home Deco</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="#">Dama</a></li>
+			        <li><a href="#">Caballero</a></li>
+			        <li><a href="#">Niños</a></li>
+			        <li><a href="#">Contacto</a></li>
 				</ul>
 			</nav>
 			<div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
@@ -110,7 +109,7 @@
 					<div class="home_title">Modificar mi informacion</div>
 					<div class="breadcrumbs d-flex flex-column align-items-center justify-content-center">
 						<ul class="d-flex flex-row align-items-start justify-content-start text-center">
-							<li><a href="category.aspx">Inicio</a></li>
+							<li><a href="tiendaug.aspx">Inicio</a></li>
 							<li>Mi Usuario</li>
 						</ul>
 					</div>
@@ -125,7 +124,7 @@
 				<div class="row">
 					
 					<!-- Billing -->
-					<div class="col-lg-6">
+					<div class="col-lg-12">
 						<div class="billing">
 							<div class="checkout_title">Mis Datos</div>
 							<div class="checkout_form_container">
@@ -148,7 +147,7 @@
 										<!-- Country -->
 										<select name="checkout_country" id="checkout_country" class="dropdown_item_select checkout_input" require="required">
 											<option>Pais</option>
-                                            <option>mexico</option>
+                                            <option>Mexico</option>
 											<option>Lithuania</option>
 											<option>Sweden</option>
 											<option>UK</option>
@@ -204,7 +203,7 @@
 										</ul>
 									</div>
 
-                                    <div class="checkout_button trans_200"><a href="checkout.aspx">Modificar mi informacion</a></div>
+                                    <div class="checkout_button trans_200"><a href="pago.aspx">Modificar mi informacion</a></div>
 
 								</form>
 							</div>
@@ -295,15 +294,13 @@
 						<div class="col">
 							<div class="footer_bar_content d-flex flex-md-row flex-column align-items-center justify-content-start">
 								<div class="copyright order-md-1 order-2"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Este diseño fue desarrollado <i class="fa fa-heart-o" aria-hidden="true"></i> por <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 								<nav class="footer_nav ml-md-auto order-md-2 order-1">
 									<ul class="d-flex flex-row align-items-center justify-content-start">
-										<li><a href="category.html">Women</a></li>
-										<li><a href="category.html">Men</a></li>
-										<li><a href="category.html">Kids</a></li>
-										<li><a href="category.html">Home Deco</a></li>
-										<li><a href="#">Contact</a></li>
+										<li><a href="#">Dama</a></li>
+										<li><a href="#">Caballero</a></li>
+										<li><a href="#">Contacto</a></li>
 									</ul>
 								</nav>
 							</div>

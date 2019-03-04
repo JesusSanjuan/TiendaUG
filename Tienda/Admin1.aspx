@@ -29,8 +29,8 @@
 <!--===============================================================================================-->
     <link href="Content/bootstrap.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">
-	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/main.css">
-    <link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/login.css">
+	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/cssadmin/main.css">
+    <link rel="stylesheet" type="text/css" href="Scripts/Plantilla/cssadmin/login.css">
     <link href="Scripts/Folepond/filepond.css" rel="stylesheet" />
     <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
 
