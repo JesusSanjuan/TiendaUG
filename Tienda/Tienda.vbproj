@@ -128,7 +128,6 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
-    <Content Include="login.aspx" />
     <Content Include="Scripts\Folepond\filepond-plugin-file-rename.js" />
     <Content Include="Scripts\Folepond\filepond.css" />
     <Content Include="Scripts\Folepond\filepond.esm.js" />
@@ -139,7 +138,87 @@
     <Content Include="Scripts\imagenes\alerta.gif" />
     <Content Include="Scripts\imagenes\correcto.gif" />
     <Content Include="Scripts\imagenes\favicon.ico" />
+    <Content Include="Scripts\imagenes\icons\favicon.ico" />
+    <Content Include="Scripts\imagenes\img-01.png" />
     <Content Include="Scripts\imagenes\pregunta.png" />
+    <Content Include="Scripts\littlecloset\images\boxes_1.png" />
+    <Content Include="Scripts\littlecloset\images\boxes_2.png" />
+    <Content Include="Scripts\littlecloset\images\box_1.jpg" />
+    <Content Include="Scripts\littlecloset\images\box_1_img.jpg" />
+    <Content Include="Scripts\littlecloset\images\box_2.jpg" />
+    <Content Include="Scripts\littlecloset\images\box_2_img.jpg" />
+    <Content Include="Scripts\littlecloset\images\box_3.jpg" />
+    <Content Include="Scripts\littlecloset\images\box_3_img.jpg" />
+    <Content Include="Scripts\littlecloset\images\cart.svg" />
+    <Content Include="Scripts\littlecloset\images\cart_2.svg" />
+    <Content Include="Scripts\littlecloset\images\cart_3.xml" />
+    <Content Include="Scripts\littlecloset\images\cart_item_1.jpg" />
+    <Content Include="Scripts\littlecloset\images\down.png" />
+    <Content Include="Scripts\littlecloset\images\heart.svg" />
+    <Content Include="Scripts\littlecloset\images\heart_2.svg" />
+    <Content Include="Scripts\littlecloset\images\home.jpg" />
+    <Content Include="Scripts\littlecloset\images\home_1.jpg" />
+    <Content Include="Scripts\littlecloset\images\home_2.jpg" />
+    <Content Include="Scripts\littlecloset\images\home_3.jpg" />
+    <Content Include="Scripts\littlecloset\images\icon_1.svg" />
+    <Content Include="Scripts\littlecloset\images\icon_2.svg" />
+    <Content Include="Scripts\littlecloset\images\icon_3.svg" />
+    <Content Include="Scripts\littlecloset\images\logo_1.png" />
+    <Content Include="Scripts\littlecloset\images\logo_2.png" />
+    <Content Include="Scripts\littlecloset\images\phone.svg" />
+    <Content Include="Scripts\littlecloset\images\product_1.jpg" />
+    <Content Include="Scripts\littlecloset\images\product_2.jpg" />
+    <Content Include="Scripts\littlecloset\images\product_3.jpg" />
+    <Content Include="Scripts\littlecloset\images\product_4.jpg" />
+    <Content Include="Scripts\littlecloset\images\product_5.jpg" />
+    <Content Include="Scripts\littlecloset\images\product_6.jpg" />
+    <Content Include="Scripts\littlecloset\images\product_7.jpg" />
+    <Content Include="Scripts\littlecloset\images\product_8.jpg" />
+    <Content Include="Scripts\littlecloset\images\product_9.jpg" />
+    <Content Include="Scripts\littlecloset\images\product_image_1.jpg" />
+    <Content Include="Scripts\littlecloset\images\search.png" />
+    <Content Include="Scripts\littlecloset\images\user.svg" />
+    <Content Include="Scripts\littlecloset\images\view_1.png" />
+    <Content Include="Scripts\littlecloset\images\view_2.png" />
+    <Content Include="Scripts\littlecloset\images\view_3.png" />
+    <Content Include="Scripts\littlecloset\js\cart.js" />
+    <Content Include="Scripts\littlecloset\js\category.js" />
+    <Content Include="Scripts\littlecloset\js\checkout.js" />
+    <Content Include="Scripts\littlecloset\js\custom.js" />
+    <Content Include="Scripts\littlecloset\js\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\littlecloset\js\product.js" />
+    <Content Include="Scripts\littlecloset\plugins\easing\easing.js" />
+    <Content Include="Scripts\littlecloset\plugins\flexslider\flexslider.css" />
+    <Content Include="Scripts\littlecloset\plugins\flexslider\jquery.flexslider-min.js" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Scripts\littlecloset\plugins\greensock\animation.gsap.min.js" />
+    <Content Include="Scripts\littlecloset\plugins\greensock\ScrollToPlugin.min.js" />
+    <Content Include="Scripts\littlecloset\plugins\greensock\TimelineMax.min.js" />
+    <Content Include="Scripts\littlecloset\plugins\greensock\TweenMax.min.js" />
+    <Content Include="Scripts\littlecloset\plugins\Isotope\fitcolumns.js" />
+    <Content Include="Scripts\littlecloset\plugins\Isotope\isotope.pkgd.min.js" />
+    <Content Include="Scripts\littlecloset\plugins\OwlCarousel2-2.2.1\ajax-loader.gif" />
+    <Content Include="Scripts\littlecloset\plugins\OwlCarousel2-2.2.1\animate.css" />
+    <Content Include="Scripts\littlecloset\plugins\OwlCarousel2-2.2.1\owl.carousel.css" />
+    <Content Include="Scripts\littlecloset\plugins\OwlCarousel2-2.2.1\owl.carousel.js" />
+    <Content Include="Scripts\littlecloset\plugins\OwlCarousel2-2.2.1\owl.theme.default.css" />
+    <Content Include="Scripts\littlecloset\plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
+    <Content Include="Scripts\littlecloset\plugins\parallax-js-master\parallax.min.js" />
+    <Content Include="Scripts\littlecloset\plugins\progressbar\progressbar.min.js" />
+    <Content Include="Scripts\littlecloset\plugins\scrollmagic\ScrollMagic.min.js" />
+    <Content Include="Scripts\littlecloset\styles\cart.css" />
+    <Content Include="Scripts\littlecloset\styles\cart_responsive.css" />
+    <Content Include="Scripts\littlecloset\styles\category.css" />
+    <Content Include="Scripts\littlecloset\styles\category_responsive.css" />
+    <Content Include="Scripts\littlecloset\styles\checkout.css" />
+    <Content Include="Scripts\littlecloset\styles\checkout_responsive.css" />
+    <Content Include="Scripts\littlecloset\styles\main_styles.css" />
+    <Content Include="Scripts\littlecloset\styles\product.css" />
+    <Content Include="Scripts\littlecloset\styles\product_responsive.css" />
+    <Content Include="Scripts\littlecloset\styles\responsive.css" />
     <Content Include="Scripts\Plantilla\css\544750.jpg" />
     <Content Include="Scripts\Plantilla\css\login.css" />
     <Content Include="Scripts\Plantilla\css\main.css" />
@@ -181,12 +260,13 @@
     <Content Include="Scripts\Plantilla\vendor\select2\select2.min.css" />
     <Content Include="Scripts\Plantilla\vendor\select2\select2.min.js" />
     <Content Include="category.aspx" />
-    <Content Include="Scripts\imagenes\desktop.ini" />
+    <Content Include="index.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\Plantilla\vendor\tilt\tilt.jquery.min.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -255,13 +335,6 @@
       <DependentUpon>Admin2.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="login.aspx.designer.vb">
-      <DependentUpon>login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="login.aspx.vb">
-      <DependentUpon>login.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="category.aspx.designer.vb">
       <DependentUpon>category.aspx</DependentUpon>
     </Compile>
@@ -274,6 +347,13 @@
     </Compile>
     <Compile Include="Usuario.aspx.vb">
       <DependentUpon>Usuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.vb">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.vb">
+      <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
@@ -373,6 +453,41 @@
     <Content Include="Scripts\Plantilla\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
     <Content Include="Scripts\Plantilla\fonts\montserrat\Montserrat-Thin.ttf" />
     <Content Include="Scripts\Plantilla\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Scripts\littlecloset\plugins\flexslider\fonts\flexslider-icon.ttf" />
+    <Content Include="Scripts\littlecloset\plugins\flexslider\fonts\flexslider-icon.woff" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_variables.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
