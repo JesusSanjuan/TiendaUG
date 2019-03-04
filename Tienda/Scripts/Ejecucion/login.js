@@ -1,6 +1,5 @@
 ﻿
 $('#Inicio').on('click', function () {//obtener datos cuando el periodo cambie
-
     var usuarioLogin = document.getElementById("usert").value;
     var passwordLogin = document.getElementById("password").value;
     if (usuarioLogin.length == 0 || passwordLogin.length == 0)
@@ -16,7 +15,7 @@ $('#Inicio').on('click', function () {//obtener datos cuando el periodo cambie
     {
         $.ajax({
             type: "POST",
-            url: "login.aspx/testmethod",
+            url: "index.aspx/testmethod",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             async: false,
