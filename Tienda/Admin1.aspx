@@ -95,7 +95,7 @@
 					<span class="label-input100">Color *</span>
 					    <div>
                             <asp:DropDownList ID="Col"  class="js-select2" runat="server">
-                                <asp:ListItem Enabled="true" Text="Seleccione el color del producto" Value=""></asp:ListItem>
+                                <asp:ListItem Enabled="true" Text="Seleccione el color del producto" Value="0"></asp:ListItem>
                                 <asp:ListItem Text="Azul" Value="Azul"></asp:ListItem>
                                 <asp:ListItem Text="Rojo" Value="Rojo"></asp:ListItem>
                                 <asp:ListItem Text="Amarillo" Value="Amarillo"></asp:ListItem>

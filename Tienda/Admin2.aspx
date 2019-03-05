@@ -79,7 +79,7 @@
                              <asp:GridView ID="GridView1" CssClass="alt table table-bordered"  runat="server" AutoGenerateColumns="False" DataKeyNames="Id_codigo" DataSourceID="SqlDataSource1" AlternatingRowStyle-CssClass="alt">
 <AlternatingRowStyle ></AlternatingRowStyle> 
                                     <Columns>
-                                        <asp:CommandField  ButtonType="Image"  ShowSelectButton="True"/>
+                                        <asp:CommandField    ShowSelectButton="True"/>
                                         <asp:BoundField DataField="Id_codigo" HeaderText="Id_codigo" InsertVisible="False" ReadOnly="True" SortExpression="Id_codigo" />
                                         <asp:BoundField DataField="Codigo" HeaderText="Codigo" SortExpression="Codigo" />
                                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />
@@ -87,7 +87,6 @@
                                         <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
                                         <asp:BoundField DataField="Color" HeaderText="Color" SortExpression="Color" />
                                         <asp:BoundField DataField="Talla" HeaderText="Talla" SortExpression="Talla" />
-                                        <asp:BoundField DataField="id_imagen" HeaderText="id_imagen" SortExpression="id_imagen" />
                                     </Columns>
                           </asp:GridView>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TiendaUGConnectionString %>" SelectCommand="SELECT * FROM [UG]"></asp:SqlDataSource>
@@ -164,7 +163,9 @@
 				</div>
                 <div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
 					<span class="label-input100">Imagen</span>
-                    <asp:Image ID="Image1" runat="server" />
+                    <div class="login100-pic js-tilt" data-tilt>
+					        <img src="Scripts/Plantilla/images/img-01.png" alt="IMG">
+				    </div>
 				</div>
                 
 
@@ -223,7 +224,12 @@
 	<script src="Scripts/Plantilla/vendor/countdowntime/countdowntime.js"></script>
 	<script src="Scripts/Plantilla/js/main.js"></script>
 <!--===============================================================================================-->
-
+    <script src="Scripts/Plantilla/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>

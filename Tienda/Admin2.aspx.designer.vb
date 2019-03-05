@@ -131,15 +131,6 @@ Partial Public Class WebForm2
     Protected WithEvents radio4 As Global.System.Web.UI.HtmlControls.HtmlInputRadioButton
     
     '''<summary>
-    '''Control Image1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Image1 As Global.System.Web.UI.WebControls.Image
-    
-    '''<summary>
     '''Control FileUpload1.
     '''</summary>
     '''<remarks>

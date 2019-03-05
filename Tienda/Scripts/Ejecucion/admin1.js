@@ -47,18 +47,28 @@ $(document).ready(function () {
                 success: function (result) {
                     var valor = JSON.parse(result.d);
                     var resultado = valor[0];
-                    alert(resultado);
                     $('#myModal').modal({ show: true });
                     if (resultado == "true") {
 
                         $('#imgmodal').html('<img src="../Scripts/imagenes/correcto.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
                         $('#txtmodatitle').html("<strong style='vertical - align: middle;'> Alta exitoso</strong>");
-                        $('#texmodal').html("<strong style='vertical - align: middle;'> El produto " + Descrip + ", se dio de alta exitosamente </strong>");
+                        $('#texmodal').html("<strong style='vertical - align: middle;'> El produto " + Descrip + ", se dio de alta, exitosamente </strong>");
+                        $('#Descripcion').val(""); 
+                        $('#Cant').val("");
+                        $("#Col").val('0');
+                        $('#Col').trigger('change');
+                        $('#Lacantidad').val("");
+                        $('#Codigo').val("");
+                        $("#radio1").prop('checked', false); 
+                        $("#radio2").prop('checked', false); 
+                        $("#radio3").prop('checked', false); 
+                        $("#radio4").prop('checked', false); 
+                       
                     }
                     else {
                         $('#imgmodal').html('<img src="../Scripts/imagenes/alerta.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
                         $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Error de alta</strong>");
-                        $('#texmodal').html("<strong style='vertical - align: middle;'> El producto no se pudo ingresar, intente mas tarde </strong>");
+                        $('#texmodal').html("<strong style='vertical - align: middle;'> El producto no se pudo ingresar, intente nuevamente </strong>");
                     }
                 },
                 error: function (result) {
