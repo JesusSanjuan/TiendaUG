@@ -138,8 +138,6 @@
     <Content Include="Scripts\imagenes\alerta.gif" />
     <Content Include="Scripts\imagenes\correcto.gif" />
     <Content Include="Scripts\imagenes\favicon.ico" />
-    <Content Include="Scripts\imagenes\icons\favicon.ico" />
-    <Content Include="Scripts\imagenes\img-01.png" />
     <Content Include="Scripts\imagenes\pregunta.png" />
     <Content Include="Scripts\littlecloset\images\boxes_1.png" />
     <Content Include="Scripts\littlecloset\images\boxes_2.png" />
@@ -219,7 +217,6 @@
     <Content Include="Scripts\littlecloset\styles\product.css" />
     <Content Include="Scripts\littlecloset\styles\product_responsive.css" />
     <Content Include="Scripts\littlecloset\styles\responsive.css" />
-    <Content Include="Scripts\Plantilla\css\544750.jpg" />
     <Content Include="Scripts\Plantilla\css\login.css" />
     <Content Include="Scripts\Plantilla\css\main.css" />
     <Content Include="Scripts\Plantilla\css\util.css" />
@@ -231,10 +228,7 @@
     <Content Include="Scripts\Plantilla\fonts\iconic\css\material-design-iconic-font.min.css" />
     <Content Include="Scripts\Plantilla\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="Scripts\Plantilla\fonts\montserrat\OFL.txt" />
-    <Content Include="Scripts\Plantilla\images\544750.jpg" />
-    <Content Include="Scripts\Plantilla\images\bg-01.jpg" />
     <Content Include="Scripts\Plantilla\images\icons\favicon.ico" />
-    <Content Include="Scripts\Plantilla\images\icons\Select.svg" />
     <Content Include="Scripts\Plantilla\images\img-01.png" />
     <Content Include="Scripts\Plantilla\js\main.js" />
     <Content Include="Scripts\Plantilla\vendor\animate\animate.css" />
