@@ -161,6 +161,7 @@
     <Content Include="Scripts\littlecloset\images\icon_1.svg" />
     <Content Include="Scripts\littlecloset\images\icon_2.svg" />
     <Content Include="Scripts\littlecloset\images\icon_3.svg" />
+    <Content Include="Scripts\littlecloset\images\logout.svg" />
     <Content Include="Scripts\littlecloset\images\logo_1.png" />
     <Content Include="Scripts\littlecloset\images\logo_2.png" />
     <Content Include="Scripts\littlecloset\images\phone.svg" />
@@ -217,6 +218,9 @@
     <Content Include="Scripts\littlecloset\styles\product.css" />
     <Content Include="Scripts\littlecloset\styles\product_responsive.css" />
     <Content Include="Scripts\littlecloset\styles\responsive.css" />
+    <Content Include="Scripts\Plantilla\cssadmin\544750.jpg" />
+    <Content Include="Scripts\Plantilla\cssadmin\login.css" />
+    <Content Include="Scripts\Plantilla\cssadmin\main.css" />
     <Content Include="Scripts\Plantilla\css\login.css" />
     <Content Include="Scripts\Plantilla\css\main.css" />
     <Content Include="Scripts\Plantilla\css\util.css" />
@@ -482,6 +486,24 @@
     <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="Scripts\littlecloset\plugins\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Scripts\Plantilla\fonts\poppins\Poppins-ThinItalic.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
