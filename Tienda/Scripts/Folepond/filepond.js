@@ -2256,36 +2256,36 @@
     labelThousandsSeparator: [getThousandsSeparator(), Type.STRING], // Default is locale separator
 
     labelIdle: [
-      'Drag & Drop your files or <span class="filepond--label-action">Browse</span>',
+        'Arrastra y suelta tus archivos o <span class="filepond--label-action">Selecciona</span>',
       Type.STRING
     ],
-    labelInvalidField: ['Field contains invalid files', Type.STRING],
-    labelFileWaitingForSize: ['Waiting for size', Type.STRING],
-    labelFileSizeNotAvailable: ['Size not available', Type.STRING],
-    labelFileCountSingular: ['file in list', Type.STRING],
-    labelFileCountPlural: ['files in list', Type.STRING],
-    labelFileLoading: ['Loading', Type.STRING],
-    labelFileAdded: ['Added', Type.STRING], // assistive only
-    labelFileLoadError: ['Error during load', Type.STRING],
-    labelFileRemoved: ['Removed', Type.STRING], // assistive only
-    labelFileRemoveError: ['Error during remove', Type.STRING],
-    labelFileProcessing: ['Uploading', Type.STRING],
-    labelFileProcessingComplete: ['Upload complete', Type.STRING],
-    labelFileProcessingAborted: ['Upload cancelled', Type.STRING],
-    labelFileProcessingError: ['Error during upload', Type.STRING],
-    labelFileProcessingRevertError: ['Error during revert', Type.STRING],
+      labelInvalidField: ['El campo contiene archivos inválidos', Type.STRING],
+      labelFileWaitingForSize: ['Esperando el tamaño', Type.STRING],
+      labelFileSizeNotAvailable: ['Talla no disponible', Type.STRING],
+      labelFileCountSingular: ['Archivo en la lista', Type.STRING],
+      labelFileCountPlural: ['files in list', Type.STRING],
+      labelFileLoading: ['Cargando', Type.STRING],
+      labelFileAdded: ['Adicional', Type.STRING], // assistive only
+      labelFileLoadError: ['Error durante la carga', Type.STRING],
+      labelFileRemoved: ['Remover', Type.STRING], // assistive only
+      labelFileRemoveError: ['Error durante la eliminación', Type.STRING],
+      labelFileProcessing: ['Subiendo', Type.STRING],
+      labelFileProcessingComplete: ['Carga completa', Type.STRING],
+      labelFileProcessingAborted: ['Subida cancelada', Type.STRING],
+      labelFileProcessingError: ['Error durante la carga', Type.STRING],
+      labelFileProcessingRevertError: ['Error durante la reversión', Type.STRING],
 
-    labelTapToCancel: ['tap to cancel', Type.STRING],
-    labelTapToRetry: ['tap to retry', Type.STRING],
-    labelTapToUndo: ['tap to undo', Type.STRING],
+      labelTapToCancel: ['Toque para cancelar', Type.STRING],
+      labelTapToRetry: ['Toque para volver a intentarlo', Type.STRING],
+      labelTapToUndo: ['Toque para deshacer', Type.STRING],
 
-    labelButtonRemoveItem: ['Remove', Type.STRING],
-    labelButtonAbortItemLoad: ['Abort', Type.STRING],
-    labelButtonRetryItemLoad: ['Retry', Type.STRING],
-    labelButtonAbortItemProcessing: ['Cancel', Type.STRING],
-    labelButtonUndoItemProcessing: ['Undo', Type.STRING],
-    labelButtonRetryItemProcessing: ['Retry', Type.STRING],
-    labelButtonProcessItem: ['Upload', Type.STRING],
+      labelButtonRemoveItem: ['Retirar', Type.STRING],
+      labelButtonAbortItemLoad: ['Abortar', Type.STRING],
+      labelButtonRetryItemLoad: ['Procesar de nuevo', Type.STRING],
+      labelButtonAbortItemProcessing: ['Cancelar', Type.STRING],
+      labelButtonUndoItemProcessing: ['Deshacer', Type.STRING],
+      labelButtonRetryItemProcessing: ['Procesar de nuevo', Type.STRING],
+      labelButtonProcessItem: ['Subir', Type.STRING],
 
     // make sure width and height plus viewpox are even numbers so icons are nicely centered
     iconRemove: [

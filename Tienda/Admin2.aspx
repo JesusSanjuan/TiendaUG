@@ -30,6 +30,11 @@
 	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">
 	<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/cssadmin/main.css">
     <link rel="stylesheet" type="text/css" href="Scripts/Plantilla/cssadmin/login.css">
+     <link href="Scripts/Folepond/filepond.css" rel="stylesheet" />
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/Ejecucion/admin2_actualizacion.js"></script>
 <!--===============================================================================================-->
 </head>
 <body>
@@ -121,7 +126,7 @@
 					<span class="label-input100">Color *</span>
 					    <div>
                             <asp:DropDownList ID="Col"  class="js-select2" runat="server">
-                                <asp:ListItem Enabled="true" Text="Seleccione el color del producto" Value="-1"></asp:ListItem>
+                                <asp:ListItem Enabled="true" Text="Seleccione el color del producto" Value="0"></asp:ListItem>
                                 <asp:ListItem Text="Azul" Value="Azul"></asp:ListItem>
                                 <asp:ListItem Text="Rojo" Value="Rojo"></asp:ListItem>
                                 <asp:ListItem Text="Amarillo" Value="Amarillo"></asp:ListItem>
@@ -129,6 +134,9 @@
 						    <div class="dropDownSelect2"></div>
 					    </div>
 				</div>
+
+
+
                 <div class="w-full dis-block js-show-service">
 					<div class="wrap-contact100-form-radio">
 						<span class="label-input100">De que talla es el producto?</span>
@@ -161,19 +169,23 @@
 						</div>
 					</div>
 				</div>
+                <div class="wrap-input100 validate-input bg1" >
+					<span class="label-input100">Imagen Actual</span>
+                   <center>
+                        <div class="login100-pic js-tilt" data-tilt>
+					            <img src="Scripts/Plantilla/images/img-01.png" alt="IMG">
+				        </div>
+                   </center>
+				</div>    
                 <div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
-					<span class="label-input100">Imagen</span>
-                    <div class="login100-pic js-tilt" data-tilt>
-					        <img src="Scripts/Plantilla/images/img-01.png" alt="IMG">
-				    </div>
+                    <span class="label-input100">Nueva Imagen 0</span>
+	                    <input type="file" name="filepond" multiple data-max-file-size="3MB" data-max-files="2" required>
 				</div>
-                
-
-
                 <div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
-					<span class="label-input100">Imagen</span>
+					<span class="label-input100">Nueva Imagen</span>
                     <asp:FileUpload ID="FileUpload1" class="input100" runat="server" />
 				</div>
+
                 <div class="container-contact100-form-btn" >
 					<button ID="Mod" class="contact100-form-btn" runat="server" >
 						<span>
@@ -221,6 +233,17 @@
 	<script src="Scripts/Plantilla/vendor/daterangepicker/moment.min.js"></script>
 	<script src="Scripts/Plantilla/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
+	<script src="Scripts/Plantilla/vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+			
+		})
+	</script>
+<!--===============================================================================================-->
 	<script src="Scripts/Plantilla/vendor/countdowntime/countdowntime.js"></script>
 	<script src="Scripts/Plantilla/js/main.js"></script>
 <!--===============================================================================================-->
@@ -230,6 +253,13 @@
 			scale: 1.1
 		})
 	</script>
+<!--===============================================================================================-->
+    <script src="Scripts/Folepond/filepond-plugin-file-rename.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+    <script src="Scripts/Folepond/filepond.js"></script>
+
+    <script src="Scripts/Ejecucion/admin2.js"></script>
+<!--===============================================================================================-->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>

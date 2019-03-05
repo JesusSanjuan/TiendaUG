@@ -27,7 +27,7 @@ $(document).ready(function () {
             Talla = "Ninguno";
         }  
         
-        if (Descrip.length == 0 || Cantida.length == 0 || Color.length == 0 || Precio.length == 0 || Codigo.length == 0 || Talla == "Ninguno")
+        if (Descrip.length == 0 || Cantida.length == 0 || Color.length == 1 || Precio.length == 0 || Codigo.length == 0 || Talla == "Ninguno")
         {
             $('#myModal').modal({ show: true });
             $('#imgmodal').html('<img src="../Scripts/imagenes/pregunta.png" class="img-fluid" width="100" height="100" alt="Responsive image"/>');

@@ -26,11 +26,11 @@ Public Class WebForm2
     End Function
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Usuario" Then
-            Response.Redirect("Admin2.aspx")
-        ElseIf System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "SU" Then
-            Response.Redirect("login.aspx")
-        End If
+        ' If System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Usuario" Then
+        'Response.Redirect("Admin2.aspx")
+        ' ElseIf System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "SU" Then
+        ' Response.Redirect("login.aspx")
+        ' End If
     End Sub
 
     Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridView1.SelectedIndexChanged
@@ -59,6 +59,9 @@ Public Class WebForm2
         End If
 
         cerrar()
+
+        Dim script As String = "operacion('Hola desde vb.net');"
+        ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
 
     End Sub
 

@@ -31,11 +31,11 @@ Public Class WebForm1
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ' Dim script As String = "AnoActual();"
         ' ScriptManager.RegisterStartupScript(Page, GetType(Page), "anioactual", script, True)
-        If System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Usuario" Then
-            Response.Redirect("Admin1.aspx")
-        ElseIf System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "SU" Then
-            Response.Redirect("login.aspx")
-        End If
+        'If System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Usuario" Then
+        'Response.Redirect("Admin1.aspx")
+        'ElseIf System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "SU" Then
+        'Response.Redirect("login.aspx")
+        'End If
     End Sub
 
     <WebMethod()>
