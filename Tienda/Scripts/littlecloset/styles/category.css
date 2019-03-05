@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 /******************************
@@ -497,7 +497,7 @@ section
 }
 .user
 {
-	margin-right: 28px;
+	margin-right: 20px;
 }
 .user a > div
 {
@@ -526,7 +526,7 @@ section
 }
 .cart
 {
-	margin-right: 29px;
+	margin-right: 20px;
 }
 .cart a > div
 {
