@@ -20,8 +20,8 @@
                 async: false,
                 data: JSON.stringify({ idProductos: idproducto }),
                 success: function (result) {
-                    var valor = JSON.parse(result.d);
-                    var resultado = valor[0];
+                    var resultado = JSON.parse(result.d);
+                    alert(resultado);
                     $('#myModal').modal({ show: true });
                     if (resultado == "true") {
 
