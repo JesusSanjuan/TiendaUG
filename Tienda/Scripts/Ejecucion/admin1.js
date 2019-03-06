@@ -2,7 +2,7 @@
 $(document).ready(function () {
 
 
-    $('#Alta').on('click', function () {//obtener datos cuando el periodo cambie
+    $('#Alta').on('click', function () {
     var Descrip = document.getElementById("Descripcion").value;
     var Cantida = document.getElementById("Cant").value;
     var Color = document.getElementById('Col').value;

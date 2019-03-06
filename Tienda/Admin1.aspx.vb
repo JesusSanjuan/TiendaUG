@@ -4,10 +4,6 @@ Imports Newtonsoft.Json
 Imports System.Configuration
 
 Public Class WebForm1
-
-
-
-
     Inherits System.Web.UI.Page
     Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
     'Public Shared conn As SqlConnection = New SqlConnection("Data Source=.;Initial Catalog=TiendaUG;User ID=Sa;Password=Jesus1993")

@@ -183,7 +183,6 @@
     <Content Include="Scripts\littlecloset\js\category.js" />
     <Content Include="Scripts\littlecloset\js\checkout.js" />
     <Content Include="Scripts\littlecloset\js\custom.js" />
-    <Content Include="Scripts\littlecloset\js\jquery-3.2.1.min.js" />
     <Content Include="Scripts\littlecloset\js\product.js" />
     <Content Include="Scripts\littlecloset\plugins\easing\easing.js" />
     <Content Include="Scripts\littlecloset\plugins\flexslider\flexslider.css" />

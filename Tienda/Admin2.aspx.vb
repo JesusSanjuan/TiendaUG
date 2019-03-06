@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Web.Services
+Imports Newtonsoft.Json
 
 Public Class WebForm2
     Inherits System.Web.UI.Page
@@ -8,9 +10,9 @@ Public Class WebForm2
 
     Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
     'Public Shared conn As SqlConnection = New SqlConnection("Data Source=.;Initial Catalog=TiendaUG;User ID=Sa;Password=Jesus1993")
-    Public cmd As SqlCommand
-    Public dr As SqlDataReader
-    Public Function conectar() As SqlConnection
+    Public Shared cmd As SqlCommand
+    Public Shared dr As SqlDataReader
+    Public Shared Function conectar() As SqlConnection
         Try
             conn.Open()
             'MsgBox("Conectado")
@@ -20,7 +22,7 @@ Public Class WebForm2
         Return conn
     End Function
 
-    Public Function cerrar() As SqlConnection
+    Public Shared Function cerrar() As SqlConnection
         conn.Close()
         Return conn
     End Function
@@ -71,16 +73,6 @@ Public Class WebForm2
     Protected Sub SqlDataSource1_Selecting(sender As Object, e As SqlDataSourceSelectingEventArgs) Handles SqlDataSource1.Selecting
 
     End Sub
-
-
-    Private Sub Borrar_ServerClick(sender As Object, e As EventArgs) Handles Borrar.ServerClick
-        Dim idNum As Integer = CType(idenPrinc.Text, Integer)
-        Dim ObjetoAdapador As New DataSet1TableAdapters.UGTableAdapter
-        Dim ObjetoDataSetCliente As New DataSet1TableAdapters.UGTableAdapter
-        ObjetoAdapador.Borrar(idNum)
-        MsgBox("Registro borrado con exito")
-    End Sub
-
     Private Sub Mod_ServerClick(sender As Object, e As EventArgs) Handles [Mod].ServerClick
         Dim idNum As Integer = CType(idenPrinc.Text, Integer)
         Dim Descrip As String
@@ -120,15 +112,14 @@ Public Class WebForm2
         MsgBox("Actualizado con exito")
     End Sub
 
-    Protected Sub Col_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Col.SelectedIndexChanged
-
-    End Sub
-
-    Protected Sub Cant_TextChanged(sender As Object, e As EventArgs) Handles Cant.TextChanged
-
-    End Sub
-
-    Protected Sub idenPrinc_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
+    <WebMethod()>
+    Public Shared Function eliminarproducto(ByVal idProductos As String) As Object
+        Dim obj As String = "NO"
+        Dim idNum As Integer = CType(idProductos, Integer)
+        Dim ObjetoAdapador As New DataSet1TableAdapters.UGTableAdapter
+        Dim ObjetoDataSetCliente As New DataSet1TableAdapters.UGTableAdapter
+        ObjetoAdapador.Borrar(idNum)
+        obj = JsonConvert.SerializeObject("true")
+        Return obj
+    End Function
 End Class
