@@ -58,16 +58,12 @@ Public Class WebForm2
             Prec.Text = dr.GetDouble(3)
             Cant.Text = dr.GetSqlString(1)
 
-            Color = dr.GetSqlString(5)
-            Talla = dr.GetSqlString(6)
+            Color = dr.GetSqlString(4)
+            Talla = dr.GetSqlString(5)
             Dim script As String = "operacion('" & Color & "','" & Talla & "');"
             ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
         End If
-
         cerrar()
-
-
-
     End Sub
 
     Protected Sub SqlDataSource1_Selecting(sender As Object, e As SqlDataSourceSelectingEventArgs) Handles SqlDataSource1.Selecting

@@ -134,8 +134,7 @@
 						    <div class="dropDownSelect2"></div>
 					    </div>
 				</div>
-
-
+                             
 
                 <div class="w-full dis-block js-show-service">
 					<div class="wrap-contact100-form-radio">
@@ -164,7 +163,7 @@
                         <div class="contact100-form-radio">
 							<input class="input-radio100" id="radio4" type="radio" name="type-product" value="extragrande" runat="server">
 							<label class="label-radio100" for="radio4">
-								ExtraGrande
+								Extra-Grande
 							</label>
 						</div>
 					</div>
