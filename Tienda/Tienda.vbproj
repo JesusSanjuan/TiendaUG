@@ -137,10 +137,7 @@
     <Content Include="Scripts\Folepond\filepond.js" />
     <Content Include="Scripts\Folepond\filepond.min.css" />
     <Content Include="Scripts\Folepond\filepond.min.js" />
-    <Content Include="Scripts\imagenes\alerta.gif" />
-    <Content Include="Scripts\imagenes\correcto.gif" />
-    <Content Include="Scripts\imagenes\favicon.ico" />
-    <Content Include="Scripts\imagenes\pregunta.png" />
+    <Content Include="favicon.ico" />
     <Content Include="Scripts\littlecloset\images\boxes_1.png" />
     <Content Include="Scripts\littlecloset\images\boxes_2.png" />
     <Content Include="Scripts\littlecloset\images\box_1.jpg" />
@@ -234,8 +231,10 @@
     <Content Include="Scripts\Plantilla\fonts\iconic\css\material-design-iconic-font.min.css" />
     <Content Include="Scripts\Plantilla\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="Scripts\Plantilla\fonts\montserrat\OFL.txt" />
-    <Content Include="Scripts\Plantilla\images\icons\favicon.ico" />
+    <Content Include="Scripts\Plantilla\images\alerta.gif" />
+    <Content Include="Scripts\Plantilla\images\correcto.gif" />
     <Content Include="Scripts\Plantilla\images\img-01.png" />
+    <Content Include="Scripts\Plantilla\images\pregunta.png" />
     <Content Include="Scripts\Plantilla\js\main.js" />
     <Content Include="Scripts\Plantilla\vendor\animate\animate.css" />
     <Content Include="Scripts\Plantilla\vendor\animsition\css\animsition.css" />
@@ -519,6 +518,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

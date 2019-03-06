@@ -8,7 +8,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="Scripts/Plantilla/images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="favicon.ico"/>
 <!--===============================================================================================-->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />    
 <!--===============================================================================================-->
@@ -172,7 +172,7 @@
 					<span class="label-input100">Imagen Actual</span>
                    <center>
                         <div class="login100-pic js-tilt" data-tilt>
-					            <img src="Scripts/Plantilla/images/img-01.png" alt="IMG">
+					            <img id="mi_imagen" src="Scripts/Plantilla/images/img-01.png" alt="IMG">
 				        </div>
                    </center>
 				</div>    

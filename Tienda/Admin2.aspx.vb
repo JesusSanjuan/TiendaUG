@@ -51,6 +51,7 @@ Public Class WebForm2
 
         Dim Color As String
         Dim Talla As String
+        Dim Direccion As String
         If dr.HasRows Then
             dr.Read()
             Codigo.Text = dr.GetSqlString(7)
@@ -60,7 +61,8 @@ Public Class WebForm2
 
             Color = dr.GetSqlString(4)
             Talla = dr.GetSqlString(5)
-            Dim script As String = "operacion('" & Color & "','" & Talla & "');"
+            Direccion = dr.GetSqlString(6)
+            Dim script As String = "operacion('" & Color & "','" & Talla & "','" & Direccion & "');"
             ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
         End If
         cerrar()

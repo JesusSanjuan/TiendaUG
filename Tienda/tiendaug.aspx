@@ -9,7 +9,7 @@
 <meta name="description" content="Little Closet template">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="Scripts/Plantilla/images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="favicon.ico"/>
 <!--===============================================================================================-->
 <link href="Content/bootstrap.min.css" rel="stylesheet" />
 <link href="Scripts/littlecloset/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">

@@ -9,7 +9,7 @@
 <meta name="description" content="Tienda UG">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="Scripts/Plantilla/images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="favicon.ico"/>
 <!--===============================================================================================-->
 
 <link href="Content/bootstrap.min.css" rel="stylesheet" />
