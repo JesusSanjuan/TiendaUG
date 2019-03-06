@@ -49,6 +49,8 @@ Public Class WebForm2
         cmd.Parameters("@idStaff").Value = idNum
         dr = cmd.ExecuteReader()
 
+        Dim Color As String
+        Dim Talla As String
         If dr.HasRows Then
             dr.Read()
             Codigo.Text = dr.GetSqlString(7)
@@ -56,12 +58,15 @@ Public Class WebForm2
             Prec.Text = dr.GetDouble(3)
             Cant.Text = dr.GetSqlString(1)
 
+            Color = dr.GetSqlString(5)
+            Talla = dr.GetSqlString(6)
+            Dim script As String = "operacion('" & Color & "','" & Talla & "');"
+            ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
         End If
 
         cerrar()
 
-        Dim script As String = "operacion('Hola desde vb.net');"
-        ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
+
 
     End Sub
 

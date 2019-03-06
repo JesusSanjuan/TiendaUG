@@ -164,7 +164,7 @@
                         <div class="contact100-form-radio">
 							<input class="input-radio100" id="radio4" type="radio" name="type-product" value="extragrande" runat="server">
 							<label class="label-radio100" for="radio4">
-								Extra-Grande
+								ExtraGrande
 							</label>
 						</div>
 					</div>

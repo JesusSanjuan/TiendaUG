@@ -1,7 +1,8 @@
-﻿function operacion(a)
+﻿function operacion(color, talla)
 {
     $(document).ready(function () {
-        alert(a);
+        alert(color);
+        alert(talla);
     });
  }
 
