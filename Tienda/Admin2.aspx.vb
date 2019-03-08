@@ -70,9 +70,6 @@ Public Class WebForm2
         cerrar()
     End Sub
 
-    Protected Sub SqlDataSource1_Selecting(sender As Object, e As SqlDataSourceSelectingEventArgs) Handles SqlDataSource1.Selecting
-
-    End Sub
     Private Sub Mod_ServerClick(sender As Object, e As EventArgs) Handles [Mod].ServerClick
         Dim idNum As Integer = CType(idenPrinc.Text, Integer)
         Dim Descrip As String
@@ -115,11 +112,22 @@ Public Class WebForm2
     <WebMethod()>
     Public Shared Function eliminarproducto(ByVal idProductos As String) As Object
         Dim obj As String = "NO"
-        Dim idNum As Integer = CType(idProductos, Integer)
-        Dim ObjetoAdapador As New DataSet1TableAdapters.UGTableAdapter
-        Dim ObjetoDataSetCliente As New DataSet1TableAdapters.UGTableAdapter
-        ObjetoAdapador.Borrar(idNum)
-        obj = JsonConvert.SerializeObject("true")
+        Dim ResultConsulta(1) As String
+
+        Try
+            Dim idNum As Integer = CType(idProductos, Integer)
+            Dim ObjetoAdapador As New DataSet1TableAdapters.UGTableAdapter
+            Dim ObjetoDataSetCliente As New DataSet1TableAdapters.UGTableAdapter
+            ObjetoAdapador.Borrar(idNum)
+            ResultConsulta(0) = "true"
+            ResultConsulta(1) = "ninguno"
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        Catch ex As Exception
+            ResultConsulta(0) = "error"
+            ResultConsulta(1) = ex.ToString
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        End Try
+
         Return obj
     End Function
 End Class

@@ -63,6 +63,15 @@ $(document).ready(function () {
                         $("#radio2").prop('checked', false); 
                         $("#radio3").prop('checked', false); 
                         $("#radio4").prop('checked', false); 
+
+
+                        $('#cerrar').click(function () {
+                            location.href = "Admin1.aspx";
+                        });
+                        $("#myModal").on('hide.bs.modal', function () {
+                            location.href = "Admin1.aspx";
+                        });
+
                        
                     }
                     else {
