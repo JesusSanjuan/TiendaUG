@@ -1,7 +1,5 @@
 ﻿
 $(document).ready(function () {
-
-
     $('#Alta').on('click', function () {
     var Descrip = document.getElementById("Descripcion").value;
     var Cantida = document.getElementById("Cant").value;

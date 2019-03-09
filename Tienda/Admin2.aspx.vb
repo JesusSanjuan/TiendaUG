@@ -69,51 +69,31 @@ Public Class WebForm2
         End If
         cerrar()
     End Sub
-
-    Private Sub Mod_ServerClick(sender As Object, e As EventArgs) Handles [Mod].ServerClick
-        Dim idNum As Integer = CType(idenPrinc.Text, Integer)
-        Dim Descrip As String
-        Dim Codig As String
-        Dim Cantidad As String
-        Dim Color As String
-        Dim Precio As String
-        Dim Talla As String
-        Select Case True
-            Case radio1.Checked = True
-                Talla = "Chica"
-            Case radio2.Checked = True
-                Talla = "Mediana"
-            Case radio3.Checked = True
-                Talla = "Grande"
-            Case radio4.Checked = True
-                Talla = "Extra-Grande"
-            Case Else
-                Talla = "Ninguno"
-        End Select
-
-        Descrip = Descripcion.Text
-        Codig = Codigo.Text
-        Cantidad = Cant.Text
-        Color = Col.SelectedItem.ToString()
-        Precio = Cant.Text
-
-        If FileUpload1.HasFile Then
-            'Dim filename As String
-            'filename = Path.GetFileName(FileUpload1.FileName)
-            FileUpload1.SaveAs(Server.MapPath("~/Imagen_server/imagen_" + Codig + ".jpg"))
-        End If
-
-        Dim ObjetoAdapador As New DataSet1TableAdapters.UGTableAdapter
-        Dim ObjetoDataSetCliente As New DataSet1TableAdapters.UGTableAdapter
-        ObjetoAdapador.Actualizar(Cantidad, Descrip, Precio, Color, Talla, "imagen_" + Codig, idNum)
-        MsgBox("Actualizado con exito")
-    End Sub
+    <WebMethod()>
+    Public Shared Function modificar(ByVal Cantidad As String, ByVal Codig As String, ByVal Descript As String, ByVal Precio As String, ByVal Color As String, ByVal Talla As String, ByVal idProductos As String) As Object
+        Dim obj As String = "NO"
+        Dim ResultConsulta(1) As String
+        Try
+            Dim idNum As Integer = CType(idProductos, Integer)
+            Dim ObjetoAdapador As New DataSet1TableAdapters.UGTableAdapter
+            Dim ObjetoDataSetCliente As New DataSet1TableAdapters.UGTableAdapter
+            MsgBox(Color.Length)
+            ObjetoAdapador.Actualizar(Cantidad, Descript, Precio, Color, Talla, "imagen_" + Codig + ".jpg", idNum)
+            ResultConsulta(0) = "true"
+            ResultConsulta(1) = "ninguno"
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        Catch ex As Exception
+            ResultConsulta(0) = "error"
+            ResultConsulta(1) = ex.ToString
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        End Try
+        Return obj
+    End Function
 
     <WebMethod()>
     Public Shared Function eliminarproducto(ByVal idProductos As String) As Object
         Dim obj As String = "NO"
         Dim ResultConsulta(1) As String
-
         Try
             Dim idNum As Integer = CType(idProductos, Integer)
             Dim ObjetoAdapador As New DataSet1TableAdapters.UGTableAdapter
@@ -127,7 +107,6 @@ Public Class WebForm2
             ResultConsulta(1) = ex.ToString
             obj = JsonConvert.SerializeObject(ResultConsulta)
         End Try
-
         Return obj
     End Function
 End Class
