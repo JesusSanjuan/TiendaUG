@@ -22,7 +22,8 @@
 <link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">
 
 
-
+ <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/Ejecucion/cargaproductos.js"></script>
 </head>
 <body>
 
@@ -169,8 +170,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row products_row products_container grid">
-					
+				<div id="Productos" class="row products_row products_container grid">
 					<!-- Product -->
 					<div class="col-xl-4 col-md-6 grid-item new">
 						<div class="product">
@@ -449,8 +449,8 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
+                <!-- Barra de numeros  -->
 				<div class="row page_nav_row">
 					<div class="col">
 						<div class="page_nav">
@@ -463,6 +463,7 @@
 						</div>
 					</div>
 				</div>
+                <!-- Barra de numeros -->
 			</div>
 		</div>
 
