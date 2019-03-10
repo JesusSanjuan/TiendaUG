@@ -94,7 +94,7 @@
 				<!-- Cart -->
 				<div class="cart"><a href="carrito.aspx"><div><img class="svg" src="Scripts/littlecloset/images/cart.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
 				<!-- Cart -->
-				<div class="user"><a data-toggle="modal" data-target="#exampleModal"><div><img src="Scripts/littlecloset/images/logout.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
+				<div class="user"><a data-toggle="modal" data-target="#cerrarsesion"><div><img src="Scripts/littlecloset/images/logout.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
 				<!-- Phone -->
 				<div class="header_phone d-flex flex-row align-items-center justify-content-start">
 					<div><div><img src="Scripts/littlecloset/images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
@@ -347,21 +347,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 	</div>		
 </div>
 <!-- Cerrar -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="cerrarsesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Te vas tan rapido?</h5>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Cancelar">
-            <span aria-hidden="true">×</span>
-        </button>
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Te vas tan rapido?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Cancelar">
+                <span aria-hidden="true">×</span>
+            </button>
+            </div>
+            <div class="modal-body">Seleccione "Cerrar sesión", está listo para finalizar su sesión actual?</div>
+            <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>     
+            <button class="btn btn-primary" id="botoncerrarsesion" type="button" data-dismiss="modal">Cerrar sesion</button> 
+            </div>
         </div>
-        <div class="modal-body">Seleccione "Cerrar sesión",está listo para finalizar su sesión actual?</div>
-        <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>     
-        <button class="btn btn-primary" type="button" data-dismiss="modal">Cerrar sesion</button> 
-        </div>
-    </div>
     </div>
 </div>
 <!-- Cerrar -->
@@ -376,5 +376,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 <script src="Scripts/littlecloset/plugins/easing/easing.js"></script>
 <script src="Scripts/littlecloset/plugins/parallax-js-master/parallax.min.js"></script>
 <script src="Scripts/littlecloset/js/cart.js"></script>
+<script src="Scripts/Ejecucion/cerrarsesion.js"></script>
 </body>
 </html>

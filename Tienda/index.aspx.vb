@@ -40,15 +40,15 @@ Public Class WebForm5
 
         If dr.HasRows = True Then
             dr.Read()
-            System.Web.HttpContext.Current.Session(“id_user”) = dr.GetSqlInt32(0)
-            System.Web.HttpContext.Current.Session(“tipo_user”) = dr.GetString(1)
+            System.Web.HttpContext.Current.Session("id_user") = dr.GetSqlInt32(0)
+            System.Web.HttpContext.Current.Session("tipo_user") = dr.GetString(1)
             ResultConsulta(0) = dr.GetSqlInt32(0)
             ResultConsulta(1) = dr.GetString(1)
             obj = JsonConvert.SerializeObject(ResultConsulta)
         ElseIf dr.HasRows = False Then
             ResultConsulta(0) = "0"
             ResultConsulta(1) = "SU"
-            System.Web.HttpContext.Current.Session(“tipo_user”) = "SU"
+            System.Web.HttpContext.Current.Session("tipo_user") = "SU"
             obj = JsonConvert.SerializeObject(ResultConsulta)
         End If
         cerrar()

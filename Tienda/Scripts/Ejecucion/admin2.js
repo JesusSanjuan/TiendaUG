@@ -40,8 +40,8 @@
                     }
                     else {
                         $('#imgmodal').html('<img src="../Scripts/plantilla/images/alerta.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
-                        $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Error al borrar ->" + resultado2 +"</strong>");
-                        $('#texmodal').html("<strong style='vertical - align: middle;'> El producto no se pudo borrar, intente nuevamente </strong>");
+                        $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Error al borrar </strong>");
+                        $('#texmodal').html("<strong style='vertical - align: middle;'> El producto no se pudo borrar, intente nuevamente, error ->" + resultado2 +" </strong>");
                         
                     }
                 },
@@ -94,7 +94,6 @@
                         default:
                             Talla = "Ninguno";
                      }
-            alert(Color.length);
 
                     if (Descrip.length == 0 || Cantida.length == 0 || Color.length == 1 || Precio.length == 0 || Codigo.length == 0 || Talla == "Ninguno") {
                         $('#myModal').modal({ show: true });

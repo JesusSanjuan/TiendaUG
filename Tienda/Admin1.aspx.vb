@@ -27,11 +27,15 @@ Public Class WebForm1
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ' Dim script As String = "AnoActual();"
         ' ScriptManager.RegisterStartupScript(Page, GetType(Page), "anioactual", script, True)
-        'If System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Usuario" Then
-        'Response.Redirect("Admin1.aspx")
-        'ElseIf System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "SU" Then
-        'Response.Redirect("login.aspx")
-        'End If
+        Try
+            If System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Usuario" Then
+                Response.Redirect("Admin1.aspx")
+            ElseIf System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "SU" Then
+                Response.Redirect("login.aspx")
+            End If
+        Catch ex As Exception
+            Response.Redirect("index.aspx")
+        End Try
     End Sub
 
     <WebMethod()>
@@ -58,16 +62,16 @@ Public Class WebForm1
         cerrar()
         Return obj
     End Function
-
     <WebMethod()>
-    Public Function cerrarsesion(ByVal Dato1 As String) As Object
+    Public Shared Function cerrarsesion(ByVal Dato1 As String) As Object
         Dim obj As String = "NO"
         Dim ResultConsulta(1) As String
         Try
-            System.Web.HttpContext.Current.Session(“id_user”) = ""
+            System.Web.HttpContext.Current.Session(“id_user”) = "SU"
             System.Web.HttpContext.Current.Session(“tipo_user”) = ""
             ResultConsulta(0) = "true"
             ResultConsulta(1) = "ninguno"
+
             obj = JsonConvert.SerializeObject(ResultConsulta)
         Catch ex As Exception
             ResultConsulta(0) = "error"

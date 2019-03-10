@@ -59,7 +59,7 @@
                 </ul> 
                 <ul class="navbar-nav ml-auto"> 
                      <li class="nav-item">
-                        <a class="nav-link btn btn-outline-info d-lg-inline-block mb-3 mb-md-0 ml-md-3" data-toggle="modal" data-target="#exampleModal">
+                        <a class="nav-link btn btn-outline-info d-lg-inline-block mb-3 mb-md-0 ml-md-3" data-toggle="modal" data-target="#cerrarsesion">
                         <i class="fas fa-sign-out-alt"></i>
                             Cerrar Sesion
                         </a>
@@ -228,21 +228,21 @@
   </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="cerrarsesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Te vas tan rapido?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Cancelar">
-                <span aria-hidden="true">×</span>
-            </button>
-            </div>
-            <div class="modal-body">Seleccione "Cerrar sesión",está listo para finalizar su sesión actual?</div>
-            <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>     
-            <button class="btn btn-primary" type="button" data-dismiss="modal">Cerrar sesion</button> 
-            </div>
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Te vas tan rapido?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Cancelar">
+            <span aria-hidden="true">×</span>
+        </button>
         </div>
+        <div class="modal-body">Seleccione "Cerrar sesión", está listo para finalizar su sesión actual?</div>
+        <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>     
+        <button class="btn btn-primary" id="botoncerrarsesion" type="button" data-dismiss="modal">Cerrar sesion</button> 
+        </div>
+    </div>
     </div>
 </div>
 
@@ -280,6 +280,7 @@
     <script src="Scripts/Folepond/filepond.js"></script>
 
     <script src="Scripts/Ejecucion/admin2.js"></script>
+    <script src="Scripts/Ejecucion/cerrarsesion.js"></script>
 <!--===============================================================================================-->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>

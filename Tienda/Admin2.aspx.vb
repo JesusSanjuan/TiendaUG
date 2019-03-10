@@ -28,11 +28,15 @@ Public Class WebForm2
     End Function
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        ' If System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Usuario" Then
-        'Response.Redirect("Admin2.aspx")
-        ' ElseIf System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "SU" Then
-        ' Response.Redirect("login.aspx")
-        ' End If
+        Try
+            If System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Usuario" Then
+                Response.Redirect("Admin1.aspx")
+            ElseIf System.Web.HttpContext.Current.Session("tipo_user").ToString() = "SU" Then
+                Response.Redirect("login.aspx")
+            End If
+        Catch ex As Exception
+            Response.Redirect("index.aspx")
+        End Try
     End Sub
 
     Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridView1.SelectedIndexChanged
@@ -77,7 +81,6 @@ Public Class WebForm2
             Dim idNum As Integer = CType(idProductos, Integer)
             Dim ObjetoAdapador As New DataSet1TableAdapters.UGTableAdapter
             Dim ObjetoDataSetCliente As New DataSet1TableAdapters.UGTableAdapter
-            MsgBox(Color.Length)
             ObjetoAdapador.Actualizar(Cantidad, Descript, Precio, Color, Talla, "imagen_" + Codig + ".jpg", idNum)
             ResultConsulta(0) = "true"
             ResultConsulta(1) = "ninguno"
@@ -89,7 +92,6 @@ Public Class WebForm2
         End Try
         Return obj
     End Function
-
     <WebMethod()>
     Public Shared Function eliminarproducto(ByVal idProductos As String) As Object
         Dim obj As String = "NO"
@@ -101,6 +103,24 @@ Public Class WebForm2
             ObjetoAdapador.Borrar(idNum)
             ResultConsulta(0) = "true"
             ResultConsulta(1) = "ninguno"
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        Catch ex As Exception
+            ResultConsulta(0) = "error"
+            ResultConsulta(1) = ex.ToString
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        End Try
+        Return obj
+    End Function
+    <WebMethod()>
+    Public Shared Function cerrarsesion(ByVal Dato1 As String) As Object
+        Dim obj As String = "NO"
+        Dim ResultConsulta(1) As String
+        Try
+            System.Web.HttpContext.Current.Session(“id_user”) = "SU"
+            System.Web.HttpContext.Current.Session(“tipo_user”) = ""
+            ResultConsulta(0) = "true"
+            ResultConsulta(1) = "ninguno"
+
             obj = JsonConvert.SerializeObject(ResultConsulta)
         Catch ex As Exception
             ResultConsulta(0) = "error"
