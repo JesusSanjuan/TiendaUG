@@ -58,6 +58,25 @@ Public Class WebForm1
         cerrar()
         Return obj
     End Function
+
+    <WebMethod()>
+    Public Function cerrarsesion(ByVal Dato1 As String) As Object
+        Dim obj As String = "NO"
+        Dim ResultConsulta(1) As String
+        Try
+            System.Web.HttpContext.Current.Session(“id_user”) = ""
+            System.Web.HttpContext.Current.Session(“tipo_user”) = ""
+            ResultConsulta(0) = "true"
+            ResultConsulta(1) = "ninguno"
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        Catch ex As Exception
+            ResultConsulta(0) = "error"
+            ResultConsulta(1) = ex.ToString
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        End Try
+        Return obj
+    End Function
+
     <WebMethod()>
     Public Function Prueba(ByVal Cantidad As String) As Object
         MsgBox("Hola Mundo")

@@ -60,7 +60,7 @@
                 </ul> 
                <ul class="navbar-nav ml-auto"> 
                      <li class="nav-item">
-                        <a class="nav-link btn btn-outline-info d-lg-inline-block mb-3 mb-md-0 ml-md-3" data-toggle="modal" data-target="#exampleModal">
+                        <a class="nav-link btn btn-outline-info d-lg-inline-block mb-3 mb-md-0 ml-md-3" data-toggle="modal" data-target="#cerrarsesion">
                         <i class="fas fa-sign-out-alt"></i>
                             Cerrar Sesion
                         </a>
@@ -191,7 +191,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="cerrarsesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -203,7 +203,7 @@
         <div class="modal-body">Seleccione "Cerrar sesión", está listo para finalizar su sesión actual?</div>
         <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>     
-        <button class="btn btn-primary" type="button" data-dismiss="modal">Cerrar sesion</button> 
+        <button class="btn btn-primary" id="botoncerrarsesion" type="button" data-dismiss="modal">Cerrar sesion</button> 
         </div>
     </div>
     </div>
@@ -237,6 +237,7 @@
     <script src="Scripts/Folepond/filepond.js"></script>
 
     <script src="Scripts/Ejecucion/admin1.js"></script>
+    <script src="Scripts/Ejecucion/cerrarsesion.js"></script>
 <!--===============================================================================================-->
 	
 

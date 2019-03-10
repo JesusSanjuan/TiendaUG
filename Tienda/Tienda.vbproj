@@ -121,6 +121,7 @@
     <Content Include="Scripts\Ejecucion\admin1.js" />
     <Content Include="Scripts\Ejecucion\admin2.js" />
     <Content Include="Scripts\Ejecucion\admin2_actualizacion.js" />
+    <Content Include="Scripts\Ejecucion\cerrarsesion.js" />
     <Content Include="Scripts\Ejecucion\login.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
