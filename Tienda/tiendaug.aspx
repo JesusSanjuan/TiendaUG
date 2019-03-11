@@ -20,8 +20,8 @@
 <link rel="stylesheet" type="text/css" href="Scripts/littlecloset/styles/category_responsive.css">
 <link href="Content/bootstrap.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">
-
-
+    <script src="Scripts/jquery-3.3.1.js"></script>
+<script src="Scripts/Ejecucion/cargaproductos.js"></script>
 </head>
 <body>
 
@@ -299,6 +299,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
         </div>
     </div>
 </div>
+
+    </form>
 <!-- Cerrar -->
 <script src="Scripts/jquery-3.3.1.min.js"></script>
 <script src="Scripts/popper.js"></script>
@@ -314,7 +316,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 <script src="Scripts/littlecloset/plugins/Isotope/fitcolumns.js"></script>
 <script src="Scripts/littlecloset/js/category.js"></script>
 <script src="Scripts/Ejecucion/cerrarsesion.js"></script>
-<script src="Scripts/Ejecucion/cargaproductos.js"></script>
-    </form>
+
 </body>
 </html>
