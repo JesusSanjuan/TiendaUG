@@ -32,13 +32,6 @@ Public Class WebForm4
             ElseIf System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Usuario" Then
 
 
-
-
-
-
-
-
-
             ElseIf System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "SU" Then
                 Response.Redirect("login.aspx")
             End If
