@@ -77,7 +77,7 @@
 					Tienda UG
 				</span>
                 <span class="contact100-form-title">
-					Consulta, Modifiacion y eliminacion de los productos
+					Consulta, Modificacion y eliminacion de los productos
 				</span>
                 <div class="wrap-input100 validate-input bg1" data-validate="Porfavor ingrese la descripcion del producto">
 					<span class="label-input100"> Consulta de informacion</span>                        

@@ -79,7 +79,7 @@ Public Class WebForm2
             Dim idNum As Integer = CType(idProductos, Integer)
             Dim ObjetoAdapador As New DataSet1TableAdapters.UGTableAdapter
             Dim ObjetoDataSetCliente As New DataSet1TableAdapters.UGTableAdapter
-            ObjetoAdapador.Actualizar(Cantidad, Descript, Precio, Color, Talla, "imagen_" + Codig + ".jpg", idNum)
+            ObjetoAdapador.Actualizar(Cantidad, Descript, Precio, Color, Talla, "imagen_" + Codig + ".jpg", Codig, idNum)
             ResultConsulta(0) = "true"
             ResultConsulta(1) = "ninguno"
             obj = JsonConvert.SerializeObject(ResultConsulta)

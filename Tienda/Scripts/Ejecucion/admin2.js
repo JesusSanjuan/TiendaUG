@@ -76,6 +76,7 @@
                     var Color = document.getElementById('Col').value;
                     var Precio = document.getElementById('Prec').value;
                     var Codigo = document.getElementById('Codigo').value;
+
                     var Talla = "";
 
                     switch (true) {
