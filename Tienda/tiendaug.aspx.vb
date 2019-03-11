@@ -69,42 +69,25 @@ Public Class WebForm4
         cmd = New SqlCommand(consulta, conn)
         dr = cmd.ExecuteReader()
 
-
-
-        Dim id_codigo As String
-        Dim Descripcion As String
-        Dim Precio As String
-        Dim id_imagen As String
-        Dim Codigo As String
         Dim Contador As Integer = 0
-        Dim ResultadoFinal As String
-        Dim obj(Cantidad - 1) As String
-        Dim ResultConsulta(4) As String
-
+        Dim ResultadoFinal As Object
+        Dim obj(Cantidad - 1, 4) As Object
         Dim Valor As String = dr.HasRows.ToString()
 
         While (Contador < Cantidad)
             dr.Read()
-            ResultConsulta(0) = dr.GetValue(0)
-            ResultConsulta(1) = dr.GetString(1)
-                ResultConsulta(2) = dr.GetValue(2)
-                ResultConsulta(3) = dr.GetString(3)
-                ResultConsulta(4) = dr.GetString(4)
-
-                id_codigo = dr.GetValue(0)
-                Descripcion = dr.GetString(1)
-                Precio = dr.GetValue(2)
-                id_imagen = dr.GetSqlString(3)
-                Codigo = dr.GetSqlString(4)
-
-            obj(Contador) = JsonConvert.SerializeObject(ResultConsulta)
+            obj(Contador, 0) = dr.GetValue(0)
+            obj(Contador, 1) = dr.GetString(1)
+            obj(Contador, 2) = dr.GetValue(2)
+            obj(Contador, 3) = dr.GetString(3)
+            obj(Contador, 4) = dr.GetString(4)
             Contador = Contador + 1
 
         End While
 
         ResultadoFinal = JsonConvert.SerializeObject(obj)
-        ' Dim script As String = "operacion('" & id_codigo & "','" & Descripcion & "','" & Precio & "','" & id_imagen & "','" & Codigo & "');"
-        'ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
+        Dim script As String = "operacion(" & ResultadoFinal & ");"
+        ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
         cerrar()
 
     End Sub

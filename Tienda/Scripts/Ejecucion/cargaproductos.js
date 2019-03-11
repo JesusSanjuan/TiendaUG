@@ -1,8 +1,11 @@
-﻿function operacion(Id_codigo, Cantidad, Descripcion, Precio, id_imagen, Codigo) {
+﻿function operacion(Vectordeproductos) {
    
     $(document).ready(function () {
-        alert(Id_codigo);
-
+       // alert(Vectordeproductos);
+       // alert(JSON.stringify(Vectordeproductos));
+        var Vector = JSON.parse(JSON.stringify(Vectordeproductos)); 
+        var Dato = Vector[2][3];      
+        alert(Dato);
     });
 }
 
