@@ -1,7 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Web.Services
 Imports Newtonsoft.Json
-Imports System.Configuration
 
 Public Class WebForm1
     Inherits System.Web.UI.Page
@@ -14,7 +13,7 @@ Public Class WebForm1
             conn.Open()
             'MsgBox("Conectado")
         Catch ex As Exception
-            MsgBox("Error")
+            MsgBox("Error Conexion a base de datos" & ex.ToString)
         End Try
         Return conn
     End Function

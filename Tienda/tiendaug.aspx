@@ -21,11 +21,11 @@
 <link href="Content/bootstrap.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">
 
-
- <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script src="Scripts/Ejecucion/cargaproductos.js"></script>
 </head>
 <body>
+
+    <form id="form1" runat="server">
 
 <!-- Menu -->
 
@@ -33,10 +33,8 @@
 
 	<!-- Search -->
 	<div class="menu_search">
-		<form action="#" id="menu_search_form" class="menu_search_form">
 			<input type="text" class="search_input" placeholder="Buscar Articulo" required="required">
 			<button class="menu_search_button"><img src="Scripts/littlecloset/images/search.png" alt=""></button>
-		</form>
 	</div>
 	<!-- Navigation -->
 	<div class="menu_nav">
@@ -90,10 +88,8 @@
 			<div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
 				<!-- Search -->
 				<div class="header_search">
-					<form action="#" id="header_search_form">
 						<input type="text" class="search_input" placeholder="Buscar Articulo" required="required">
 						<button class="header_search_button"><img src="Scripts/littlecloset/images/search.png" alt=""></button>
-					</form>
 				</div>
 				<!-- User -->
 				<div class="user"><a href="usuario.aspx"><div><img src="Scripts/littlecloset/images/user.svg" alt="https://www.flaticon.com/authors/freepik"><div>10</div></div></a></div>
@@ -118,7 +114,8 @@
 		<div class="home">
 			<div class="home_container d-flex flex-column align-items-center justify-content-end">
 				<div class="home_content text-center">
-					<div class="home_title">Bienvenido a la Tienda UG</div>
+					<div class="home_title">Bienvenido a la Tienda UG
+                    </div>
 					<div class="breadcrumbs d-flex flex-column align-items-center justify-content-center">
 						<ul class="d-flex flex-row align-items-start justify-content-start text-center">
 							<li><a href="tiendaug.aspx">Inicio</a></li>
@@ -520,10 +517,8 @@
 							<div class="footer_contact">
 								<div class="footer_title">Mantente en Contacto</div>
 								<div class="newsletter">
-									<form action="#" id="newsletter_form" class="newsletter_form">
 										<input type="email" class="newsletter_input" placeholder="Suscríbete a nuestro boletín" required="required">
 										<button class="newsletter_button">+</button>
-									</form>
 								</div>
 								<div class="footer_social">
 									<div class="footer_title">Social</div>
@@ -596,5 +591,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 <script src="Scripts/littlecloset/plugins/Isotope/fitcolumns.js"></script>
 <script src="Scripts/littlecloset/js/category.js"></script>
 <script src="Scripts/Ejecucion/cerrarsesion.js"></script>
+    </form>
 </body>
 </html>

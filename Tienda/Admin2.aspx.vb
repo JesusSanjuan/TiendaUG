@@ -5,8 +5,6 @@ Imports Newtonsoft.Json
 Public Class WebForm2
     Inherits System.Web.UI.Page
     Dim ids As String
-    Dim ds As New DataSet
-    Dim da As OleDb.OleDbDataAdapter
 
     Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
     'Public Shared conn As SqlConnection = New SqlConnection("Data Source=.;Initial Catalog=TiendaUG;User ID=Sa;Password=Jesus1993")
@@ -17,7 +15,7 @@ Public Class WebForm2
             conn.Open()
             'MsgBox("Conectado")
         Catch ex As Exception
-            MsgBox("Error")
+            MsgBox("Error Conexion a base de datos" & ex.ToString)
         End Try
         Return conn
     End Function

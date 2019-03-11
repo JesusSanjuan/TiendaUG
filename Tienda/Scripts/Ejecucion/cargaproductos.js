@@ -1,6 +1,7 @@
-﻿function operacion() {
+﻿function operacion(Id_codigo, Cantidad, Descripcion, Precio, id_imagen, Codigo) {
+   
     $(document).ready(function () {
-        alert("Entro") ;
+        alert(Id_codigo);
 
     });
 }

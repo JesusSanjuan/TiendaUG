@@ -18,10 +18,7 @@
                 break;
             default:
         } 
-
         $("#mi_imagen").attr("src", "Scripts/littlecloset/images/"+ direccion);
-
-
     });
  }
 

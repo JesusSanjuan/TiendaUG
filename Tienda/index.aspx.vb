@@ -14,7 +14,7 @@ Public Class WebForm5
             conn.Open()
             'MsgBox("Conectado")
         Catch ex As Exception
-            MsgBox("Error con la conexion de base de datos")
+            MsgBox("Error Conexion a base de datos" & ex.ToString)
         End Try
         Return conn
     End Function
