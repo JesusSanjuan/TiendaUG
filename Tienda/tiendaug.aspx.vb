@@ -102,7 +102,7 @@ Public Class WebForm4
 
         End While
 
-        ResultadoFinal = JsonConvert.SerializeObject(obj(Contador))
+        ResultadoFinal = JsonConvert.SerializeObject(obj)
         ' Dim script As String = "operacion('" & id_codigo & "','" & Descripcion & "','" & Precio & "','" & id_imagen & "','" & Codigo & "');"
         'ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
         cerrar()
