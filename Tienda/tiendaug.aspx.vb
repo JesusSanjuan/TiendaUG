@@ -87,17 +87,19 @@ Public Class WebForm4
 
         conectar()
         'Se genera el String de la Consulta
-        Dim consulta As String = "SELECT Color, Talla FROM  UG WHERE ==" & idCodigo
+        Dim consulta As String = "SELECT Descripcion, Color, Talla, Codigo FROM  UG WHERE UG.Id_codigo =" & idCodigo
         'Agregamos la sentencia SQL y la conexion
         MsgBox(consulta)
         cmd = New SqlCommand(consulta, conn)
         dr = cmd.ExecuteReader()
-        Dim res(1) As Object
+        Dim res(3) As Object
 
         If dr.HasRows Then
             dr.Read()
             res(0) = dr.GetString(0)
             res(1) = dr.GetString(1)
+            res(2) = dr.GetString(2)
+            res(3) = dr.GetString(3)
         End If
         cerrar()
 
