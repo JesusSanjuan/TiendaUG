@@ -39,10 +39,7 @@ Public Class WebForm4
             Response.Redirect("index.aspx")
         End Try
     End Sub
-
     Private Sub WebForm4_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
-
-
         conectar()
         ' MsgBox("INSERT INTO UG(Cantidad,Descripcion,Precio,Color,Talla,Id_imagen) VALUES('" + Cantidad + "','" + Descrip + "','" + Precio + "','" + Color + "','" + Talla + "','imagen_" + aStr + ".jpg')")
         Dim consulta0 As String = "SELECT COUNT(*) FROM  UG"
@@ -84,4 +81,43 @@ Public Class WebForm4
         cerrar()
 
     End Sub
+
+    <WebMethod()>
+    Public Shared Function compraproducto(ByVal idCodigo As Integer) As Object
+
+        conectar()
+        'Se genera el String de la Consulta
+        Dim consulta As String = "SELECT Color, Talla FROM  UG WHERE ==" & idCodigo
+        'Agregamos la sentencia SQL y la conexion
+        MsgBox(consulta)
+        cmd = New SqlCommand(consulta, conn)
+        dr = cmd.ExecuteReader()
+        Dim res(1) As Object
+
+        If dr.HasRows Then
+            dr.Read()
+            res(0) = dr.GetString(0)
+            res(1) = dr.GetString(1)
+        End If
+        cerrar()
+
+        Dim obj As String = "NO"
+        Dim ResultConsulta(1) As String
+        Dim id_user As String = System.Web.HttpContext.Current.Session("id_user").ToString
+        Dim id_user_number As Integer = CType(id_user, Integer)
+        MsgBox(id_user)
+        Try
+            Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
+            Dim ObjetoDataSetCliente As New DataSet1TableAdapters.carritoTableAdapter
+            ObjetoAdapador.InsertarCompra(idCodigo, id_user_number, 1, "Default", "Default", "Carrito")
+            ResultConsulta(0) = "true"
+            ResultConsulta(1) = "ninguno"
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        Catch ex As Exception
+            ResultConsulta(0) = "error"
+            ResultConsulta(1) = ex.ToString
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        End Try
+        Return obj
+    End Function
 End Class

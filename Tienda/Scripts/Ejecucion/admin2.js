@@ -132,8 +132,8 @@
                                 }
                                 else {
                                     $('#imgmodal').html('<img src="../Scripts/plantilla/images/alerta.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
-                                    $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Error al borrar ->" + resultado2 + "</strong>");
-                                    $('#texmodal').html("<strong style='vertical - align: middle;'> El producto no se puede modificar, intente nuevamente </strong>");
+                                    $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Error al borrar</strong>");
+                                    $('#texmodal').html("<strong style='vertical - align: middle;'> El producto no se puede modificar, intente nuevamente. ->" + resultado2 + "</strong>");
                                 }
                             },
                             error: function (result) {

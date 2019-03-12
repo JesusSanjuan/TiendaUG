@@ -20,7 +20,7 @@
 <link rel="stylesheet" type="text/css" href="Scripts/littlecloset/styles/category_responsive.css">
 <link href="Content/bootstrap.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">
-    <script src="Scripts/jquery-3.3.1.js"></script>
+<script src="Scripts/jquery-3.3.1.js"></script>
 <script src="Scripts/Ejecucion/cargaproductos.js"></script>
 </head>
 <body>
@@ -278,9 +278,31 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 				</div>
 			</div>
 		</footer>
-	</div>
-		
+	</div>		
 </div>
+<!-- Menus emergentes -->
+<div class="modal" id="myModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="txtmodatitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+                <div class="col-3" id="imgmodal"></div>
+                <div class="col-9" id="texmodal"></div>                                                                        
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cerrar" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Menus emergentes -->
 <!-- Cerrar -->
 <div class="modal fade" id="cerrarsesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -316,6 +338,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 <script src="Scripts/littlecloset/plugins/Isotope/fitcolumns.js"></script>
 <script src="Scripts/littlecloset/js/category.js"></script>
 <script src="Scripts/Ejecucion/cerrarsesion.js"></script>
-
+<script src="Scripts/Ejecucion/obtenercargaproductos.js"></script>
 </body>
 </html>
