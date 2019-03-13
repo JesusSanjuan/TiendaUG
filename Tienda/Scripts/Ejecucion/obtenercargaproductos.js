@@ -1,7 +1,12 @@
 ﻿$(document).ready(function () {
     $('.product_cart').on('click', function () {        
+
+        $("#contadorcompras").show();
+        var numerocompraanterior = $("#contadorcompras").text();
+        var valor = parseInt(numerocompraanterior) + 1;
+        $('#contadorcompras').text(valor);
         
-        var id_codigo = $(this).data("role");
+        var id_codigo = $(this).data("role");       
         $.ajax({
             type: "POST",
             url: "tiendaug.aspx/compraproducto",
@@ -13,12 +18,16 @@
                 var valor = JSON.parse(result.d);
                 var resultado1 = valor[0];
                 var resultado2 = valor[1];
+                var Descripcion = valor[2];
+                var Color = valor[3];
+                var Talla = valor[4];
+                var Codigo = valor[5];
                 $('#myModal').modal({ show: true });
                 if (resultado1 === "true") {
 
                     $('#imgmodal').html('<img src="../Scripts/Plantilla/images/correcto.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
                     $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Agregado al carrito</strong>");
-                    $('#texmodal').html("<strong style='vertical - align: middle;'> El produto " + Descrip + ", se dio ha modificado, exitosamente </strong>");
+                    $('#texmodal').html("<strong style='vertical - align: middle;'> El produto " + Descripcion + ", se dio ha modificado, exitosamente </strong>");
                 }
                 else {
                     $('#imgmodal').html('<img src="../Scripts/plantilla/images/alerta.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
@@ -37,4 +46,5 @@
         });
 
     });
+    
 }); 

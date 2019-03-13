@@ -81,7 +81,6 @@ Public Class WebForm4
         cerrar()
 
     End Sub
-
     <WebMethod()>
     Public Shared Function compraproducto(ByVal idCodigo As Integer) As Object
 
@@ -89,7 +88,6 @@ Public Class WebForm4
         'Se genera el String de la Consulta
         Dim consulta As String = "SELECT Descripcion, Color, Talla, Codigo FROM  UG WHERE UG.Id_codigo =" & idCodigo
         'Agregamos la sentencia SQL y la conexion
-        MsgBox(consulta)
         cmd = New SqlCommand(consulta, conn)
         dr = cmd.ExecuteReader()
         Dim res(3) As Object
@@ -104,16 +102,20 @@ Public Class WebForm4
         cerrar()
 
         Dim obj As String = "NO"
-        Dim ResultConsulta(1) As String
+        Dim ResultConsulta(6) As String
         Dim id_user As String = System.Web.HttpContext.Current.Session("id_user").ToString
         Dim id_user_number As Integer = CType(id_user, Integer)
-        MsgBox(id_user)
+
         Try
             Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
             Dim ObjetoDataSetCliente As New DataSet1TableAdapters.carritoTableAdapter
             ObjetoAdapador.InsertarCompra(idCodigo, id_user_number, 1, "Default", "Default", "Carrito")
             ResultConsulta(0) = "true"
-            ResultConsulta(1) = "ninguno"
+            ResultConsulta(1) = "Nada"
+            ResultConsulta(2) = res(1)
+            ResultConsulta(3) = res(2)
+            ResultConsulta(4) = res(3)
+            ResultConsulta(5) = res(3)
             obj = JsonConvert.SerializeObject(ResultConsulta)
         Catch ex As Exception
             ResultConsulta(0) = "error"
