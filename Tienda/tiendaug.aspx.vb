@@ -54,14 +54,14 @@ Public Class WebForm4
 
         conectar()
         'Se genera el String de la Consulta
-        Dim consulta As String = "SELECT Id_codigo,  Descripcion, Precio, id_imagen, Codigo FROM  UG"
+        Dim consulta As String = "SELECT Id_codigo,  Descripcion, Precio, id_imagen, Color, Talla FROM  UG"
         'Agregamos la sentencia SQL y la conexion
         cmd = New SqlCommand(consulta, conn)
         dr = cmd.ExecuteReader()
 
         Dim Contador As Integer = 0
         Dim ResultadoFinal As Object
-        Dim obj(Cantidad - 1, 4) As Object
+        Dim obj(Cantidad - 1, 5) As Object
         Dim Valor As String = dr.HasRows.ToString()
 
         While (Contador < Cantidad)
@@ -71,6 +71,7 @@ Public Class WebForm4
             obj(Contador, 2) = dr.GetValue(2)
             obj(Contador, 3) = dr.GetString(3)
             obj(Contador, 4) = dr.GetString(4)
+            obj(Contador, 5) = dr.GetString(5)
             Contador = Contador + 1
 
         End While
@@ -109,12 +110,12 @@ Public Class WebForm4
         Try
             Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
             Dim ObjetoDataSetCliente As New DataSet1TableAdapters.carritoTableAdapter
-            ObjetoAdapador.InsertarCompra(idCodigo, id_user_number, 1, "Default", "Default", "Carrito")
+            ObjetoAdapador.InsertarCompra(idCodigo, id_user_number, 1, "Carrito")
             ResultConsulta(0) = "true"
             ResultConsulta(1) = "Nada"
-            ResultConsulta(2) = res(1)
-            ResultConsulta(3) = res(2)
-            ResultConsulta(4) = res(3)
+            ResultConsulta(2) = res(0)
+            ResultConsulta(3) = res(1)
+            ResultConsulta(4) = res(2)
             ResultConsulta(5) = res(3)
             obj = JsonConvert.SerializeObject(ResultConsulta)
         Catch ex As Exception

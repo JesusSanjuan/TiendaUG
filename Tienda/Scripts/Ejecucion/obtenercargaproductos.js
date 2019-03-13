@@ -27,7 +27,7 @@
 
                     $('#imgmodal').html('<img src="../Scripts/Plantilla/images/correcto.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
                     $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Agregado al carrito</strong>");
-                    $('#texmodal').html("<strong style='vertical - align: middle;'> El produto " + Descripcion + ", se dio ha modificado, exitosamente </strong>");
+                    $('#texmodal').html("<strong style='vertical - align: middle;'> El produto " + Descripcion + " en color: " +Color+", talla: "+Talla+", se ha agregado, exitosamente </strong>");
                 }
                 else {
                     $('#imgmodal').html('<img src="../Scripts/plantilla/images/alerta.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
