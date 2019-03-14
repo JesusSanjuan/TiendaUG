@@ -1,4 +1,11 @@
-﻿function operacion(Vectordeproductos) { 
+﻿function operacion(Vectordeproductos, valorcarrito) {
+    var Valor = JSON.parse(JSON.stringify(valorcarrito));  
+
+    if (Valor !== 0) {    
+        $("#contadorcompras").show();
+        $('#contadorcompras').text(Valor);
+    }
+
     var MatrizProductos = JSON.parse(JSON.stringify(Vectordeproductos));         
     for (var i = 0; i < MatrizProductos.length; i++) { 
                 $("#Productos").append("<div class='col-xl-4 col-md-6 grid-item sale'>"+

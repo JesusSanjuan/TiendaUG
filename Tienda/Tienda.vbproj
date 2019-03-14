@@ -121,10 +121,13 @@
     <Content Include="Scripts\Ejecucion\admin1.js" />
     <Content Include="Scripts\Ejecucion\admin2.js" />
     <Content Include="Scripts\Ejecucion\admin2_actualizacion.js" />
-    <Content Include="Scripts\Ejecucion\cargaproductos.js" />
+    <Content Include="Scripts\Ejecucion\LoadComplete_tiendaug.js" />
+    <Content Include="Scripts\Ejecucion\LoadComplete_carrito.js" />
     <Content Include="Scripts\Ejecucion\cerrarsesion.js" />
     <Content Include="Scripts\Ejecucion\login.js" />
     <Content Include="Scripts\Ejecucion\obtenercargaproductos.js" />
+    <Content Include="Scripts\Ejecucion\LoadComplete_pago.js" />
+    <Content Include="Scripts\Ejecucion\LoadComplete_usuario.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />

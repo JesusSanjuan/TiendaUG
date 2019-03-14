@@ -21,7 +21,7 @@
 <link href="Content/bootstrap.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">
 <script src="Scripts/jquery-3.3.1.js"></script>
-<script src="Scripts/Ejecucion/cargaproductos.js"></script>
+<script src="Scripts/Ejecucion/LoadComplete_tiendaug.js"></script>
 </head>
 <body>
 

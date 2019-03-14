@@ -23,17 +23,30 @@
                 var Talla = valor[4];
                 var Codigo = valor[5];
                 $('#myModal').modal({ show: true });
-                if (resultado1 === "true") {
-
-                    $('#imgmodal').html('<img src="../Scripts/Plantilla/images/correcto.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
-                    $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Agregado al carrito</strong>");
-                    $('#texmodal').html("<strong style='vertical - align: middle;'> El produto " + Descripcion + " en color: " +Color+", talla: "+Talla+", se ha agregado, exitosamente </strong>");
+                switch (resultado1) {
+                    case "true":
+                        $('#imgmodal').html('<img src="../Scripts/Plantilla/images/correcto.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
+                        $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Agregado al carrito</strong>");
+                        $('#texmodal').html("<strong style='vertical - align: middle;'> El produto " + Descripcion + " en color: " + Color + ", talla: " + Talla + ", se ha agregado, exitosamente </strong>");
+                         break;
+                    case "trueRe":
+                        $('#imgmodal').html('<img src="../Scripts/Plantilla/images/correcto.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
+                        $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Agregado al carrito nuevamente</strong>");
+                        $('#texmodal').html("<strong style='vertical - align: middle;'> El produto " + Descripcion + " en color: " + Color + ", talla: " + Talla + ", se ha agregado, exitosamente </strong>");
+                        break;
                 }
-                else {
-                    $('#imgmodal').html('<img src="../Scripts/plantilla/images/alerta.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
-                    $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Error carrito</strong>");
-                    $('#texmodal').html("<strong style='vertical - align: middle;'> El producto no se puede agregar al carrito, intente mas tarde. ->" + resultado2 + " </strong>");
-                }
+                switch (resultado2) {
+                    case "error":
+                        $('#imgmodal').html('<img src="../Scripts/plantilla/images/alerta.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
+                        $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Error carrito</strong>");
+                        $('#texmodal').html("<strong style='vertical - align: middle;'> El producto no se puede agregar al carrito, intente mas tarde. ->" + resultado2 + " </strong>");
+                        break;
+                    case "errorRe":
+                        $('#imgmodal').html('<img src="../Scripts/plantilla/images/alerta.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
+                        $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Error agregando nuevamente al carrito</strong>");
+                        $('#texmodal').html("<strong style='vertical - align: middle;'> El producto no se puede agregar al carrito, intente mas tarde. ->" + resultado2 + " </strong>");
+                        break;
+                }             
             },
             error: function (result) {
                 console.log(result.responseText);
