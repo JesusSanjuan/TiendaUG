@@ -18,19 +18,19 @@
 <link rel="stylesheet" type="text/css" href="Scripts/littlecloset/styles/cart_responsive.css">
 <link href="Content/bootstrap.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">
+<script src="Scripts/jquery-3.3.1.js"></script>
+<script src="Scripts/Ejecucion/LoadComplete_carrito.js"></script>
 </head>
 <body>
-
+<form id="form1" runat="server">
 <!-- Menu -->
 
 <div class="menu">
 
 	<!-- Search -->
 	<div class="menu_search">
-		<form action="#" id="menu_search_form" class="menu_search_form">
 			<input type="text" class="search_input" placeholder="Buscar Articulo" required="required">
 			<button class="menu_search_button"><img src="Scripts/littlecloset/images/search.png" alt=""></button>
-		</form>
 	</div>
 	<!-- Navigation -->
 	<div class="menu_nav">
@@ -84,10 +84,8 @@
 			<div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
 				<!-- Search -->
 				<div class="header_search">
-					<form action="#" id="header_search_form">
 						<input type="text" class="search_input" placeholder="Buscar Articulo" required="required">
 						<button class="header_search_button"><img src="Scripts/littlecloset/images/search.png" alt=""></button>
-					</form>
 				</div>
 				<!-- User -->
 				<div class="cart"><a href="usuario.aspx"><div><img src="Scripts/littlecloset/images/user.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
@@ -95,11 +93,11 @@
 				<div class="user"><a href="carrito.aspx"><div><img class="svg" src="Scripts/littlecloset/images/cart.svg" alt="https://www.flaticon.com/authors/freepik"><div id="contadorcompras" style="display:none;">0</div></div></a></div>
 				<!-- Cart -->
 				<div class="user"><a data-toggle="modal" data-target="#cerrarsesion"><div><img  class="svg" src="Scripts/littlecloset/images/logout.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
-				<!-- Phone -->
+				<!-- Phone 
 				<div class="header_phone d-flex flex-row align-items-center justify-content-start">
 					<div><div><img src="Scripts/littlecloset/images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
 					<div>+52 1 951-254-1254</div>
-				</div>
+				</div>-->
 			</div>
 		</div>
 	</header>
@@ -188,10 +186,8 @@
 							<div class="cart_extra_content cart_extra_coupon">
 								<div class="cart_extra_title">Codigo Promocional</div>
 								<div class="coupon_form_container">
-									<form action="#" id="coupon_form" class="coupon_form">
 										<input type="text" class="coupon_input" required="required">
 										<button class="coupon_button">Aplicar</button>
-									</form>
 								</div>
 								<div class="coupon_text">Phasellus sit amet nunc eros. Sed nec congue tellus. Aenean nulla nisl, volutpat blandit lorem ut.</div>
 								<div class="shipping">
@@ -304,10 +300,8 @@
 							<div class="footer_contact">
 								<div class="footer_title">Mantente en Contacto</div>
 								<div class="newsletter">
-									<form action="#" id="newsletter_form" class="newsletter_form">
 										<input type="email" class="newsletter_input" placeholder="Suscríbete a nuestro boletín" required="required">
 										<button class="newsletter_button">+</button>
-									</form>
 								</div>
 								<div class="footer_social">
 									<div class="footer_title">Social</div>
@@ -365,6 +359,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
     </div>
 </div>
 <!-- Cerrar -->
+</form>
 <script src="Scripts/jquery-3.3.1.min.js"></script>
 <script src="Scripts/popper.js"></script>
 <script src="Scripts/bootstrap.min.js"></script>

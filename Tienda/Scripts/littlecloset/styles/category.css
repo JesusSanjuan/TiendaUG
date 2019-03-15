@@ -384,7 +384,8 @@ section
 .hamburger
 {
 	display: none;
-	margin-left: 25px;
+	margin-left: 20px;
+	margin-right: 20px;
 	cursor: pointer;
 	margin-top: 4px;
 }
