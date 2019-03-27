@@ -18,8 +18,6 @@
 <link rel="stylesheet" type="text/css" href="Scripts/littlecloset/styles/cart_responsive.css">
 <link href="Content/bootstrap.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">
-<script src="Scripts/jquery-3.3.1.js"></script>
-<script src="Scripts/Ejecucion/LoadComplete_carrito.js"></script>
 </head>
 <body>
 
@@ -148,6 +146,7 @@
 							<!-- Cart Items -->
 							<div class="cart_items">
 								<ul class="cart_items_list">
+
 									<!-- Cart Item -->
 									<li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-end justify-content-start">
 										<div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
@@ -163,7 +162,7 @@
 										<div class="product_price product_text"><span>Price: </span>$3.99</div>
 										<div class="product_quantity_container">
 											<div class="product_quantity ml-lg-auto mr-lg-auto text-center">
-												<span class="product_text product_num">10</span>
+												<span class="product_text product_num">1</span>
 												<div class="qty_sub qty_button trans_200 text-center"><span>-</span></div>
 												<div class="qty_add qty_button trans_200 text-center"><span>+</span></div>
 											</div>
