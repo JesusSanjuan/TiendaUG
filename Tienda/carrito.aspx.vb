@@ -71,6 +71,5 @@ Public Class cart
         ResultadoFinal2 = JsonConvert.SerializeObject(sumacarrito)
         Dim script As String = "operacion(" & ResultadoFinal & "," & ResultadoFinal2 & ");"
         ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
-        cerrar()
     End Sub
 End Class
