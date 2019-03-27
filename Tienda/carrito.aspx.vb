@@ -71,47 +71,31 @@ Public Class cart
 
 
         conectar()
-        ' MsgBox("INSERT INTO UG(Cantidad,Descripcion,Precio,Color,Talla,Id_imagen) VALUES('" + Cantidad + "','" + Descrip + "','" + Precio + "','" + Color + "','" + Talla + "','imagen_" + aStr + ".jpg')")
         Dim consultaCan2 As String = "SELECT id_codigo_articulo, Cantidad_comprado FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
         cmd = New SqlCommand(consultaCan2, conn)
         dr = cmd.ExecuteReader()
-        Dim res(1) As Object
 
-        If dr.HasRows Then
-            dr.Read()
-            res(0) = dr.GetValue(0)
-            res(1) = dr.GetValue(1)
-        End If
+        Contador = 0
+        While (dr.Read())
+            Contador = Contador + 1
+        End While
+        Dim res(Contador, 1) As Object
+        Contador = 0
+        While (dr.Read())
+            res(Contador, 0) = dr.GetValue(0)
+            res(Contador, 1) = dr.GetValue(1)
+            Contador = Contador + 1
+        End While
         cerrar()
-        conectar()
-        Dim consulta As String = "SELECT Descripcion, Color, Talla, Precio, Codigo FROM  UG WHERE UG.Id_codigo =" & res(0)
-        'Agregamos la sentencia SQL y la conexion
-        cmd = New SqlCommand(consulta, conn)
-        dr = cmd.ExecuteReader()
-        Dim res2(4) As Object
 
-        If dr.HasRows Then
-            dr.Read()
-            res2(0) = dr.GetString(0)
-            res2(1) = dr.GetString(1)
-            res2(2) = dr.GetString(2)
-            res2(3) = dr.GetValue(3)
-            res2(4) = dr.GetString(4)
-        End If
-        cerrar()
-        Dim ResultadoFinal(6) As Object
-        ResultadoFinal(0) = res2(0)
-        ResultadoFinal(1) = res2(1)
-        ResultadoFinal(2) = res2(2)
-        ResultadoFinal(3) = res2(3)
-        ResultadoFinal(4) = res2(4)
-        ResultadoFinal(5) = res(1)
-        Dim ResultadoFinal3 As Object
-        ResultadoFinal3 = JsonConvert.SerializeObject(ResultadoFinal)
+        ' conectar()
+        MsgBox(res.Length.ToString)
+        MsgBox(res.Rank.ToString)
+        For index As Integer = 1 To 5
+            ' Dim consulta As String = "SELECT Descripcion, Color, Talla, Precio, Codigo FROM  UG WHERE UG.Id_codigo =" & res(0)
+            'Agregamos la sentencia SQL y la conexion
+        Next
 
 
-
-        Dim script As String = "operacion(" & ResultadoFinal3 & "," & ResultadoFinal2 & ");"
-        ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
     End Sub
 End Class
