@@ -71,31 +71,33 @@ Public Class cart
 
 
         conectar()
-        Dim consultaCan2 As String = "SELECT id_codigo_articulo, Cantidad_comprado FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
+        Dim consultaCan2 As String = "SELECT COUNT(id_codigo_articulo) FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
         cmd = New SqlCommand(consultaCan2, conn)
         dr = cmd.ExecuteReader()
+        Dim CantidadCan2 As String
+        dr.Read()
+        CantidadCan2 = dr.GetValue(0)
+        cerrar()
 
+        conectar()
+        Dim consultaCan3 As String = "SELECT id_codigo_articulo, Cantidad_comprado FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
+        cmd = New SqlCommand(consultaCan3, conn)
+        dr = cmd.ExecuteReader()
         Contador = 0
-        While (dr.Read())
-            Contador = Contador + 1
-        End While
-        Dim res(Contador, 1) As Object
-        Contador = 0
-        While (dr.Read())
-            res(Contador, 0) = dr.GetValue(0)
-            res(Contador, 1) = dr.GetValue(1)
+        Dim Res(CantidadCan2 - 1, 1) As Object
+        While (Contador < CantidadCan)
+            dr.Read()
+            Res(Contador, 0) = dr.GetValue(0)
+            Res(Contador, 1) = dr.GetValue(1)
             Contador = Contador + 1
         End While
         cerrar()
 
         ' conectar()
-        MsgBox(res.Length.ToString)
-        MsgBox(res.Rank.ToString)
-        For index As Integer = 1 To 5
-            ' Dim consulta As String = "SELECT Descripcion, Color, Talla, Precio, Codigo FROM  UG WHERE UG.Id_codigo =" & res(0)
-            'Agregamos la sentencia SQL y la conexion
+        For Index As Integer = 0 To (Res.Length / Res.Rank) - 1
+            Dim consulta As String = "SELECT Descripcion, Color, Talla, Precio, Codigo FROM  UG WHERE UG.Id_codigo =" & Res(Index, 0)
+            
         Next
-
 
     End Sub
 End Class
