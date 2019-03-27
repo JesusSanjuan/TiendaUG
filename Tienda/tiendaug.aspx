@@ -97,11 +97,11 @@
 				<div class="user"><a href="carrito.aspx"><div><img class="svg" src="Scripts/littlecloset/images/cart.svg" alt="https://www.flaticon.com/authors/freepik"><div id="contadorcompras" style="display:none;">0</div></div></a></div>
 				<!-- Cart -->
 				<div class="user"><a data-toggle="modal" data-target="#cerrarsesion"><div><img  class="svg" src="Scripts/littlecloset/images/logout.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
-				<!-- Phone -->
+				<!-- Phone 
 				<div class="header_phone d-flex flex-row align-items-center justify-content-start">
 					<div><div><img src="Scripts/littlecloset/images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
 					<div>+52 1 951-254-1254</div>
-				</div>
+				</div>-->
 			</div>
 		</div>
 	</header>

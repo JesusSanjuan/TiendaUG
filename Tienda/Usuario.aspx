@@ -17,9 +17,11 @@
 <link rel="stylesheet" type="text/css" href="Scripts/littlecloset/styles/checkout_responsive.css">
 <link href="Content/bootstrap.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">
+<script src="Scripts/jquery-3.3.1.js"></script>
+<script src="Scripts/Ejecucion/LoadComplete_usuario.js"></script>
 </head>
 <body>
-
+<form id="form1" runat="server">
 <!-- Menu -->
 
 <div class="menu">
@@ -83,10 +85,8 @@
 			<div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
 				<!-- Search -->
 				<div class="header_search">
-					<form action="#" id="header_search_form">
-						<input type="text" class="search_input" placeholder="Search Item" required="required">
+						<input type="text" class="search_input" placeholder="Buscar Articulo" required="required">
 						<button class="header_search_button"><img src="Scripts/littlecloset/images/search.png" alt=""></button>
-					</form>
 				</div>
 				<!-- User -->
 				<div class="cart"><a href="usuario.aspx"><div><img src="Scripts/littlecloset/images/user.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
@@ -94,11 +94,11 @@
 				<div class="user"><a href="carrito.aspx"><div><img class="svg" src="Scripts/littlecloset/images/cart.svg" alt="https://www.flaticon.com/authors/freepik"><div id="contadorcompras" style="display:none;">0</div></div></a></div>
 				<!-- Cart -->
 				<div class="user"><a data-toggle="modal" data-target="#cerrarsesion"><div><img  class="svg" src="Scripts/littlecloset/images/logout.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
-				<!-- Phone -->
+				<!-- Phone 
 				<div class="header_phone d-flex flex-row align-items-center justify-content-start">
 					<div><div><img src="Scripts/littlecloset/images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
 					<div>+52 1 951-254-1254</div>
-				</div>
+				</div>-->
 			</div>
 		</div>
 	</header>
@@ -335,6 +335,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
     </div>
 </div>
 <!-- Cerrar -->
+</form>
 <script src="Scripts/jquery-3.3.1.min.js"></script>
 <script src="Scripts/popper.js"></script>
 <script src="Scripts/bootstrap.min.js"></script>
