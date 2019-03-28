@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Cararrito</title>
+<title>Carrito</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Tienda UG">
@@ -150,7 +150,7 @@
 							<!-- Cart Buttons -->
 							<div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
 								<div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
-									<div class="button button_clear trans_200"><a href="categories.html">Limpiar Carrito de Compras</a></div>
+									<div class="button button_clear trans_200" id="limpiarcompras"><a data-toggle="modal" data-target="#borrar">Limpiar Carrito de Compras</a></div>
 									<div class="button button_continue trans_200"><a href="tiendaug.aspx">Continuar Comprando</a></div>
 								</div>
 							</div>
@@ -172,7 +172,7 @@
 									<ul>
 										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
 											<label class="radio_container">
-												<input type="radio" id="radio_1" name="shipping_radio" class="shipping_radio">
+												<input type="radio" id="radio_1" name="shipping_radio" class="shipping_radio" value="$180.00">
 												<span class="radio_mark"></span>
 												<span class="radio_text">Entrega del Dia Siguiente</span>
 											</label>
@@ -180,7 +180,7 @@
 										</li>
 										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
 											<label class="radio_container">
-												<input type="radio" id="radio_2" name="shipping_radio" class="shipping_radio">
+												<input type="radio" id="radio_2" name="shipping_radio" class="shipping_radio" value="$105.00">
 												<span class="radio_mark"></span>
 												<span class="radio_text">Entrega Estandar</span>
 											</label>
@@ -188,7 +188,7 @@
 										</li>
 										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
 											<label class="radio_container">
-												<input type="radio" id="radio_3" name="shipping_radio" class="shipping_radio" checked>
+												<input type="radio" id="radio_3" name="shipping_radio" class="shipping_radio" value="Gratuito" >
 												<span class="radio_mark"></span>
 												<span class="radio_text">Recoleccion Personal</span>
 											</label>
@@ -202,19 +202,19 @@
 					<div class="col-lg-6 cart_extra_col">
 						<div class="cart_extra cart_extra_2">
 							<div class="cart_extra_content cart_extra_total">
-								<div class="cart_extra_title">Carrito Total</div>
+								<div class="cart_extra_title" >Carrito Total</div>
 								<ul class="cart_extra_total_list">
 									<li class="d-flex flex-row align-items-center justify-content-start">
 										<div class="cart_extra_total_title">Subtotal</div>
-										<div class="cart_extra_total_value ml-auto" id="Subtotal">$29.90</div>
+										<div class="cart_extra_total_value ml-auto" id="Subtotal"></div>
 									</li>
 									<li class="d-flex flex-row align-items-center justify-content-start">
 										<div class="cart_extra_total_title">Compra</div>
-										<div class="cart_extra_total_value ml-auto">Gratuito</div>
+										<div class="cart_extra_total_value ml-auto" id="tipoenvio">Gratuito</div>
 									</li>
 									<li class="d-flex flex-row align-items-center justify-content-start">
 										<div class="cart_extra_total_title">Total</div>
-										<div class="cart_extra_total_value ml-auto">$29.90</div>
+										<div class="cart_extra_total_value ml-auto">-</div>
 									</li>
 								</ul>
 								<div class="checkout_button trans_200"><a href="pago.aspx">Pasar por la Caja</a></div>
@@ -336,6 +336,48 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
     </div>
 </div>
 <!-- Cerrar -->
+<!-- Borrar -->
+<div class="modal fade" id="borrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleBorrar">Borrar</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Cancelar">
+                <span aria-hidden="true">×</span>
+            </button>
+            </div>
+            <div class="modal-body">Realmente desea vaciar su carrito?</div>
+            <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>     
+            <button class="btn btn-primary" id="botonBorrar" type="button" data-dismiss="modal">Borrar</button> 
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Borrar -->    
+<!-- Borrador --> 
+<div class="modal" id="myModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="txtmodatitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+                <div class="col-3" id="imgmodal"></div>
+                <div class="col-9" id="texmodal"></div>                                                                        
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cerrar" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Borrador --> 
 </form>
 <script src="Scripts/jquery-3.3.1.min.js"></script>
 <script src="Scripts/popper.js"></script>
@@ -349,5 +391,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 <script src="Scripts/littlecloset/plugins/parallax-js-master/parallax.min.js"></script>
 <script src="Scripts/littlecloset/js/cart.js"></script>
 <script src="Scripts/Ejecucion/cerrarsesion.js"></script>
+<script src="Scripts/Ejecucion/Complete_carrito.js"></script>
 </body>
 </html>

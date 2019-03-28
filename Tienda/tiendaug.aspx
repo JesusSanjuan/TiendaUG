@@ -338,6 +338,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 <script src="Scripts/littlecloset/plugins/Isotope/fitcolumns.js"></script>
 <script src="Scripts/littlecloset/js/category.js"></script>
 <script src="Scripts/Ejecucion/cerrarsesion.js"></script>
-<script src="Scripts/Ejecucion/obtenercargaproductos.js"></script>
+<script src="Scripts/Ejecucion/Complete_tiendaug.js"></script>
 </body>
 </html>
