@@ -39,8 +39,8 @@ Public Class cart
     Private Sub cart_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
         Dim id_user As String = System.Web.HttpContext.Current.Session("id_user").ToString
         Dim id_user_number As Integer = CType(id_user, Integer)
+
         conectar()
-        ' MsgBox("INSERT INTO UG(Cantidad,Descripcion,Precio,Color,Talla,Id_imagen) VALUES('" + Cantidad + "','" + Descrip + "','" + Precio + "','" + Color + "','" + Talla + "','imagen_" + aStr + ".jpg')")
         Dim consultaCan As String = "SELECT COUNT(Cantidad_comprado) FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number
         cmd = New SqlCommand(consultaCan, conn)
         dr = cmd.ExecuteReader()
@@ -50,10 +50,8 @@ Public Class cart
         cerrar()
 
         conectar()
-        'Se genera el String de la Consulta
         Dim Contador As Integer = 0
         Dim consulta2 As String = "SELECT Cantidad_comprado FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number
-        'Agregamos la sentencia SQL y la conexion
         cmd = New SqlCommand(consulta2, conn)
         dr = cmd.ExecuteReader()
         Dim sumacarrito As Integer = 0
@@ -66,8 +64,6 @@ Public Class cart
             End While
         End If
         cerrar()
-        Dim ResultadoFinal2 As Object
-        ResultadoFinal2 = JsonConvert.SerializeObject(sumacarrito)
 
 
         conectar()
@@ -93,11 +89,27 @@ Public Class cart
         End While
         cerrar()
 
-        ' conectar()
+        Dim res2((Res.Length / Res.Rank) - 1, 6) As Object
         For Index As Integer = 0 To (Res.Length / Res.Rank) - 1
-            Dim consulta As String = "SELECT Descripcion, Color, Talla, Precio, Codigo FROM  UG WHERE UG.Id_codigo =" & Res(Index, 0)
-            
+            conectar()
+            Dim consulta As String = "SELECT Descripcion, Color, Talla, Precio, Codigo, id_imagen FROM  UG WHERE UG.Id_codigo =" & Res(Index, 0)
+            cmd = New SqlCommand(consulta, conn)
+            dr = cmd.ExecuteReader()
+            dr.Read()
+            res2(Index, 0) = dr.GetString(0)
+            res2(Index, 1) = dr.GetString(1)
+            res2(Index, 2) = dr.GetString(2)
+            res2(Index, 3) = dr.GetValue(3)
+            res2(Index, 4) = dr.GetString(4)
+            res2(Index, 5) = dr.GetString(5)
+            res2(Index, 6) = Res(Index, 1)
+            cerrar()
         Next
-
+        Dim ResultadoF As Object
+        Dim ResultadoF2 As Object
+        ResultadoF = JsonConvert.SerializeObject(res2)
+        ResultadoF2 = JsonConvert.SerializeObject(sumacarrito)
+        Dim script As String = "operacion(" & ResultadoF & "," & ResultadoF2 & ");"
+        ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
     End Sub
 End Class
