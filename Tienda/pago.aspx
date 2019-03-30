@@ -76,11 +76,10 @@
 			<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
 			<nav class="main_nav">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li><a href="#">Women</a></li>
-					<li><a href="#">Men</a></li>
-					<li><a href="#">Kids</a></li>
-					<li><a href="#">Home Deco</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="#">Dama</a></li>
+					<li><a href="#">Caballero</a></li>
+					<li><a href="#">Niños</a></li>
+					<li><a href="#">Contacto</a></li>
 				</ul>
 			</nav>
 			<div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
@@ -238,8 +237,8 @@
 										<div class="cart_extra_total_value ml-auto">$29.90</div>
 									</li>
 									<li class="d-flex flex-row align-items-center justify-content-start">
-										<div class="cart_extra_total_title">Shipping</div>
-										<div class="cart_extra_total_value ml-auto">Gratuito</div>
+										<div class="cart_extra_total_title">Envio</div>
+										<div class="cart_extra_total_value ml-auto">-</div>
 									</li>
 									<li class="d-flex flex-row align-items-center justify-content-start">
 										<div class="cart_extra_total_title">Total</div>

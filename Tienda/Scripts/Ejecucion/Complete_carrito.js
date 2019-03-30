@@ -1,15 +1,24 @@
 ﻿$(document).ready(function () {   
     $('#radio_1').on('click', function () {  
-        $('#tipoenvio').text($("#radio_1").val());
-
-        var id_codigo = $("div").data("subtotal");
-        alert(id_codigo.toString());
+        $('#tipoenvio').text($("#radio_1").val());        
+        var total = $("#valorsubtotal").data("subtotal");
+        var envio = $("#envio1").data("envio1");
+        var totalCompra = total + envio;
+        $('#TotalFinal').text("$" + totalCompra);
     });
     $('#radio_2').on('click', function () {
         $('#tipoenvio').text($("#radio_2").val());
+        var total = $("#valorsubtotal").data("subtotal");
+        var envio = $("#envio2").data("envio2");
+        var totalCompra = total + envio;
+        $('#TotalFinal').text("$" + totalCompra);
     });
     $('#radio_3').on('click', function () {
         $('#tipoenvio').text($("#radio_3").val());
+        var total = $("#valorsubtotal").data("subtotal");
+        var envio = $("#envio3").data("envio3");
+        var totalCompra = total + envio;
+        $('#TotalFinal').text("$" + totalCompra);
     });
 
     $("#botonBorrar").click(function () {
@@ -55,6 +64,10 @@
         }).fail(function (data) {
             console.log("Error: " + data);
         });
+    });
+
+    $("#pasaralacaja").click(function () {
+        location.href = "pago.aspx";
     });
 
 }); 

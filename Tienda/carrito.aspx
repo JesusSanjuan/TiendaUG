@@ -176,7 +176,7 @@
 												<span class="radio_mark"></span>
 												<span class="radio_text">Entrega del Dia Siguiente</span>
 											</label>
-											<div class="shipping_price ml-auto">$180.00</div>
+											<div class="shipping_price ml-auto" id="envio1" data-envio1="180">$180.00</div>
 										</li>
 										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
 											<label class="radio_container">
@@ -184,7 +184,7 @@
 												<span class="radio_mark"></span>
 												<span class="radio_text">Entrega Estandar</span>
 											</label>
-											<div class="shipping_price ml-auto">$105.00</div>
+											<div class="shipping_price ml-auto" id="envio2" data-envio2="105">$105.00</div>
 										</li>
 										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
 											<label class="radio_container">
@@ -192,7 +192,7 @@
 												<span class="radio_mark"></span>
 												<span class="radio_text">Recoleccion Personal</span>
 											</label>
-											<div class="shipping_price ml-auto">Gratuito</div>
+											<div class="shipping_price ml-auto" id="envio3" data-envio3="0">Gratuito</div>
 										</li>
 									</ul>
 								</div>
@@ -209,15 +209,15 @@
 										<div class="cart_extra_total_value ml-auto" id="Subtotal"></div>
 									</li>
 									<li class="d-flex flex-row align-items-center justify-content-start">
-										<div class="cart_extra_total_title">Compra</div>
-										<div class="cart_extra_total_value ml-auto" id="tipoenvio">Gratuito</div>
+										<div class="cart_extra_total_title">Envio</div>
+										<div class="cart_extra_total_value ml-auto" id="tipoenvio">-</div>
 									</li>
 									<li class="d-flex flex-row align-items-center justify-content-start">
 										<div class="cart_extra_total_title">Total</div>
-										<div class="cart_extra_total_value ml-auto">-</div>
+										<div class="cart_extra_total_value ml-auto" id="TotalFinal">-</div>
 									</li>
 								</ul>
-								<div class="checkout_button trans_200"><a href="pago.aspx">Pasar por la Caja</a></div>
+								<div class="checkout_button trans_200" id="pasaralacaja" ><a>Pasar por la Caja</a></div>
 							</div>
 						</div>
 					</div>

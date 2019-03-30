@@ -38,6 +38,6 @@
                 "</ul>");
         }
     }
-    $('#Subtotal').append("<div data-subtotal='" + subtotal +"'> $" + subtotal+"</div>");
+    $('#Subtotal').append("<div id='valorsubtotal' value='holamundo' data-subtotal='" + subtotal +"'> $" + subtotal+"</div>");
    // $('#Subtotal').text("$"+subtotal);
 }
