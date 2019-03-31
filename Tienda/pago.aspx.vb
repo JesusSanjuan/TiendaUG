@@ -33,6 +33,7 @@ Public Class checkout
         Catch ex As Exception
             Response.Redirect("index.aspx")
         End Try
+        MsgBox(System.Web.HttpContext.Current.Session("precioTotal").ToString)
     End Sub
 
     Private Sub checkout_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete

@@ -132,4 +132,25 @@ Public Class cart
         End Try
         Return obj
     End Function
+    <WebMethod()>
+    Public Shared Function Alta_envio(ByVal precio As String, ByVal precioTotal As String) As Object
+        Dim obj As String = "NO"
+        System.Web.HttpContext.Current.Session("precioTotal") = precioTotal
+        Dim id_user As String = System.Web.HttpContext.Current.Session("id_user").ToString
+        Dim id_user_number As Integer = CType(id_user, Integer)
+        Dim ResultConsulta(1) As String
+        Try
+            Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
+            Dim ObjetoDataSetCliente As New DataSet1TableAdapters.carritoTableAdapter
+            ObjetoAdapador.ActualizarEnvio(precio, id_user_number)
+            ResultConsulta(0) = "true"
+            ResultConsulta(1) = "ninguno"
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        Catch ex As Exception
+            ResultConsulta(0) = "error"
+            ResultConsulta(1) = ex.ToString
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        End Try
+        Return obj
+    End Function
 End Class
