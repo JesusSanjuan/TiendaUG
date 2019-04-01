@@ -41,7 +41,7 @@ Public Class cart
         Dim id_user_number As Integer = CType(id_user, Integer)
 
         conectar()
-        Dim consultaCan As String = "SELECT COUNT(Cantidad_comprado) FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number
+        Dim consultaCan As String = "SELECT COUNT(Cantidad_comprado) FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
         cmd = New SqlCommand(consultaCan, conn)
         dr = cmd.ExecuteReader()
         Dim CantidadCan As String
@@ -51,7 +51,7 @@ Public Class cart
 
         conectar()
         Dim Contador As Integer = 0
-        Dim consulta2 As String = "SELECT Cantidad_comprado FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number
+        Dim consulta2 As String = "SELECT Cantidad_comprado FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
         cmd = New SqlCommand(consulta2, conn)
         dr = cmd.ExecuteReader()
         Dim sumacarrito As Integer = 0

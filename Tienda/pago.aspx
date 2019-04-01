@@ -249,21 +249,21 @@
 									<ul>
 										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
 											<label class="radio_container">
-												<input type="radio" id="radio_1" name="payment_radio" class="payment_radio">
+												<input type="radio" id="radio_1P" name="payment_radio" class="payment_radio">
 												<span class="radio_mark"></span>
 												<span class="radio_text">Paypal</span>
 											</label>
 										</li>
 										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
 											<label class="radio_container">
-												<input type="radio" id="radio_2" name="payment_radio" class="payment_radio">
+												<input type="radio" id="radio_2P" name="payment_radio" class="payment_radio">
 												<span class="radio_mark"></span>
 												<span class="radio_text">Contra Reembolso</span>
 											</label>
 										</li>
 										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
 											<label class="radio_container">
-												<input type="radio" id="radio_3" name="payment_radio" class="payment_radio" checked>
+												<input type="radio" id="radio_3P" name="payment_radio" class="payment_radio">
 												<span class="radio_mark"></span>
 												<span class="radio_text">Tarjeta de Credito</span>
 											</label>
@@ -273,7 +273,7 @@
 								<div class="cart_text">
 									<p> Comprando en la Tienda UG tiene grandes beneficios.</p>
 								</div>
-								<div class="checkout_button trans_200"><a href="pago.aspx">Realizar Pedido</a></div>
+								<div class="checkout_button trans_200" id="Button_Pedido" style="display: none" > <a>Realizar Pedido</a></div>
 							</div>
 						</div>
 					</div>
@@ -397,6 +397,29 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
     </div>
 </div>
 <!-- Cerrar -->
+<!-- Menus emergentes -->
+<div class="modal" id="myModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="txtmodatitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+                <div class="col-3" id="imgmodal"></div>
+                <div class="col-9" id="texmodal"></div>                                                                        
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cerrar" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Menus emergentes -->
 </form>
 <script src="Scripts/jquery-3.3.1.min.js"></script>
 <script src="Scripts/popper.js"></script>
@@ -410,5 +433,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 <script src="Scripts/littlecloset/plugins/parallax-js-master/parallax.min.js"></script>
 <script src="Scripts/littlecloset/js/checkout.js"></script>
 <script src="Scripts/Ejecucion/cerrarsesion.js"></script>
+<script src="Scripts/Ejecucion/Complete_pago.js"></script>
 </body>
 </html>

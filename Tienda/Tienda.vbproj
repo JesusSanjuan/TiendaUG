@@ -122,6 +122,7 @@
     <Content Include="Scripts\Ejecucion\admin2.js" />
     <Content Include="Scripts\Ejecucion\admin2_actualizacion.js" />
     <Content Include="Scripts\Ejecucion\Complete_carrito.js" />
+    <Content Include="Scripts\Ejecucion\Complete_pago.js" />
     <Content Include="Scripts\Ejecucion\LoadComplete_tiendaug.js" />
     <Content Include="Scripts\Ejecucion\LoadComplete_carrito.js" />
     <Content Include="Scripts\Ejecucion\cerrarsesion.js" />

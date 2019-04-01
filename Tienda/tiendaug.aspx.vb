@@ -83,7 +83,7 @@ Public Class WebForm4
 
         conectar()
         ' MsgBox("INSERT INTO UG(Cantidad,Descripcion,Precio,Color,Talla,Id_imagen) VALUES('" + Cantidad + "','" + Descrip + "','" + Precio + "','" + Color + "','" + Talla + "','imagen_" + aStr + ".jpg')")
-        Dim consultaCan As String = "SELECT COUNT(Cantidad_comprado) FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number
+        Dim consultaCan As String = "SELECT COUNT(Cantidad_comprado) FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
         cmd = New SqlCommand(consultaCan, conn)
         dr = cmd.ExecuteReader()
         Dim CantidadCan As String
@@ -93,7 +93,7 @@ Public Class WebForm4
 
         conectar()
         'Se genera el String de la Consulta
-        Dim consulta2 As String = "SELECT Cantidad_comprado FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number
+        Dim consulta2 As String = "SELECT Cantidad_comprado FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
         'Agregamos la sentencia SQL y la conexion
         cmd = New SqlCommand(consulta2, conn)
         dr = cmd.ExecuteReader()

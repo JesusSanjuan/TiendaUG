@@ -40,7 +40,7 @@ Public Class checkout
         Dim id_user_number As Integer = CType(id_user, Integer)
         conectar()
         ' MsgBox("INSERT INTO UG(Cantidad,Descripcion,Precio,Color,Talla,Id_imagen) VALUES('" + Cantidad + "','" + Descrip + "','" + Precio + "','" + Color + "','" + Talla + "','imagen_" + aStr + ".jpg')")
-        Dim consultaCan As String = "SELECT COUNT(Cantidad_comprado) FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number
+        Dim consultaCan As String = "SELECT COUNT(Cantidad_comprado) FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
         cmd = New SqlCommand(consultaCan, conn)
         dr = cmd.ExecuteReader()
         Dim CantidadCan As String
@@ -52,7 +52,7 @@ Public Class checkout
         'Se genera el String de la Consulta
         Dim Contador As Integer = 0
         Dim ResultadoFinal As Object = 0
-        Dim consulta2 As String = "SELECT Cantidad_comprado FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number
+        Dim consulta2 As String = "SELECT Cantidad_comprado FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
         'Agregamos la sentencia SQL y la conexion
         cmd = New SqlCommand(consulta2, conn)
         dr = cmd.ExecuteReader()
@@ -72,4 +72,24 @@ Public Class checkout
         ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
         cerrar()
     End Sub
+    <WebMethod()>
+    Public Shared Function Pago_Pedido() As Object
+        Dim id_user As String = System.Web.HttpContext.Current.Session("id_user").ToString
+        Dim id_user_number As Integer = CType(id_user, Integer)
+        Dim obj As String = "NO"
+        Dim ResultConsulta(1) As String
+        Try
+            Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
+            Dim ObjetoDataSetCliente As New DataSet1TableAdapters.carritoTableAdapter
+            ObjetoAdapador.ActualizaEstatusCompra("pagado", id_user_number, "carrito")
+            ResultConsulta(0) = "true"
+            ResultConsulta(1) = "ninguno"
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        Catch ex As Exception
+            ResultConsulta(0) = "error"
+            ResultConsulta(1) = ex.ToString
+            obj = JsonConvert.SerializeObject(ResultConsulta)
+        End Try
+        Return obj
+    End Function
 End Class

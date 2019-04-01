@@ -157,71 +157,75 @@
 						</div>
 					</div>
 				</div>
-				<div class="row cart_extra_row">
-					<div class="col-lg-6">
-						<div class="cart_extra cart_extra_1">
-							<div class="cart_extra_content cart_extra_coupon">
-								<div class="cart_extra_title">Codigo Promocional</div>
-								<div class="coupon_form_container">
-										<input type="text" class="coupon_input" required="required">
-										<button class="coupon_button">Aplicar</button>
-								</div>
-								<div class="coupon_text">Phasellus sit amet nunc eros. Sed nec congue tellus. Aenean nulla nisl, volutpat blandit lorem ut.</div>
-								<div class="shipping">
-									<div class="cart_extra_title">Metodo de Compra</div>
-									<ul>
-										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
-											<label class="radio_container">
-												<input type="radio" id="radio_1" name="shipping_radio" class="shipping_radio" value="$180.00">
-												<span class="radio_mark"></span>
-												<span class="radio_text">Entrega del Dia Siguiente</span>
-											</label>
-											<div class="shipping_price ml-auto" id="envio1" data-envio1="180">$180.00</div>
-										</li>
-										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
-											<label class="radio_container">
-												<input type="radio" id="radio_2" name="shipping_radio" class="shipping_radio" value="$105.00">
-												<span class="radio_mark"></span>
-												<span class="radio_text">Entrega Estandar</span>
-											</label>
-											<div class="shipping_price ml-auto" id="envio2" data-envio2="105">$105.00</div>
-										</li>
-										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
-											<label class="radio_container">
-												<input type="radio" id="radio_3" name="shipping_radio" class="shipping_radio" value="Gratuito" >
-												<span class="radio_mark"></span>
-												<span class="radio_text">Recoleccion Personal</span>
-											</label>
-											<div class="shipping_price ml-auto" id="envio3" data-envio3="0">Gratuito</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 cart_extra_col">
-						<div class="cart_extra cart_extra_2">
-							<div class="cart_extra_content cart_extra_total">
-								<div class="cart_extra_title" >Carrito Total</div>
-								<ul class="cart_extra_total_list">
-									<li class="d-flex flex-row align-items-center justify-content-start">
-										<div class="cart_extra_total_title">Subtotal</div>
-										<div class="cart_extra_total_value ml-auto" id="Subtotal"></div>
-									</li>
-									<li class="d-flex flex-row align-items-center justify-content-start">
-										<div class="cart_extra_total_title">Envio</div>
-										<div class="cart_extra_total_value ml-auto" id="tipoenvio">-</div>
-									</li>
-									<li class="d-flex flex-row align-items-center justify-content-start">
-										<div class="cart_extra_total_title">Total</div>
-										<div class="cart_extra_total_value ml-auto" id="TotalFinal">-</div>
-									</li>
-								</ul>
-								<div class="checkout_button trans_200" id="pasaralacaja" ><a>Pasar por la Caja</a></div>
-							</div>
-						</div>
-					</div>
-				</div>
+
+                <div id="con_pedidos">
+				        <div class="row cart_extra_row">
+					        <div class="col-lg-6">
+						        <div class="cart_extra cart_extra_1">
+							        <div class="cart_extra_content cart_extra_coupon">
+								        <div class="cart_extra_title">Codigo Promocional</div>
+								        <div class="coupon_form_container">
+										        <input type="text" class="coupon_input" required="required">
+										        <button class="coupon_button">Aplicar</button>
+								        </div>
+								        <div class="coupon_text">Phasellus sit amet nunc eros. Sed nec congue tellus. Aenean nulla nisl, volutpat blandit lorem ut.</div>
+								        <div class="shipping">
+									        <div class="cart_extra_title">Metodo de Compra</div>
+									        <ul>
+										        <li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+											        <label class="radio_container">
+												        <input type="radio" id="radio_1" name="shipping_radio" class="shipping_radio" value="$180.00">
+												        <span class="radio_mark"></span>
+												        <span class="radio_text">Entrega del Dia Siguiente</span>
+											        </label>
+											        <div class="shipping_price ml-auto" id="envio1" data-envio1="180">$180.00</div>
+										        </li>
+										        <li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+											        <label class="radio_container">
+												        <input type="radio" id="radio_2" name="shipping_radio" class="shipping_radio" value="$105.00">
+												        <span class="radio_mark"></span>
+												        <span class="radio_text">Entrega Estandar</span>
+											        </label>
+											        <div class="shipping_price ml-auto" id="envio2" data-envio2="105">$105.00</div>
+										        </li>
+										        <li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+											        <label class="radio_container">
+												        <input type="radio" id="radio_3" name="shipping_radio" class="shipping_radio" value="Gratuito" >
+												        <span class="radio_mark"></span>
+												        <span class="radio_text">Recoleccion Personal</span>
+											        </label>
+											        <div class="shipping_price ml-auto" id="envio3" data-envio3="0">Gratuito</div>
+										        </li>
+									        </ul>
+								        </div>
+							        </div>
+						        </div>
+					        </div>
+					        <div class="col-lg-6 cart_extra_col">
+						        <div class="cart_extra cart_extra_2">
+							        <div class="cart_extra_content cart_extra_total">
+								        <div class="cart_extra_title" >Carrito Total</div>
+								        <ul class="cart_extra_total_list">
+									        <li class="d-flex flex-row align-items-center justify-content-start">
+										        <div class="cart_extra_total_title">Subtotal</div>
+										        <div class="cart_extra_total_value ml-auto" id="Subtotal"></div>
+									        </li>
+									        <li class="d-flex flex-row align-items-center justify-content-start">
+										        <div class="cart_extra_total_title">Envio</div>
+										        <div class="cart_extra_total_value ml-auto" id="tipoenvio">-</div>
+									        </li>
+									        <li class="d-flex flex-row align-items-center justify-content-start">
+										        <div class="cart_extra_total_title">Total</div>
+										        <div class="cart_extra_total_value ml-auto" id="TotalFinal">-</div>
+									        </li>
+								        </ul>
+								        <div class="checkout_button trans_200" id="pasaralacaja" style="display: none" ><a>Pasar a la Caja</a></div>
+							        </div>
+						        </div>
+					        </div>
+				        </div>
+
+                </div>
 			</div>
 		</div>
 

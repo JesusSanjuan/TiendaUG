@@ -6,6 +6,7 @@
         var envio = $("#envio1").data("envio1");
         totalCompra = total + envio;
         $('#TotalFinal').text("$" + totalCompra);
+        $('#pasaralacaja').show();
     });
     $('#radio_2').on('click', function () {
         $('#tipoenvio').text($("#radio_2").val());
@@ -13,6 +14,7 @@
         var envio = $("#envio2").data("envio2");
         totalCompra = total + envio;
         $('#TotalFinal').text("$" + totalCompra);
+        $('#pasaralacaja').show();
     });
     $('#radio_3').on('click', function () {
         $('#tipoenvio').text($("#radio_3").val());
@@ -20,6 +22,7 @@
         var envio = $("#envio3").data("envio3");
         totalCompra = total + envio;
         $('#TotalFinal').text("$" + totalCompra);
+        $('#pasaralacaja').show();
     });
 
     $("#botonBorrar").click(function () {
