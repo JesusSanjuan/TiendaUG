@@ -133,8 +133,9 @@ Public Class cart
         Return obj
     End Function
     <WebMethod()>
-    Public Shared Function Alta_envio(ByVal precio As String, ByVal precioTotal As String) As Object
+    Public Shared Function Alta_envio(ByVal precio_envio As String, ByVal precioTotal As String) As Object
         Dim obj As String = "NO"
+        System.Web.HttpContext.Current.Session("precio_envio") = precio_envio
         System.Web.HttpContext.Current.Session("precioTotal") = precioTotal
         Dim id_user As String = System.Web.HttpContext.Current.Session("id_user").ToString
         Dim id_user_number As Integer = CType(id_user, Integer)
@@ -142,7 +143,7 @@ Public Class cart
         Try
             Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
             Dim ObjetoDataSetCliente As New DataSet1TableAdapters.carritoTableAdapter
-            ObjetoAdapador.ActualizarEnvio(precio, id_user_number)
+            ObjetoAdapador.ActualizarEnvio(precio_envio, id_user_number)
             ResultConsulta(0) = "true"
             ResultConsulta(1) = "ninguno"
             obj = JsonConvert.SerializeObject(ResultConsulta)

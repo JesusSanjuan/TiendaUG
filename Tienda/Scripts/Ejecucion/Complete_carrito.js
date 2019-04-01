@@ -69,13 +69,13 @@
     $("#pasaralacaja").click(function () {
         var valor_compra = 0;
         if ($("#radio_1").is(':checked')) {
-            valor_compra = 180;
+            valor_compra_envio = 180;
         } 
         if ($("#radio_2").is(':checked')) {
-            valor_compra = 105;
+            valor_compra_envio = 105;
         } 
         if ($("#radio_3").is(':checked')) {
-            valor_compra = 0;
+            valor_compra_envio = 0;
         } 
 
         $.ajax({
@@ -84,7 +84,7 @@
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             async: false,
-            data: JSON.stringify({ precio: valor_compra, precioTotal : totalCompra  }),
+            data: JSON.stringify({ precio_envio: valor_compra_envio, precioTotal : totalCompra  }),
             success: function (result) {
                 var valor = JSON.parse(result.d);
                 var resultado1 = valor[0];

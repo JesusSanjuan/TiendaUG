@@ -33,7 +33,6 @@ Public Class checkout
         Catch ex As Exception
             Response.Redirect("index.aspx")
         End Try
-        MsgBox(System.Web.HttpContext.Current.Session("precioTotal").ToString)
     End Sub
 
     Private Sub checkout_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
@@ -69,7 +68,7 @@ Public Class checkout
         cerrar()
         Dim ResultadoFinal2 As Object
         ResultadoFinal2 = JsonConvert.SerializeObject(sumacarrito)
-        Dim script As String = "operacion(" & ResultadoFinal & "," & ResultadoFinal2 & ");"
+        Dim script As String = "operacion(" & ResultadoFinal & "," & ResultadoFinal2 & ", " & System.Web.HttpContext.Current.Session("precioTotal").ToString & ", " & System.Web.HttpContext.Current.Session("precio_envio").ToString & ");"
         ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
         cerrar()
     End Sub
