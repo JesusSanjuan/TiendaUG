@@ -115,4 +115,7 @@
 
     });
 
+    $("#continuarcompras").click(function () {
+        location.href = "tiendaug.aspx";
+    });
 }); 

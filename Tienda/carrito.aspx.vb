@@ -143,7 +143,7 @@ Public Class cart
         Try
             Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
             Dim ObjetoDataSetCliente As New DataSet1TableAdapters.carritoTableAdapter
-            ObjetoAdapador.ActualizarEnvio(precio_envio, id_user_number)
+            ObjetoAdapador.ActualizarEnvio(precio_envio, id_user_number, "carrito")
             ResultConsulta(0) = "true"
             ResultConsulta(1) = "ninguno"
             obj = JsonConvert.SerializeObject(ResultConsulta)

@@ -121,7 +121,7 @@ Public Class WebForm4
 
         conectar()
         'Se genera el String de la Consulta
-        Dim consulta0 As String = "SELECT Id_compra, Cantidad_comprado FROM  carrito WHERE  carrito.id_codigo_articulo =" & idCodigo & "and carrito.id_usuario=" & id_user
+        Dim consulta0 As String = "SELECT Id_compra, Cantidad_comprado FROM  carrito WHERE  carrito.id_codigo_articulo =" & idCodigo & "and carrito.id_usuario=" & id_user & "and carrito.status_compra = 'carrito'"
         'Agregamos la sentencia SQL y la conexion
         cmd = New SqlCommand(consulta0, conn)
         dr = cmd.ExecuteReader()
@@ -141,7 +141,7 @@ Public Class WebForm4
 
         conectar()
         'Se genera el String de la Consulta
-        Dim consulta As String = "SELECT Descripcion, Color, Talla, Codigo FROM  UG WHERE UG.Id_codigo =" & idCodigo
+        Dim consulta As String = "SELECT Descripcion, Color, Talla, Codigo FROM  UG WHERE UG.Id_codigo =" & idCodigo 
         'Agregamos la sentencia SQL y la conexion
         cmd = New SqlCommand(consulta, conn)
         dr = cmd.ExecuteReader()
@@ -179,7 +179,7 @@ Public Class WebForm4
             Try
                 Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
                 Dim ObjetoDataSetCliente As New DataSet1TableAdapters.carritoTableAdapter
-                ObjetoAdapador.InsertarCompra(idCodigo, id_user_number, 1, "Carrito")
+                ObjetoAdapador.InsertarCompra(idCodigo, id_user_number, 1, "carrito")
                 ResultConsulta(0) = "true"
                 ResultConsulta(1) = "Nada"
                 ResultConsulta(2) = res(0)

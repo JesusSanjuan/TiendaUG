@@ -150,8 +150,8 @@
 							<!-- Cart Buttons -->
 							<div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
 								<div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
-									<div class="button button_clear trans_200" id="limpiarcompras"><a data-toggle="modal" data-target="#borrar">Limpiar Carrito de Compras</a></div>
-									<div class="button button_continue trans_200"><a href="tiendaug.aspx">Continuar Comprando</a></div>
+									<div class="button button_clear trans_200" id="limpiarcompras" style="display: none; cursor:pointer;"><a data-toggle="modal" data-target="#borrar">Limpiar Carrito de Compras</a></div>
+									<div class="button button_continue trans_200" id="continuarcompras" style="cursor:pointer;"><a>Continuar Comprando</a></div>
 								</div>
 							</div>
 						</div>
@@ -219,7 +219,7 @@
 										        <div class="cart_extra_total_value ml-auto" id="TotalFinal">-</div>
 									        </li>
 								        </ul>
-								        <div class="checkout_button trans_200" id="pasaralacaja" style="display: none" ><a>Pasar a la Caja</a></div>
+								        <div class="checkout_button trans_200" id="pasaralacaja" style="display: none; cursor:pointer;" ><a>Pasar a la Caja</a></div>
 							        </div>
 						        </div>
 					        </div>

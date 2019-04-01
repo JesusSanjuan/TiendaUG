@@ -10,7 +10,10 @@
     if (VectorProductos.length == 0) {
         $("#Lista").append(" <br/> <br/> <br/><div class='cart_extra_title' style='display:table-cell;vertical-align:middle;'>Aun no hay productos agregados en el carrito</div> <br/> <br/> <br/>");
         $('#con_pedidos').hide();
+        $('#limpiarcompras').hide();
+
     } else {
+        $('#limpiarcompras').show();
         for (var i = 0; i < VectorProductos.length; i++) {
             var totalporproducto = VectorProductos[i][3] * VectorProductos[i][6];
             subtotal = subtotal + VectorProductos[i][3] * VectorProductos[i][6];

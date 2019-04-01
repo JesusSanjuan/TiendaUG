@@ -13,7 +13,6 @@
     });
 
     $("#Button_Pedido").click(function () {
-        alert("Button");
        $.ajax({
             type: "POST",
            url: "pago.aspx/Pago_Pedido",
