@@ -273,7 +273,7 @@
 								<div class="cart_text">
 									<p> Comprando en la Tienda UG tiene grandes beneficios.</p>
 								</div>
-								<div class="checkout_button trans_200" id="Button_Pedido" style="display: none" > <a>Realizar Pedido</a></div>
+								<div class="checkout_button trans_200" id="Button_Pedido" style="display: none; cursor:pointer;" > <a>Realizar Pedido</a></div>
 							</div>
 						</div>
 					</div>
