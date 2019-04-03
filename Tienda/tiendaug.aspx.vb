@@ -144,27 +144,27 @@ Public Class WebForm4
         End Try
         Return obj
     End Function
-    <WebMethod()>
-    Public Shared Function reactualizar() As Object
-        Dim table As New DataTable
-        Dim ObjetoAdapador As New DataSet1TableAdapters.UGTableAdapter
-        table = ObjetoAdapador.ObtenerProductosGetDataBy
-        Dim Contador As Integer = 0
-        Dim ResultadoFinal As Object
-        Dim obj(table.Rows.Count - 1, 6) As Object
+    '<WebMethod()>
+    'Public Shared Function reactualizar() As Object
+    '    Dim table As New DataTable
+    '    Dim ObjetoAdapador As New DataSet1TableAdapters.UGTableAdapter
+    '    table = ObjetoAdapador.ObtenerProductosGetDataBy
+    '    Dim Contador As Integer = 0
+    '    Dim ResultadoFinal As Object
+    '    Dim obj(table.Rows.Count - 1, 6) As Object
 
-        While (Contador < table.Rows.Count)
-            Dim row As DataRow = table.Rows(Contador)
-            obj(Contador, 0) = row.Item("Id_codigo")
-            obj(Contador, 1) = row.Item("Descripcion")
-            obj(Contador, 2) = row.Item("Precio")
-            obj(Contador, 3) = row.Item("id_imagen")
-            obj(Contador, 4) = row.Item("Color")
-            obj(Contador, 5) = row.Item("Talla")
-            obj(Contador, 6) = row.Item("Cantidad")
-            Contador = Contador + 1
-        End While
-        ResultadoFinal = JsonConvert.SerializeObject(obj)
-        Return ResultadoFinal
-    End Function
+    '    While (Contador < table.Rows.Count)
+    '        Dim row As DataRow = table.Rows(Contador)
+    '        obj(Contador, 0) = row.Item("Id_codigo")
+    '        obj(Contador, 1) = row.Item("Descripcion")
+    '        obj(Contador, 2) = row.Item("Precio")
+    '        obj(Contador, 3) = row.Item("id_imagen")
+    '        obj(Contador, 4) = row.Item("Color")
+    '        obj(Contador, 5) = row.Item("Talla")
+    '        obj(Contador, 6) = row.Item("Cantidad")
+    '        Contador = Contador + 1
+    '    End While
+    '    ResultadoFinal = JsonConvert.SerializeObject(obj)
+    '    Return ResultadoFinal
+    'End Function
 End Class
