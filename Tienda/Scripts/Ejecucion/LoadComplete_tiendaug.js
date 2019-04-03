@@ -18,6 +18,7 @@
                                " <div class='product_name'><a href='#'>"+ MatrizProductos[i][1]+"</a></div>"+
                                         "<div class='product_category'>Color: " + MatrizProductos[i][4] + "</div>" +
                                         "<div class='product_category'>Talla: " + MatrizProductos[i][5] + "</div>" +
+                                        "<div class='product_category'>Disponibles: " + MatrizProductos[i][6] + "</div>" +
                                         "<div class='product_category'>En categoria: <a href='#'> Dama </a></div>"+
                               "  </div>"+
                             "</div>"+

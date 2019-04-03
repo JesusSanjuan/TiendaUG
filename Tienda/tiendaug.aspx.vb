@@ -4,27 +4,6 @@ Imports Newtonsoft.Json
 
 Public Class WebForm4
     Inherits System.Web.UI.Page
-
-
-    Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
-    'Public Shared conn As SqlConnection = New SqlConnection("Data Source=.;Initial Catalog=TiendaUG;User ID=Sa;Password=Jesus1993")
-    Public Shared cmd As SqlCommand
-    Public Shared dr As SqlDataReader
-    Public Shared Function conectar() As SqlConnection
-        Try
-            conn.Open()
-            'MsgBox("Conectado")
-        Catch ex As Exception
-            MsgBox("Error Conexion a base de datos " & ex.ToString)
-        End Try
-        Return conn
-    End Function
-
-    Public Shared Function cerrar() As SqlConnection
-        conn.Close()
-        Return conn
-    End Function
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             If System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Administrador" Then
@@ -46,7 +25,7 @@ Public Class WebForm4
 
         Dim Contador As Integer = 0
         Dim ResultadoFinal As Object
-        Dim obj(table.Rows.Count - 1, 5) As Object
+        Dim obj(table.Rows.Count - 1, 6) As Object
 
         While (Contador < table.Rows.Count)
             Dim row As DataRow = table.Rows(Contador)
@@ -56,6 +35,7 @@ Public Class WebForm4
             obj(Contador, 3) = row.Item("id_imagen")
             obj(Contador, 4) = row.Item("Color")
             obj(Contador, 5) = row.Item("Talla")
+            obj(Contador, 6) = row.Item("Cantidad")
             Contador = Contador + 1
         End While
         ResultadoFinal = JsonConvert.SerializeObject(obj)
@@ -78,7 +58,6 @@ Public Class WebForm4
         ResultadoFinal2 = JsonConvert.SerializeObject(sumacarrito)
         Dim script As String = "operacion(" & ResultadoFinal & "," & ResultadoFinal2 & ");"
         ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
-        cerrar()
 
     End Sub
     <WebMethod()>
@@ -86,56 +65,52 @@ Public Class WebForm4
         Dim id_user As String = System.Web.HttpContext.Current.Session("id_user").ToString
         Dim id_user_number As Integer = CType(id_user, Integer)
 
-        conectar()
-        'Se genera el String de la Consulta
-        Dim consulta0 As String = "SELECT Id_compra, Cantidad_comprado FROM  carrito WHERE  carrito.id_codigo_articulo =" & idCodigo & "and carrito.id_usuario=" & id_user & "and carrito.status_compra = 'carrito'"
-        'Agregamos la sentencia SQL y la conexion
-        cmd = New SqlCommand(consulta0, conn)
-        dr = cmd.ExecuteReader()
-        Dim res0(1) As Object
-        Dim no_agregado_jamas As Boolean = dr.HasRows
-        If dr.HasRows Then
+        Dim table As New DataTable
+        Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
+        table = ObjetoAdapador.CompraAgregada(idCodigo, id_user_number)
 
-            dr.Read()
-            res0(0) = dr.GetValue(0)
-            res0(1) = dr.GetValue(1)
+        Dim res0(1) As Object
+        Dim no_agregado_jamas As Boolean
+        If table.Rows.Count > 0 Then
+            Dim row As DataRow = table.Rows(0)
+            res0(0) = row.Item("Id_compra")
+            res0(1) = row.Item("Cantidad_comprado")
+            no_agregado_jamas = True
+        Else
+            no_agregado_jamas = False
         End If
-        cerrar()
 
 
         Dim obj As String = "NO"
-        Dim ResultConsulta(6) As String
+        Dim ResultConsulta(7) As String
 
-        conectar()
-        'Se genera el String de la Consulta
-        Dim consulta As String = "SELECT Descripcion, Color, Talla, Codigo FROM  UG WHERE UG.Id_codigo =" & idCodigo 
-        'Agregamos la sentencia SQL y la conexion
-        cmd = New SqlCommand(consulta, conn)
-        dr = cmd.ExecuteReader()
-        Dim res(3) As Object
+        Dim table2 As New DataTable
+        Dim ObjetoAdapador2 As New DataSet1TableAdapters.UGTableAdapter
+        table2 = ObjetoAdapador2.ConsultarProducto(idCodigo)
 
-        If dr.HasRows Then
-            dr.Read()
-            res(0) = dr.GetString(0)
-            res(1) = dr.GetString(1)
-            res(2) = dr.GetString(2)
-            res(3) = dr.GetString(3)
-        End If
-        cerrar()
+        Dim res(4) As Object
+        Dim row2 As DataRow = table2.Rows(0)
+        res(0) = row2.Item("Descripcion")
+        res(1) = row2.Item("Color")
+        res(2) = row2.Item("Talla")
+        res(3) = row2.Item("Codigo")
+        res(4) = row2.Item("Cantidad")
+        Dim minuevovalor As Integer
+        minuevovalor = res(4) - 1
 
         If no_agregado_jamas Then
             Try
-                Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
-                Dim ObjetoDataSetCliente As New DataSet1TableAdapters.carritoTableAdapter
+                Dim ObjetoAdapador3 As New DataSet1TableAdapters.carritoTableAdapter
                 Dim intMyInteger As Integer
                 intMyInteger = res0(1) + 1
-                ObjetoAdapador.Actualizar_compra(intMyInteger, res0(0))
+                ObjetoAdapador3.Actualizar_compra(intMyInteger, res0(0))
                 ResultConsulta(0) = "trueRe"
                 ResultConsulta(1) = "Nada"
                 ResultConsulta(2) = res(0)
                 ResultConsulta(3) = res(1)
                 ResultConsulta(4) = res(2)
                 ResultConsulta(5) = res(3)
+                ResultConsulta(6) = minuevovalor
                 obj = JsonConvert.SerializeObject(ResultConsulta)
             Catch ex As Exception
                 ResultConsulta(0) = "errorRe"
@@ -144,15 +119,15 @@ Public Class WebForm4
             End Try
         Else
             Try
-                Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
-                Dim ObjetoDataSetCliente As New DataSet1TableAdapters.carritoTableAdapter
-                ObjetoAdapador.InsertarCompra(idCodigo, id_user_number, 1, "carrito")
+                Dim ObjetoAdapador3 As New DataSet1TableAdapters.carritoTableAdapter
+                ObjetoAdapador3.InsertarCompra(idCodigo, id_user_number, 1)
                 ResultConsulta(0) = "true"
                 ResultConsulta(1) = "Nada"
                 ResultConsulta(2) = res(0)
                 ResultConsulta(3) = res(1)
                 ResultConsulta(4) = res(2)
                 ResultConsulta(5) = res(3)
+                ResultConsulta(6) = minuevovalor
                 obj = JsonConvert.SerializeObject(ResultConsulta)
             Catch ex As Exception
                 ResultConsulta(0) = "error"
@@ -161,6 +136,35 @@ Public Class WebForm4
             End Try
         End If
 
+        Try
+            Dim ObjetoAdapador4 As New DataSet1TableAdapters.UGTableAdapter
+            ObjetoAdapador4.ActualizarCantidadProducto(minuevovalor, idCodigo)
+        Catch ex As Exception
+            MsgBox(ex)
+        End Try
         Return obj
+    End Function
+    <WebMethod()>
+    Public Shared Function reactualizar() As Object
+        Dim table As New DataTable
+        Dim ObjetoAdapador As New DataSet1TableAdapters.UGTableAdapter
+        table = ObjetoAdapador.ObtenerProductosGetDataBy
+        Dim Contador As Integer = 0
+        Dim ResultadoFinal As Object
+        Dim obj(table.Rows.Count - 1, 6) As Object
+
+        While (Contador < table.Rows.Count)
+            Dim row As DataRow = table.Rows(Contador)
+            obj(Contador, 0) = row.Item("Id_codigo")
+            obj(Contador, 1) = row.Item("Descripcion")
+            obj(Contador, 2) = row.Item("Precio")
+            obj(Contador, 3) = row.Item("id_imagen")
+            obj(Contador, 4) = row.Item("Color")
+            obj(Contador, 5) = row.Item("Talla")
+            obj(Contador, 6) = row.Item("Cantidad")
+            Contador = Contador + 1
+        End While
+        ResultadoFinal = JsonConvert.SerializeObject(obj)
+        Return ResultadoFinal
     End Function
 End Class
