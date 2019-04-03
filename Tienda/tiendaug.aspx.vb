@@ -31,7 +31,6 @@ Public Class WebForm4
                 Response.Redirect("tiendaug.aspx")
             ElseIf System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Usuario" Then
 
-
             ElseIf System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "SU" Then
                 Response.Redirect("login.aspx")
             End If
@@ -40,73 +39,41 @@ Public Class WebForm4
         End Try
     End Sub
     Private Sub WebForm4_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
-        conectar()
-        ' MsgBox("INSERT INTO UG(Cantidad,Descripcion,Precio,Color,Talla,Id_imagen) VALUES('" + Cantidad + "','" + Descrip + "','" + Precio + "','" + Color + "','" + Talla + "','imagen_" + aStr + ".jpg')")
-        Dim consulta0 As String = "SELECT COUNT(*) FROM  UG"
-        cmd = New SqlCommand(consulta0, conn)
-        dr = cmd.ExecuteReader()
-        Dim Cantidad As String
-        If dr.HasRows Then
-            dr.Read()
-            Cantidad = dr.GetValue(0)
-        End If
-        cerrar()
 
-        conectar()
-        'Se genera el String de la Consulta
-        Dim consulta As String = "SELECT Id_codigo,  Descripcion, Precio, id_imagen, Color, Talla FROM  UG"
-        'Agregamos la sentencia SQL y la conexion
-        cmd = New SqlCommand(consulta, conn)
-        dr = cmd.ExecuteReader()
+        Dim table As New DataTable
+        Dim ObjetoAdapador As New DataSet1TableAdapters.UGTableAdapter
+        table = ObjetoAdapador.ObtenerProductosGetDataBy
 
         Dim Contador As Integer = 0
         Dim ResultadoFinal As Object
-        Dim obj(Cantidad - 1, 5) As Object
-        Dim Valor As String = dr.HasRows.ToString()
+        Dim obj(table.Rows.Count - 1, 5) As Object
 
-        While (Contador < Cantidad)
-            dr.Read()
-            obj(Contador, 0) = dr.GetValue(0)
-            obj(Contador, 1) = dr.GetString(1)
-            obj(Contador, 2) = dr.GetValue(2)
-            obj(Contador, 3) = dr.GetString(3)
-            obj(Contador, 4) = dr.GetString(4)
-            obj(Contador, 5) = dr.GetString(5)
+        While (Contador < table.Rows.Count)
+            Dim row As DataRow = table.Rows(Contador)
+            obj(Contador, 0) = row.Item("Id_codigo")
+            obj(Contador, 1) = row.Item("Descripcion")
+            obj(Contador, 2) = row.Item("Precio")
+            obj(Contador, 3) = row.Item("id_imagen")
+            obj(Contador, 4) = row.Item("Color")
+            obj(Contador, 5) = row.Item("Talla")
             Contador = Contador + 1
-
         End While
-        cerrar()
-
         ResultadoFinal = JsonConvert.SerializeObject(obj)
+
         Dim id_user As String = System.Web.HttpContext.Current.Session("id_user").ToString
         Dim id_user_number As Integer = CType(id_user, Integer)
 
-        conectar()
-        ' MsgBox("INSERT INTO UG(Cantidad,Descripcion,Precio,Color,Talla,Id_imagen) VALUES('" + Cantidad + "','" + Descrip + "','" + Precio + "','" + Color + "','" + Talla + "','imagen_" + aStr + ".jpg')")
-        Dim consultaCan As String = "SELECT COUNT(Cantidad_comprado) FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
-        cmd = New SqlCommand(consultaCan, conn)
-        dr = cmd.ExecuteReader()
-        Dim CantidadCan As String
-        dr.Read()
-        CantidadCan = dr.GetValue(0)
-        cerrar()
-
-        conectar()
-        'Se genera el String de la Consulta
-        Dim consulta2 As String = "SELECT Cantidad_comprado FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
-        'Agregamos la sentencia SQL y la conexion
-        cmd = New SqlCommand(consulta2, conn)
-        dr = cmd.ExecuteReader()
+        Dim table2 As New DataTable
+        Dim ObjetoAdapador2 As New DataSet1TableAdapters.carritoTableAdapter
+        table2 = ObjetoAdapador2.CantidadCompradoGetDataBy(id_user_number)
         Dim sumacarrito As Integer = 0
-        If dr.HasRows Then
-            Contador = 0
-            While (Contador < CantidadCan)
-                dr.Read()
-                sumacarrito = sumacarrito + dr.GetValue(0)
-                Contador = Contador + 1
-            End While
-        End If
-        cerrar()
+        Contador = 0
+        While (Contador < table2.Rows.Count)
+            Dim row As DataRow = table2.Rows(Contador)
+            sumacarrito = sumacarrito + row.Item("Cantidad_comprado")
+            Contador = Contador + 1
+        End While
+
         Dim ResultadoFinal2 As Object
         ResultadoFinal2 = JsonConvert.SerializeObject(sumacarrito)
         Dim script As String = "operacion(" & ResultadoFinal & "," & ResultadoFinal2 & ");"

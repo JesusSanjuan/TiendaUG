@@ -1,4 +1,4 @@
-﻿function operacion(Vectordeproductos, valorcarrito, precio_total, precio_envio) {
+﻿function operacion(valorcarrito, precio_total, precio_envio) {
     var Valor = JSON.parse(JSON.stringify(valorcarrito));
     var subtotal = precio_total - precio_envio;
     $('#Subtotal').text("$" + subtotal);
