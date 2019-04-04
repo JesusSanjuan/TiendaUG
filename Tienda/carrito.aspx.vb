@@ -5,25 +5,6 @@ Imports Newtonsoft.Json
 Public Class cart
     Inherits System.Web.UI.Page
 
-    Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
-    'Public Shared conn As SqlConnection = New SqlConnection("Data Source=.;Initial Catalog=TiendaUG;User ID=Sa;Password=Jesus1993")
-    Public Shared cmd As SqlCommand
-    Public Shared dr As SqlDataReader
-    Public Shared Function conectar() As SqlConnection
-        Try
-            conn.Open()
-            'MsgBox("Conectado")
-        Catch ex As Exception
-            MsgBox("Error Conexion a base de datos " & ex.ToString)
-        End Try
-        Return conn
-    End Function
-
-    Public Shared Function cerrar() As SqlConnection
-        conn.Close()
-        Return conn
-    End Function
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             If System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Administrador" Then
@@ -40,70 +21,45 @@ Public Class cart
         Dim id_user As String = System.Web.HttpContext.Current.Session("id_user").ToString
         Dim id_user_number As Integer = CType(id_user, Integer)
 
-        conectar()
-        Dim consultaCan As String = "SELECT COUNT(Cantidad_comprado) FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
-        cmd = New SqlCommand(consultaCan, conn)
-        dr = cmd.ExecuteReader()
-        Dim CantidadCan As String
-        dr.Read()
-        CantidadCan = dr.GetValue(0)
-        cerrar()
-
-        conectar()
         Dim Contador As Integer = 0
-        Dim consulta2 As String = "SELECT Cantidad_comprado FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
-        cmd = New SqlCommand(consulta2, conn)
-        dr = cmd.ExecuteReader()
+        Dim table1 As New DataTable
+        Dim ObjetoAdapador1 As New DataSet1TableAdapters.carritoTableAdapter
+        table1 = ObjetoAdapador1.CantidadCompradoGetDataBy(id_user_number)
         Dim sumacarrito As Integer = 0
-        If dr.HasRows Then
-            Contador = 0
-            While (Contador < CantidadCan)
-                dr.Read()
-                sumacarrito = sumacarrito + dr.GetValue(0)
-                Contador = Contador + 1
-            End While
-        End If
-        cerrar()
-
-
-        conectar()
-        Dim consultaCan2 As String = "SELECT COUNT(id_codigo_articulo) FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
-        cmd = New SqlCommand(consultaCan2, conn)
-        dr = cmd.ExecuteReader()
-        Dim CantidadCan2 As String
-        dr.Read()
-        CantidadCan2 = dr.GetValue(0)
-        cerrar()
-
-        conectar()
-        Dim consultaCan3 As String = "SELECT id_codigo_articulo, Cantidad_comprado FROM  carrito WHERE  carrito.Id_usuario =" & id_user_number & "and carrito.status_compra = 'carrito'"
-        cmd = New SqlCommand(consultaCan3, conn)
-        dr = cmd.ExecuteReader()
         Contador = 0
-        Dim Res(CantidadCan2 - 1, 1) As Object
-        While (Contador < CantidadCan)
-            dr.Read()
-            Res(Contador, 0) = dr.GetValue(0)
-            Res(Contador, 1) = dr.GetValue(1)
+        While (Contador < table1.Rows.Count)
+            Dim row As DataRow = table1.Rows(Contador)
+            sumacarrito = sumacarrito + row.Item("Cantidad_comprado")
             Contador = Contador + 1
         End While
-        cerrar()
+
+        Dim table2 As New DataTable
+        Dim ObjetoAdapador2 As New DataSet1TableAdapters.carritoTableAdapter
+        table2 = ObjetoAdapador2.SelecObtenerArticuloUsuario(id_user_number)
+
+        Dim Contador2 As Integer = 0
+        Dim Res(table2.Rows.Count - 1, 1) As Object
+        While (Contador2 < table2.Rows.Count)
+            Dim row As DataRow = table2.Rows(Contador2)
+            Res(Contador2, 0) = row.Item("id_codigo_articulo")
+            Res(Contador2, 1) = row.Item("Cantidad_comprado")
+            Contador2 = Contador2 + 1
+        End While
 
         Dim res2((Res.Length / Res.Rank) - 1, 6) As Object
         For Index As Integer = 0 To (Res.Length / Res.Rank) - 1
-            conectar()
-            Dim consulta As String = "SELECT Descripcion, Color, Talla, Precio, Codigo, id_imagen FROM  UG WHERE UG.Id_codigo =" & Res(Index, 0)
-            cmd = New SqlCommand(consulta, conn)
-            dr = cmd.ExecuteReader()
-            dr.Read()
-            res2(Index, 0) = dr.GetString(0)
-            res2(Index, 1) = dr.GetString(1)
-            res2(Index, 2) = dr.GetString(2)
-            res2(Index, 3) = dr.GetValue(3)
-            res2(Index, 4) = dr.GetString(4)
-            res2(Index, 5) = dr.GetString(5)
+
+            Dim table3 As New DataTable
+            Dim ObjetoAdapador3 As New DataSet1TableAdapters.UGTableAdapter
+            table3 = ObjetoAdapador3.Obtener_carac_producto_de_usuario(Res(Index, 0))
+            Dim row As DataRow = table3.Rows(0)
+            res2(Index, 0) = row.Item("Descripcion")
+            res2(Index, 1) = row.Item("Color")
+            res2(Index, 2) = row.Item("Talla")
+            res2(Index, 3) = row.Item("Precio")
+            res2(Index, 4) = row.Item("Codigo")
+            res2(Index, 5) = row.Item("id_imagen")
             res2(Index, 6) = Res(Index, 1)
-            cerrar()
         Next
         Dim ResultadoF As Object
         Dim ResultadoF2 As Object

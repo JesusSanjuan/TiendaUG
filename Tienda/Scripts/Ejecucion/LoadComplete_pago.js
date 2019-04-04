@@ -5,7 +5,7 @@
     if (precio_envio === 0) {
         $('#Envio').text("Gratuito");
     } else {
-        $('#Envio').text(precio_envio);
+        $('#Envio').text("$"+precio_envio);
     }
    
     $('#Total').text("$"+precio_total);

@@ -4,28 +4,8 @@ Imports Newtonsoft.Json
 
 Public Class WebForm1
     Inherits System.Web.UI.Page
-    Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
-    'Public Shared conn As SqlConnection = New SqlConnection("Data Source=.;Initial Catalog=TiendaUG;User ID=Sa;Password=Jesus1993")
-    Public Shared cmd As SqlCommand
-    Public Shared dr As SqlDataReader
-    Public Shared Function conectar() As SqlConnection
-        Try
-            conn.Open()
-            'MsgBox("Conectado")
-        Catch ex As Exception
-            MsgBox("Error Conexion a base de datos" & ex.ToString)
-        End Try
-        Return conn
-    End Function
-
-    Public Shared Function cerrar() As SqlConnection
-        conn.Close()
-        Return conn
-    End Function
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        ' Dim script As String = "AnoActual();"
-        ' ScriptManager.RegisterStartupScript(Page, GetType(Page), "anioactual", script, True)
         Try
             If System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Usuario" Then
                 Response.Redirect("Admin1.aspx")
@@ -39,26 +19,18 @@ Public Class WebForm1
 
     <WebMethod()>
     Public Shared Function altaproducto(ByVal Cantidad As String, ByVal Codig As String, ByVal Descrip As String, ByVal Precio As String, ByVal Color As String, ByVal Talla As String) As Object
-        conectar()
+
         Dim obj As String = "SU"
         Dim ResultConsulta(1) As String
-        Dim consulta As String = "INSERT INTO UG(Cantidad,Codigo,Descripcion,Precio,Color,Talla,Id_imagen) VALUES('" + Cantidad + "','" + Codig + "','" + Descrip + "','" + Precio + "','" + Color + "','" + Talla + "','imagen_" + Codig + ".jpg')"
-        'Agregamos la sentencia SQL y la conexion
-        cmd = New SqlCommand(consulta, conn)
-        'Establecemos una variable auxiliar  para determinar si la consulta se ejecuta bien o no
-        Dim i As Integer = cmd.ExecuteNonQuery()
-        'compara si la consulta fue hecha bien si esta es mayor que 1
-
-        If i > 0 Then
-            'Si la consulta es correcta manda este mensaje
+        Try
+            Dim ObjetoAdapador As New DataSet1TableAdapters.UGTableAdapter
+            ObjetoAdapador.InsertarProductoNuevo(Cantidad, Codig, Descrip, Precio, Color, Talla, Codig + ".jpg")
             ResultConsulta(0) = "true"
             obj = JsonConvert.SerializeObject(ResultConsulta)
-        Else
-            'si la consulta es incorrecta manda el siguiente mensaje
+        Catch ex As Exception
             ResultConsulta(0) = "false"
             obj = JsonConvert.SerializeObject(ResultConsulta)
-        End If
-        cerrar()
+        End Try
         Return obj
     End Function
     <WebMethod()>

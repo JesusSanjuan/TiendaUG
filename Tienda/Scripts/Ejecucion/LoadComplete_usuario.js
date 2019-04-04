@@ -1,4 +1,4 @@
-﻿function operacion(Vectordeproductos, valorcarrito) {
+﻿function operacion(valorcarrito) {
     var Valor = JSON.parse(JSON.stringify(valorcarrito));
 
     if (Valor !== 0) {

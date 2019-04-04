@@ -1,7 +1,5 @@
 ﻿$(document).ready(function () {
     $('.product_cart').on('click', function () {  
-        alert("Hola");
-
         $("#contadorcompras").show();
         var numerocompraanterior = $("#contadorcompras").text();
         var valor = parseInt(numerocompraanterior) + 1;
@@ -51,7 +49,14 @@
                         $('#texmodal').html("<strong style='vertical - align: middle;'> El producto no se puede agregar al carrito, intente mas tarde. ->" + resultado2 + " </strong>");
                         break;
                 }  
-                location.reload();
+                $('#cerrar').click(function () {
+                    location.reload();
+                });
+                $("#myModal").on('hide.bs.modal', function () {
+                    location.reload();
+                });
+
+               
              /*   var xhr = null;
                 xhr =  $.ajax({
                                 type: "POST",
