@@ -88,15 +88,15 @@ Public Class cart
         End While
         '/////////////////////////////////////////////////////////
 
-
-
+        'Dim ObjetoAdapador2 As New DataSet1TableAdapters.carritoTableAdapter
+        'ObjetoAdapador2.Borrar(id_user)
+        'Aqui continua
 
 
         Dim ResultConsulta(1) As String
         Try
-            Dim ObjetoAdapador2 As New DataSet1TableAdapters.carritoTableAdapter
-            Dim ObjetoDataSetCliente As New DataSet1TableAdapters.carritoTableAdapter
-            ObjetoAdapador2.Borrar(id_user, "Carrito")
+            Dim ObjetoAdapador3 As New DataSet1TableAdapters.carritoTableAdapter
+            ObjetoAdapador3.Borrar(id_user)
             ResultConsulta(0) = "true"
             ResultConsulta(1) = "ninguno"
             obj = JsonConvert.SerializeObject(ResultConsulta)
