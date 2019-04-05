@@ -73,11 +73,37 @@ Public Class cart
         Dim obj As String = "NO"
         Dim id_user As String = System.Web.HttpContext.Current.Session("id_user").ToString
         Dim id_user_number As Integer = CType(id_user, Integer)
+        /////////////////////////////////////////////////////
+        Dim table As New DataTable
+        Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
+        table = ObjetoAdapador.SelecObtenerArticuloUsuario(id_user_number)
+        Dim Contador2 As Integer = 0
+        Dim Res(table.Rows.Count - 1, 2) As Object
+        While (Contador2 < table.Rows.Count)
+            Dim row As DataRow = table.Rows(Contador2)
+            Res(Contador2, 0) = row.Item("id_codigo_articulo")
+            Res(Contador2, 1) = row.Item("Cantidad_comprado")
+
+            Dim table2 As New DataTable
+            Dim ObjetoAdapado2 As New DataSet1TableAdapters.UGTableAdapter
+            table2 = ObjetoAdapado2.ConsultarProducto(Res(Contador2, 0))
+            Dim row2 As DataRow = table2.Rows(0)
+            Res(Contador2, 2) = row2.Item("Cantidad")
+
+            Contador2 = Contador2 + 1
+
+        End While
+        /////////////////////////////////////////////////////////
+
+
+
+
+
         Dim ResultConsulta(1) As String
         Try
-            Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
+            Dim ObjetoAdapador2 As New DataSet1TableAdapters.carritoTableAdapter
             Dim ObjetoDataSetCliente As New DataSet1TableAdapters.carritoTableAdapter
-            ObjetoAdapador.Borrar(id_user, "Carrito")
+            ObjetoAdapador2.Borrar(id_user, "Carrito")
             ResultConsulta(0) = "true"
             ResultConsulta(1) = "ninguno"
             obj = JsonConvert.SerializeObject(ResultConsulta)
