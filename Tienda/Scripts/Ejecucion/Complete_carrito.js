@@ -5,7 +5,7 @@
         var total = $("#valorsubtotal").data("subtotal");
         var envio = $("#envio1").data("envio1");
         totalCompra = total + envio;
-        $('#TotalFinal').text("$" + totalCompra);
+        $('#TotalFinal').text("$" + totalCompra + ".00");
         $('#pasaralacaja').show();
     });
     $('#radio_2').on('click', function () {
@@ -13,7 +13,7 @@
         var total = $("#valorsubtotal").data("subtotal");
         var envio = $("#envio2").data("envio2");
         totalCompra = total + envio;
-        $('#TotalFinal').text("$" + totalCompra);
+        $('#TotalFinal').text("$" + totalCompra+".00");
         $('#pasaralacaja').show();
     });
     $('#radio_3').on('click', function () {
@@ -21,7 +21,7 @@
         var total = $("#valorsubtotal").data("subtotal");
         var envio = $("#envio3").data("envio3");
         totalCompra = total + envio;
-        $('#TotalFinal').text("$" + totalCompra);
+        $('#TotalFinal').text("$" + totalCompra + ".00");
         $('#pasaralacaja').show();
     });
 

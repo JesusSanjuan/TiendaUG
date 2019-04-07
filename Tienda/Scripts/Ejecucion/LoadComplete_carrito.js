@@ -42,6 +42,5 @@
                 "</ul>");
         }
     }
-    $('#Subtotal').append("<div id='valorsubtotal' value='holamundo' data-subtotal='" + subtotal +"'> $" + subtotal+"</div>");
-   // $('#Subtotal').text("$"+subtotal);
+    $('#Subtotal').append("<div id='valorsubtotal' data-subtotal='" + subtotal +"'> $" + subtotal+".00</div>");
 }
