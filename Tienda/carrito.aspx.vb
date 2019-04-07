@@ -78,20 +78,13 @@ Public Class cart
         Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
         table = ObjetoAdapador.ConsultaCarritoStock(id_user_number)
         Dim Contador2 As Integer = 0
-        Dim Res(table.Rows.Count - 1, 1) As Object
         While (Contador2 < table.Rows.Count)
             Dim row As DataRow = table.Rows(Contador2)
-            Res(Contador2, 0) = row.Item("codigo_articulo")
-            Res(Contador2, 1) = row.Item("ActualizacionStock")
+            Dim ObjetoAdapador2 As New DataSet1TableAdapters.UGTableAdapter
+            ObjetoAdapador2.ActualizarCantidadProducto(row.Item("ActualizacionStock"), row.Item("codigo_articulo"))
             Contador2 = Contador2 + 1
 
         End While
-        '/////////////////////////////////////////////////////////
-
-        'Dim ObjetoAdapador2 As New DataSet1TableAdapters.carritoTableAdapter
-        'ObjetoAdapador2.Borrar(id_user)
-        'Aqui continua
-
 
         Dim ResultConsulta(1) As String
         Try

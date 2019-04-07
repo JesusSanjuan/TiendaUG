@@ -797,7 +797,7 @@ section
 .cart_bar
 {
 	width: 100%;
-	padding-bottom: 28px;
+	padding-bottom: 1px;
 	border-bottom: solid 1px #ededed;
 }
 .cart_bar_list

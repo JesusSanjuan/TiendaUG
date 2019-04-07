@@ -95,6 +95,8 @@
 				<div class="cart"><a href="usuario.aspx"><div><img src="Scripts/littlecloset/images/user.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
 				<!-- Cart -->
 				<div class="user"><a href="carrito.aspx"><div><img class="svg" src="Scripts/littlecloset/images/cart.svg" alt="https://www.flaticon.com/authors/freepik"><div id="contadorcompras" style="display:none;">0</div></div></a></div>
+                <!-- Cart -->
+                <div class="cart"><a href="pedidos.aspx"><div><img src="Scripts/littlecloset/images/shipping-fast-solid.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
 				<!-- Cart -->
 				<div class="user"><a data-toggle="modal" data-target="#cerrarsesion"><div><img  class="svg" src="Scripts/littlecloset/images/logout.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
 				<!-- Phone 

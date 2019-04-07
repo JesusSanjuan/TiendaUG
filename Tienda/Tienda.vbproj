@@ -106,6 +106,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="pedidos.aspx" />
     <Content Include="carrito.aspx" />
     <Content Include="pago.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -121,8 +122,10 @@
     <Content Include="Scripts\Ejecucion\admin1.js" />
     <Content Include="Scripts\Ejecucion\admin2.js" />
     <Content Include="Scripts\Ejecucion\admin2_actualizacion.js" />
+    <Content Include="Scripts\Ejecucion\Complete_pedido.js" />
     <Content Include="Scripts\Ejecucion\Complete_carrito.js" />
     <Content Include="Scripts\Ejecucion\Complete_pago.js" />
+    <Content Include="Scripts\Ejecucion\LoadComplete_pedido.js" />
     <Content Include="Scripts\Ejecucion\LoadComplete_tiendaug.js" />
     <Content Include="Scripts\Ejecucion\LoadComplete_carrito.js" />
     <Content Include="Scripts\Ejecucion\cerrarsesion.js" />
@@ -183,6 +186,7 @@
     <Content Include="Scripts\littlecloset\images\product_9.jpg" />
     <Content Include="Scripts\littlecloset\images\product_image_1.jpg" />
     <Content Include="Scripts\littlecloset\images\search.png" />
+    <Content Include="Scripts\littlecloset\images\shipping-fast-solid.svg" />
     <Content Include="Scripts\littlecloset\images\user.svg" />
     <Content Include="Scripts\littlecloset\images\view_1.png" />
     <Content Include="Scripts\littlecloset\images\view_2.png" />
@@ -289,6 +293,13 @@
     <Content Include="Admin2.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pedidos.aspx.designer.vb">
+      <DependentUpon>pedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pedidos.aspx.vb">
+      <DependentUpon>pedidos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="carrito.aspx.designer.vb">
       <DependentUpon>carrito.aspx</DependentUpon>
     </Compile>
