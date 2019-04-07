@@ -132,9 +132,11 @@
 						<div class="">
                             <div class="row" style="padding-bottom:20px">                              
                               <div class="col-sm-5"> </div> 
-                              <div class="col-sm-5"></div>
+                              <div class="col-sm-4"></div>
                               <div class="col-sm-1 cart_extra_title">Pedido: </div>
-                              <div class="col-sm-1">CP12345</div>
+                              <div class="col-sm-1" id="Num_Pedido">CP????????</div>
+                              <div class="col-sm-1"> </div>
+
                             </div>
                             <div class="row" style="padding-bottom:50px">
                             </div>

@@ -65,7 +65,13 @@ Public Class cart
         Dim ResultadoF2 As Object
         ResultadoF = JsonConvert.SerializeObject(res2)
         ResultadoF2 = JsonConvert.SerializeObject(sumacarrito)
-        Dim script As String = "operacion(" & ResultadoF & "," & ResultadoF2 & ");"
+
+
+        Dim TestDateTime As Date = Date.Now
+        Dim TestStr As String
+        TestStr = Format(TestDateTime, "yyMMddHH")
+        System.Web.HttpContext.Current.Session("numero_pedido") = "CP" & TestStr
+        Dim script As String = "operacion(" & ResultadoF & "," & ResultadoF2 & "," & TestStr & ");"
         ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
     End Sub
     <WebMethod()>
@@ -73,7 +79,6 @@ Public Class cart
         Dim obj As String = "NO"
         Dim id_user As String = System.Web.HttpContext.Current.Session("id_user").ToString
         Dim id_user_number As Integer = CType(id_user, Integer)
-        '/////////////////////////////////////////////////////
         Dim table As New DataTable
         Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
         table = ObjetoAdapador.ConsultaCarritoStock(id_user_number)

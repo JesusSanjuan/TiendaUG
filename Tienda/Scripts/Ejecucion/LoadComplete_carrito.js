@@ -1,6 +1,6 @@
-﻿function operacion(Vectordeproductos, valorcarrito) {
-    var Valor = JSON.parse(JSON.stringify(valorcarrito));
-    
+﻿function operacion(Vectordeproductos, valorcarrito, numpedido) {
+    var Valor = JSON.parse(JSON.stringify(valorcarrito));   
+    $('#Num_Pedido').text("CP"+numpedido);
     if (Valor !== 0) {
         $("#contadorcompras").show();
         $('#contadorcompras').text(Valor);

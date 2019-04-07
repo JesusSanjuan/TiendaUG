@@ -3,6 +3,8 @@ Imports System.Web.Services
 Imports Newtonsoft.Json
 Public Class checkout
     Inherits System.Web.UI.Page
+
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             If System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Administrador" Then
@@ -42,10 +44,16 @@ Public Class checkout
         Dim id_user As String = System.Web.HttpContext.Current.Session("id_user").ToString
         Dim id_user_number As Integer = CType(id_user, Integer)
         Dim obj As String = "NO"
+
+        Dim TestDateTime As Date = Date.Now
+        Dim TestStr As String
+        TestStr = Format(TestDateTime, "yyyy-MM-dd HH:mm:ss")
+        Dim Num_pedido As String = System.Web.HttpContext.Current.Session(“numero_pedido”).ToString()
+
         Dim ResultConsulta(1) As String
         Try
             Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
-            ObjetoAdapador.ActualizaEstatusCompra("pagado", id_user_number, "carrito")
+            ObjetoAdapador.ActualizaEstatusCompra("pagado", TestStr, Num_pedido, id_user_number)
             ResultConsulta(0) = "true"
             ResultConsulta(1) = "ninguno"
             obj = JsonConvert.SerializeObject(ResultConsulta)
