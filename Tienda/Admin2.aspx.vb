@@ -6,25 +6,6 @@ Public Class WebForm2
     Inherits System.Web.UI.Page
     Dim ids As String
 
-    Public Shared conn As SqlConnection = New SqlConnection("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog = TiendaUG;")
-    'Public Shared conn As SqlConnection = New SqlConnection("Data Source=.;Initial Catalog=TiendaUG;User ID=Sa;Password=Jesus1993")
-    Public Shared cmd As SqlCommand
-    Public Shared dr As SqlDataReader
-    Public Shared Function conectar() As SqlConnection
-        Try
-            conn.Open()
-            'MsgBox("Conectado")
-        Catch ex As Exception
-            MsgBox("Error Conexion a base de datos" & ex.ToString)
-        End Try
-        Return conn
-    End Function
-
-    Public Shared Function cerrar() As SqlConnection
-        conn.Close()
-        Return conn
-    End Function
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             If System.Web.HttpContext.Current.Session(“tipo_user”).ToString() = "Usuario" Then
@@ -40,36 +21,28 @@ Public Class WebForm2
     Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridView1.SelectedIndexChanged
         ids = GridView1.SelectedValue
         idenPrinc.Text = ids
-
-        conectar()
-        ' MsgBox("INSERT INTO UG(Cantidad,Descripcion,Precio,Color,Talla,Id_imagen) VALUES('" + Cantidad + "','" + Descrip + "','" + Precio + "','" + Color + "','" + Talla + "','imagen_" + aStr + ".jpg')")
         Dim idNum As Integer = CType(idenPrinc.Text, Integer)
-        'Se genera el String de la Consulta
-        Dim consulta As String = "SELECT Id_codigo, Cantidad, Descripcion, Precio, Color, Talla, id_imagen, Codigo FROM  UG WHERE Id_codigo =@idStaff"
-        'Agregamos la sentencia SQL y la conexion
-        cmd = New SqlCommand(consulta, conn)
-        cmd.CommandType = CommandType.Text
-        cmd.Parameters.Add("@idStaff", SqlDbType.Int)
-        cmd.Parameters("@idStaff").Value = idNum
-        dr = cmd.ExecuteReader()
+
+        Dim table As New DataTable
+        Dim ObjetoAdapador As New DataSet1TableAdapters.UGTableAdapter
+        table = ObjetoAdapador.ConsultaTotalAdmin(idNum)
 
         Dim Color As String
         Dim Talla As String
         Dim Direccion As String
-        If dr.HasRows Then
-            dr.Read()
-            Codigo.Text = dr.GetSqlString(7)
-            Descripcion.Text = dr.GetSqlString(2)
-            Prec.Text = dr.GetDouble(3)
-            Cant.Text = dr.GetSqlString(1)
 
-            Color = dr.GetSqlString(4)
-            Talla = dr.GetSqlString(5)
-            Direccion = dr.GetSqlString(6)
-            Dim script As String = "operacion('" & Color & "','" & Talla & "','" & Direccion & "');"
-            ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
-        End If
-        cerrar()
+        Dim Contador As Integer = 0
+        Dim row As DataRow = table.Rows(0)
+        Codigo.Text = row.Item("Id_codigo")
+        Descripcion.Text = row.Item("Descripcion")
+        Prec.Text = row.Item("Precio")
+        Cant.Text = row.Item("Cantidad")
+        Color = row.Item("Color")
+        Talla = row.Item("Talla")
+        Direccion = row.Item("id_imagen")
+        Dim script As String = "operacion('" & Color & "','" & Talla & "','" & Direccion & "');"
+        ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
+
     End Sub
     <WebMethod()>
     Public Shared Function modificar(ByVal Cantidad As String, ByVal Codig As String, ByVal Descript As String, ByVal Precio As String, ByVal Color As String, ByVal Talla As String, ByVal idProductos As String) As Object
