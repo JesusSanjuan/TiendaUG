@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Admin2.aspx.vb" Inherits="Tienda.WebForm2" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Admin3.aspx.vb" Inherits="Tienda.Admin3" %>
 
 <!DOCTYPE html>
 
@@ -80,126 +80,87 @@
 					Tienda UG
 				</span>
                 <span class="contact100-form-title">
-					Consulta, Modificacion y eliminacion de los productos
+					Consulta y procesamiento de pedido
 				</span>
-                <div class="wrap-input100 validate-input bg1">
+                <div class="wrap-input100 validate-input bg1" >
 					<span class="label-input100"> Consulta de informacion</span>                        
-                             <asp:GridView ID="GridView1" CssClass="alt table table-bordered"  runat="server" AutoGenerateColumns="False" DataKeyNames="Id_codigo" DataSourceID="SqlDataSource1" AlternatingRowStyle-CssClass="alt">
+                             <asp:GridView ID="GridView1" CssClass="alt table table-bordered"  runat="server" AutoGenerateColumns="False" DataKeyNames="Numero_Pedido" DataSourceID="SqlDataSource1" AlternatingRowStyle-CssClass="alt">
 <AlternatingRowStyle ></AlternatingRowStyle> 
                                     <Columns>
-                                        <asp:CommandField    ShowSelectButton="True"/>
-                                        <asp:BoundField DataField="Id_codigo" HeaderText="Id_codigo" InsertVisible="False" ReadOnly="True" SortExpression="Id_codigo" />
-                                        <asp:BoundField DataField="Codigo" HeaderText="Codigo" SortExpression="Codigo" />
-                                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />
-                                        <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
-                                        <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
-                                        <asp:BoundField DataField="Color" HeaderText="Color" SortExpression="Color" />
-                                        <asp:BoundField DataField="Talla" HeaderText="Talla" SortExpression="Talla" />
+                                        <asp:CommandField ShowSelectButton="True" />
+                                        <asp:BoundField DataField="Estado_Compra" HeaderText="Estado_Compra" SortExpression="Estado_Compra" />
+                                        <asp:BoundField DataField="Numero_Pedido" HeaderText="Numero_Pedido" SortExpression="Numero_Pedido" />
+                                        <asp:BoundField DataField="Nombre_del_Cliente" HeaderText="Nombre_del_Cliente" SortExpression="Nombre_del_Cliente" />
+                                        <asp:BoundField DataField="Fecha_del_Pedido" HeaderText="Fecha_del_Pedido" SortExpression="Fecha_del_Pedido" />
+                                        <asp:BoundField DataField="Precio_del_Envio" HeaderText="Precio_del_Envio" SortExpression="Precio_del_Envio" />
                                     </Columns>
                           </asp:GridView>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TiendaUGConnectionString %>" SelectCommand="SELECT * FROM [UG]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TiendaUGConnectionString %>" SelectCommand="SELECT  DISTINCT T1.status_compra As Estado_Compra, T1.num_pedido As Numero_Pedido, T2.Nombre As Nombre_del_Cliente, T1.fechapedido As Fecha_del_Pedido, T1.Precio_envio As Precio_del_Envio   FROM   carrito AS T1 INNER JOIN Users AS T2 ON T1.id_usuario = T2.Id_usuario WHERE (T1.id_usuario =1) AND (T1.status_compra = 'pagado')"></asp:SqlDataSource>
         
                 </div>
 
                 <span class="contact100-form-title">
-					Informacion cargada
+					Informacion  del pedido seleccionado
 				</span>
                 
                  <div class="wrap-input100 bg1 rs1-wrap-input100">
-					<span class="label-input100">ID </span>
-				   <asp:TextBox ID="idenPrinc" class="input100" type="text"  disabled="disabled"   style="cursor: none;" runat="server"></asp:TextBox>
+					<span class="label-input100">ID Pedido</span>
+				   <asp:TextBox ID="idenPrinc" class="input100" type="text" disabled="disabled" style="cursor: none;" runat="server"></asp:TextBox>
                </div>
-                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Ingrese el codigo">
-					<span class="label-input100">Codigo *</span>
-				   <asp:TextBox ID="Codigo" class="input100" type="text"  placeholder="Ingrese el codigo"  style="cursor: pointer;"  runat="server"></asp:TextBox>
+                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" >
+					<span class="label-input100">Estado de compra </span>
+				   <asp:TextBox ID="Estado_compra" class="input100" type="text" disabled="disabled" style="cursor: none;"  runat="server"></asp:TextBox>
                </div>
-                <div class="wrap-input100 validate-input bg1" data-validate="Porfavor ingrese la descripcion del producto">
-					<span class="label-input100"> DESCRIPCION DEL PRODUCTO*</span>
-                    <asp:TextBox ID="Descripcion" class="input100" type="text"  placeholder="Describa el producto... " style="cursor: pointer;" runat="server"></asp:TextBox>
-				</div>
-                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Por favor ingrese el precio del producto">
-					    <span class="label-input100">Precio *</span>
-				            <asp:TextBox ID="Prec" class="input100" type="text"  placeholder="Ingrese el precio del producto " style="cursor: pointer;" runat="server"></asp:TextBox>
-                </div>
-                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Por favor ingrese la cantidad de producto">
-					<span class="label-input100">Cantidad *</span>
-				    <asp:TextBox ID="Cant" class="input100" type="text"  placeholder="Ingrese la cantidad de producto " style="cursor: pointer;" runat="server"></asp:TextBox>
-                </div>
-                <div class="wrap-input100 bg1 rs1-wrap-input100">
-					<span class="label-input100">Color *</span>
-					    <div>
-                            <asp:DropDownList ID="Col"  class="js-select2" runat="server">
-                                <asp:ListItem Enabled="true" Text="Seleccione el color del producto" Value="0"></asp:ListItem>
-                                <asp:ListItem Text="Azul" Value="Azul"></asp:ListItem>
-                                <asp:ListItem Text="Rojo" Value="Rojo"></asp:ListItem>
-                                <asp:ListItem Text="Amarillo" Value="Amarillo"></asp:ListItem>
-                            </asp:DropDownList>
-						    <div class="dropDownSelect2"></div>
-					    </div>
-				</div>
-                             
-
-                <div class="w-full dis-block js-show-service">
-					<div class="wrap-contact100-form-radio">
-						<span class="label-input100">De que talla es el producto?</span>
-
-						<div class="contact100-form-radio m-t-15">
-							<input class="input-radio100" id="radio1" type="radio" name="type-product" value="chica" runat="server">
-							<label class="label-radio100" for="radio1">
-								Chica
-							</label> 
-						</div>
-
-						<div class="contact100-form-radio">
-							<input class="input-radio100" id="radio2" type="radio" name="type-product" value="mediana" runat="server">
-							<label class="label-radio100" for="radio2">
-								Mediana
-							</label>
-						</div>
-
-						<div class="contact100-form-radio">
-							<input class="input-radio100" id="radio3" type="radio" name="type-product" value="grande" runat="server">
-							<label class="label-radio100" for="radio3">
-								Grande
-							</label>
-						</div>
-                        <div class="contact100-form-radio">
-							<input class="input-radio100" id="radio4" type="radio" name="type-product" value="extragrande" runat="server">
-							<label class="label-radio100" for="radio4">
-								Extra-Grande
-							</label>
-						</div>
-					</div>
-				</div>
                 <div class="wrap-input100 validate-input bg1" >
-					<span class="label-input100">Imagen Actual</span>
-                   <center>
-                        <div class="login100-pic js-tilt" data-tilt>
-					            <img id="mi_imagen" src="Scripts/Plantilla/images/img-01.png" alt="IMG">
-				        </div>
-                   </center>
-				</div>    
-                <div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
-                    <span class="label-input100">Nueva Imagen 0</span>
-	                    <input type="file" name="filepond" multiple data-max-file-size="3MB" data-max-files="2" required>
+					<span class="label-input100"> Nombre del cliente</span>
+                    <asp:TextBox ID="Nombre_cliente" class="input100" type="text" disabled="disabled" style="cursor: none;" runat="server"></asp:TextBox>
 				</div>
-                <div class="wrap-input100 validate-input bg1" data-validate = "Direccion de la imagen">
-					<span class="label-input100">Nueva Imagen</span>
-                    <asp:FileUpload ID="FileUpload1" class="input100" runat="server" />
-				</div>
+                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100">
+					    <span class="label-input100">Fecha del pedido</span>
+				            <asp:TextBox ID="Fecha_pedido" class="input100" type="text" disabled="disabled" style="cursor: none;" runat="server"></asp:TextBox>
+                </div>
+                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100">
+					<span class="label-input100">Cantidad de productos</span>
+				    <asp:TextBox ID="Cantidad_prod" class="input100" type="text" disabled="disabled" style="cursor: none;"  runat="server"></asp:TextBox>
+                </div>
 
+                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100">
+					<span class="label-input100">Tipo de envio</span>
+				    <asp:TextBox ID="Tipo_envio" class="input100" type="text" disabled="disabled" style="cursor: none;"  runat="server"></asp:TextBox>
+                </div>
+                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100">
+					<span class="label-input100">Precio de envio</span>
+				    <asp:TextBox ID="Precio_envio" class="input100" type="text" disabled="disabled" style="cursor: none;"  runat="server"></asp:TextBox>
+                </div>
+
+                <div class="wrap-input100 validate-input bg1" >					
+
+                    <span class="label-input100"> Informacion detallada del pedido</span>                        
+                             <asp:GridView ID="GridView2" CssClass="alt table table-bordered"  runat="server" AutoGenerateColumns="False" DataKeyNames="Numero_Pedido" DataSourceID="SqlDataSource1" AlternatingRowStyle-CssClass="alt">
+<AlternatingRowStyle ></AlternatingRowStyle> 
+                                    <Columns>
+                                        <asp:BoundField DataField="Estado_Compra" HeaderText="Estado_Compra" SortExpression="Estado_Compra" />
+                                        <asp:BoundField DataField="Numero_Pedido" HeaderText="Numero_Pedido" SortExpression="Numero_Pedido" />
+                                        <asp:BoundField DataField="Nombre_del_Cliente" HeaderText="Nombre_del_Cliente" SortExpression="Nombre_del_Cliente" />
+                                        <asp:BoundField DataField="Fecha_del_Pedido" HeaderText="Fecha_del_Pedido" SortExpression="Fecha_del_Pedido" />
+                                        <asp:BoundField DataField="Precio_del_Envio" HeaderText="Precio_del_Envio" SortExpression="Precio_del_Envio" />
+                                    </Columns>
+                          </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TiendaUGConnectionString %>" SelectCommand="SELECT  DISTINCT T1.status_compra As Estado_Compra, T1.num_pedido As Numero_Pedido, T2.Nombre As Nombre_del_Cliente, T1.fechapedido As Fecha_del_Pedido, T1.Precio_envio As Precio_del_Envio   FROM   carrito AS T1 INNER JOIN Users AS T2 ON T1.id_usuario = T2.Id_usuario WHERE (T1.id_usuario =1) AND (T1.status_compra = 'pagado')"></asp:SqlDataSource>
+        
+               </div>
                 <div class="container-contact100-form-btn" >
-					<button ID="Mod" class="contact100-form-btn" runat="server" >
+					<button ID="envio_pedido" class="contact100-form-btn" runat="server" >
 						<span>
-							Modificar
+							Confirmar envio de pedido
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 						</span>
 					</button>
 				</div>
                 <div class="container-contact100-form-btn" >
-					<button ID="Borrar" class="contact100-form-btn" runat="server" >
+					<button ID="Borrar_pedido" class="contact100-form-btn" runat="server" >
 						<span>
-							Borrar
+							Cancelar pedido
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 						</span>
 					</button>

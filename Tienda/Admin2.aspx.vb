@@ -40,6 +40,9 @@ Public Class WebForm2
         Color = row.Item("Color")
         Talla = row.Item("Talla")
         Direccion = row.Item("id_imagen")
+
+
+
         Dim script As String = "operacion('" & Color & "','" & Talla & "','" & Direccion & "');"
         ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
 

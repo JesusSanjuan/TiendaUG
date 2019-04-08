@@ -55,7 +55,10 @@
                             <a class="nav-link" href="Admin1.aspx">Alta</a>
                     </li> 
                     <li class="nav-item">
-                            <a class="nav-link" href="Admin2.aspx">Consulta..</a>
+                            <a class="nav-link" href="Admin2.aspx">Consulta</a>
+                    </li> 
+                    <li class="nav-item">
+                            <a class="nav-link" href="Admin3.aspx">Pedidos</a>
                     </li> 
                 </ul> 
                <ul class="navbar-nav ml-auto"> 
@@ -83,12 +86,12 @@
 
 				<div class="wrap-input100 validate-input bg1" data-validate="Porfavor ingrese la descripcion del producto">
 					<span class="label-input100"> DESCRIPCION DEL PRODUCTO*</span>
-                    <asp:TextBox ID="Descripcion" class="input100" type="text"  placeholder="Describa el producto... " runat="server"></asp:TextBox>
+                    <asp:TextBox ID="Descripcion" class="input100" type="text"  placeholder="Describa el producto..." style="cursor: pointer;" runat="server"></asp:TextBox>
 				</div>
 
 				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Por favor ingrese la cantidad de producto">
 					<span class="label-input100">Cantidad *</span>
-				    <asp:TextBox ID="Cant" class="input100" type="text"  placeholder="Ingrese la cantidad de producto " runat="server"></asp:TextBox>
+				    <asp:TextBox ID="Cant" class="input100" type="text"  placeholder="Ingrese la cantidad de producto" style="cursor: pointer;" runat="server"></asp:TextBox>
                 </div>
 
 				<div class="wrap-input100 bg1 validate-input rs1-wrap-input100" data-validate = "Seleccione el color">
@@ -106,12 +109,12 @@
 
 			     <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Por favor ingrese el precio del producto">
 					    <span class="label-input100">Precio *</span>
-				            <asp:TextBox ID="Lacantidad" class="input100" type="text"  placeholder="Ingrese el precio del producto " runat="server"></asp:TextBox>
+				            <asp:TextBox ID="Lacantidad" class="input100" type="text"  placeholder="Ingrese el precio del producto" style="cursor: pointer;" runat="server"></asp:TextBox>
                 </div>
 
                 <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Por favor ingrese el codigo">
 					<span class="label-input100">Codigo *</span>
-				   <asp:TextBox ID="Codigo" class="input100" type="text"  placeholder="Ingrese el codigo " runat="server"></asp:TextBox>
+				   <asp:TextBox ID="Codigo" class="input100" type="text"  placeholder="Ingrese el codigo" style="cursor: pointer;" runat="server"></asp:TextBox>
                </div>
 
 				<div class="w-full dis-block js-show-service">

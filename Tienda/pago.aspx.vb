@@ -35,7 +35,10 @@ Public Class checkout
 
         Dim ResultadoFinal As Object
         ResultadoFinal = JsonConvert.SerializeObject(sumacarrito)
-        Dim script As String = "operacion(" & ResultadoFinal & ", " & System.Web.HttpContext.Current.Session("precioTotal").ToString & ", " & System.Web.HttpContext.Current.Session("precio_envio").ToString & ");"
+
+        Dim NumePedido As String = JsonConvert.SerializeObject(System.Web.HttpContext.Current.Session(“numero_pedido”).ToString())
+
+        Dim script As String = "operacion(" & ResultadoFinal & ", " & System.Web.HttpContext.Current.Session("precioTotal").ToString & ", " & System.Web.HttpContext.Current.Session("precio_envio").ToString & "," & NumePedido & ");"
         ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
 
     End Sub

@@ -231,6 +231,10 @@
 							<div class="cart_extra_content cart_extra_total">
 								<div class="checkout_title">Total</div>
 								<ul class="cart_extra_total_list">
+                                    <li class="d-flex flex-row align-items-center justify-content-start">
+										<div class="cart_extra_total_title">Pedido</div>
+										<div class="cart_extra_total_value ml-auto" id="NumeroPedido">-</div>
+									</li>
 									<li class="d-flex flex-row align-items-center justify-content-start">
 										<div class="cart_extra_total_title">Subtotal</div>
 										<div class="cart_extra_total_value ml-auto" id="Subtotal">-</div>
