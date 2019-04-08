@@ -122,6 +122,8 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Ejecucion\admin1.js" />
     <Content Include="Scripts\Ejecucion\admin2.js" />
+    <Content Include="Scripts\Ejecucion\Complete_admin3a.js" />
+    <Content Include="Scripts\Ejecucion\Complete_admin3.js" />
     <Content Include="Scripts\Ejecucion\admin2_actualizacion.js" />
     <Content Include="Scripts\Ejecucion\Complete_pedido.js" />
     <Content Include="Scripts\Ejecucion\Complete_carrito.js" />

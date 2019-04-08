@@ -34,7 +34,7 @@
     <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
 
     <script src="Scripts/jquery-3.3.1.min.js"></script>
-    <script src="Scripts/Ejecucion/admin2_actualizacion.js"></script>
+    <script src="Scripts/Ejecucion/Complete_admin3a.js"></script>
 <!--===============================================================================================-->
 </head>
 <body>
@@ -133,21 +133,24 @@
 				    <asp:TextBox ID="Precio_envio" class="input100" type="text" disabled="disabled" style="cursor: none;"  runat="server"></asp:TextBox>
                 </div>
 
-                <div class="wrap-input100 validate-input bg1" >					
-
+                <div class="wrap-input100 validate-input bg1" >		
                     <span class="label-input100"> Informacion detallada del pedido</span>                        
-                             <asp:GridView ID="GridView2" CssClass="alt table table-bordered"  runat="server" AutoGenerateColumns="False" DataKeyNames="Numero_Pedido" DataSourceID="SqlDataSource1" AlternatingRowStyle-CssClass="alt">
-<AlternatingRowStyle ></AlternatingRowStyle> 
-                                    <Columns>
-                                        <asp:BoundField DataField="Estado_Compra" HeaderText="Estado_Compra" SortExpression="Estado_Compra" />
-                                        <asp:BoundField DataField="Numero_Pedido" HeaderText="Numero_Pedido" SortExpression="Numero_Pedido" />
-                                        <asp:BoundField DataField="Nombre_del_Cliente" HeaderText="Nombre_del_Cliente" SortExpression="Nombre_del_Cliente" />
-                                        <asp:BoundField DataField="Fecha_del_Pedido" HeaderText="Fecha_del_Pedido" SortExpression="Fecha_del_Pedido" />
-                                        <asp:BoundField DataField="Precio_del_Envio" HeaderText="Precio_del_Envio" SortExpression="Precio_del_Envio" />
-                                    </Columns>
-                          </asp:GridView>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TiendaUGConnectionString %>" SelectCommand="SELECT  DISTINCT T1.status_compra As Estado_Compra, T1.num_pedido As Numero_Pedido, T2.Nombre As Nombre_del_Cliente, T1.fechapedido As Fecha_del_Pedido, T1.Precio_envio As Precio_del_Envio   FROM   carrito AS T1 INNER JOIN Users AS T2 ON T1.id_usuario = T2.Id_usuario WHERE (T1.id_usuario =1) AND (T1.status_compra = 'pagado')"></asp:SqlDataSource>
-        
+                          <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                    <th scope="col">Numero</th>
+                                    <th scope="col">Descripcion</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Talla</th>
+                                    <th scope="col">Color</th>
+                                    <th scope="col">Codigo</th>
+                                    <th scope="col">Cantidad compradas</th>
+                                    <th scope="col">Imagen</th>
+                                </tr>
+                              </thead>
+                              <tbody id="Articulosconsulta">  
+                              </tbody>
+                          </table>  
                </div>
                 <div class="container-contact100-form-btn" >
 					<button ID="envio_pedido" class="contact100-form-btn" runat="server" >
@@ -243,7 +246,7 @@
     <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
     <script src="Scripts/Folepond/filepond.js"></script>
 
-    <script src="Scripts/Ejecucion/admin2.js"></script>
+    <script src="Scripts/Ejecucion/Complete_admin3.js"></script>
     <script src="Scripts/Ejecucion/cerrarsesion.js"></script>
 <!--===============================================================================================-->
 <!-- Global site tag (gtag.js) - Google Analytics -->

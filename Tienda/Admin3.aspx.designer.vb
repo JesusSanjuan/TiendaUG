@@ -104,24 +104,6 @@ Partial Public Class Admin3
     Protected WithEvents Precio_envio As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control GridView2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents GridView2 As Global.System.Web.UI.WebControls.GridView
-    
-    '''<summary>
-    '''Control SqlDataSource2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents SqlDataSource2 As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
     '''Control envio_pedido.
     '''</summary>
     '''<remarks>
