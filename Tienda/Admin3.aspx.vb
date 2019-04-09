@@ -68,24 +68,10 @@ Public Class Admin3
     <WebMethod()>
     Public Shared Function Actualizar_Pedido(ByVal numpedido As String) As Object
         Dim obj As String = "NO"
-        Dim id_user As String = System.Web.HttpContext.Current.Session("id_user").ToString
-        Dim id_user_number As Integer = CType(id_user, Integer)
-        Dim table As New DataTable
-        Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
-        table = ObjetoAdapador.ConsultaCarritoStock(id_user_number)
-        Dim Contador2 As Integer = 0
-        While (Contador2 < table.Rows.Count)
-            Dim row As DataRow = table.Rows(Contador2)
-            Dim ObjetoAdapador2 As New DataSet1TableAdapters.UGTableAdapter
-            ObjetoAdapador2.ActualizarCantidadProducto(row.Item("ActualizacionStock"), row.Item("codigo_articulo"))
-            Contador2 = Contador2 + 1
-
-        End While
-
         Dim ResultConsulta(1) As String
         Try
             Dim ObjetoAdapador3 As New DataSet1TableAdapters.carritoTableAdapter
-            ObjetoAdapador3.Borrar(id_user)
+            ObjetoAdapador3.ActulizarEstatusAdmin("Enviado", numpedido)
             ResultConsulta(0) = "true"
             ResultConsulta(1) = "ninguno"
             obj = JsonConvert.SerializeObject(ResultConsulta)

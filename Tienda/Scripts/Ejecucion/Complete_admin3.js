@@ -24,8 +24,8 @@
                             if (resultado1 == "true") {
 
                                 $('#imgmodal').html('<img src="../Scripts/Plantilla/images/correcto.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
-                                $('#txtmodatitle').html("<strong style='vertical - align: middle;'> Borrado exitoso</strong>");
-                                $('#texmodal').html("<strong style='vertical - align: middle;'> Se ha vaciado tu carrito, exitosamente </strong>");
+                                $('#txtmodatitle').html("<strong style='vertical - align: middle;'> Cambio de status</strong>");
+                                $('#texmodal').html("<strong style='vertical - align: middle;'> El pedido se ha notificado exitosamente como ENVIADO</strong>");
 
                                 $('#cerrar').click(function () {
                                     location.href = "carrito.aspx";
@@ -37,8 +37,8 @@
                             }
                             else {
                                 $('#imgmodal').html('<img src="../Scripts/plantilla/images/alerta.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
-                                $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Error al borrar </strong>");
-                                $('#texmodal').html("<strong style='vertical - align: middle;'> El producto no se pudo borrar, intente nuevamente, error ->" + resultado2 + " </strong>");
+                                $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Error de status </strong>");
+                                $('#texmodal').html("<strong style='vertical - align: middle;'> El pedido no se a podico cambiar de status, intente nuevamente, error ->" + resultado2 + " </strong>");
                             }
                         },
                         error: function (result) {

@@ -84,7 +84,7 @@
 				</span>
                 <div class="wrap-input100 validate-input bg1" >
 					<span class="label-input100"> Consulta de informacion</span>                        
-                             <asp:GridView ID="GridView1" CssClass="alt table table-bordered"  runat="server" AutoGenerateColumns="False" DataKeyNames="Numero_Pedido" DataSourceID="SqlDataSource1" AlternatingRowStyle-CssClass="alt">
+                             <asp:GridView ID="GridView1" CssClass="alt table table-bordered"  runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="Numero_Pedido" AlternatingRowStyle-CssClass="alt">
 <AlternatingRowStyle ></AlternatingRowStyle> 
                                     <Columns>
                                         <asp:CommandField ShowSelectButton="True" />
@@ -95,10 +95,10 @@
                                         <asp:BoundField DataField="Precio_del_Envio" HeaderText="Precio_del_Envio" SortExpression="Precio_del_Envio" />
                                     </Columns>
                           </asp:GridView>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TiendaUGConnectionString %>" SelectCommand="SELECT  DISTINCT T1.status_compra As Estado_Compra, T1.num_pedido As Numero_Pedido, T2.Nombre As Nombre_del_Cliente, T1.fechapedido As Fecha_del_Pedido, T1.Precio_envio As Precio_del_Envio   FROM   carrito AS T1 INNER JOIN Users AS T2 ON T1.id_usuario = T2.Id_usuario WHERE (T1.id_usuario =1) AND (T1.status_compra = 'pagado')"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TiendaUGConnectionString %>" SelectCommand="SELECT DISTINCT T1.status_compra AS Estado_Compra, T1.num_pedido AS Numero_Pedido, CONCAT(T2.Nombre,' ', T2.APP,' ', T2.APM)  AS Nombre_del_Cliente, T1.fechapedido AS Fecha_del_Pedido, T1.Precio_envio AS Precio_del_Envio FROM carrito AS T1 INNER JOIN Users AS T2 ON T1.id_usuario = T2.Id_usuario WHERE (T1.status_compra = 'pagado')">
+                    </asp:SqlDataSource>
         
                 </div>
-
                 <span class="contact100-form-title">
 					Informacion  del pedido seleccionado
 				</span>
