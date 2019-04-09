@@ -132,26 +132,27 @@
 					<span class="label-input100">Precio de envio</span>
 				    <asp:TextBox ID="Precio_envio" class="input100" type="text" disabled="disabled" style="cursor: none;"  runat="server"></asp:TextBox>
                 </div>
-
-                <div class="wrap-input100 validate-input bg1" >		
-                    <span class="label-input100"> Informacion detallada del pedido</span>                        
-                          <table class="table table-striped">
-                              <thead>
-                                <tr>
-                                    <th scope="col">Numero</th>
-                                    <th scope="col">Descripcion</th>
-                                    <th scope="col">Precio</th>
-                                    <th scope="col">Talla</th>
-                                    <th scope="col">Color</th>
-                                    <th scope="col">Codigo</th>
-                                    <th scope="col">Cantidad compradas</th>
-                                    <th scope="col">Imagen</th>
-                                </tr>
-                              </thead>
-                              <tbody id="Articulosconsulta">  
-                              </tbody>
-                          </table>  
-               </div>
+                    <div class="wrap-input100 validate-input bg1" >		
+                        <span class="label-input100"> Informacion detallada del pedido</span>                        
+                        <div class="table-responsive">       
+                             <table class="table table-striped">
+                                      <thead>
+                                        <tr>
+                                            <th scope="col">Numero</th>
+                                            <th scope="col">Descripcion</th>
+                                            <th scope="col">Precio</th>
+                                            <th scope="col">Talla</th>
+                                            <th scope="col">Color</th>
+                                            <th scope="col">Codigo</th>
+                                            <th scope="col">Cantidad compradas</th>
+                                            <th scope="col">Imagen</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody id="Articulosconsulta">  
+                                      </tbody>
+                              </table>  
+                        </div>
+                  </div>
                         <div class="container-contact100-form-btn" id="BTEnviado" style="display:none;">
 					        <button ID="envio_pedido" class="contact100-form-btn"  >
 						        <span>
