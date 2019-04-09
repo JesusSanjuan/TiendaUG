@@ -60,7 +60,7 @@ Public Class Admin3
         End While
         ResultadoFinal = JsonConvert.SerializeObject(obj)
 
-        Dim script As String = "operacion(" & ResultadoFinal & ");"
+        Dim script As String = "operacion(" & ResultadoFinal & ", '" + row.Item("Estado_Compra") + "');"
         ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
 
     End Sub

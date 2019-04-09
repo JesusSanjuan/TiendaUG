@@ -104,15 +104,6 @@ Partial Public Class Admin3
     Protected WithEvents Precio_envio As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control envio_pedido.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents envio_pedido As Global.System.Web.UI.HtmlControls.HtmlButton
-    
-    '''<summary>
     '''Control Borrar_pedido.
     '''</summary>
     '''<remarks>

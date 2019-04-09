@@ -95,7 +95,7 @@
                                         <asp:BoundField DataField="Precio_del_Envio" HeaderText="Precio_del_Envio" SortExpression="Precio_del_Envio" />
                                     </Columns>
                           </asp:GridView>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TiendaUGConnectionString %>" SelectCommand="SELECT DISTINCT T1.status_compra AS Estado_Compra, T1.num_pedido AS Numero_Pedido, CONCAT(T2.Nombre,' ', T2.APP,' ', T2.APM)  AS Nombre_del_Cliente, T1.fechapedido AS Fecha_del_Pedido, T1.Precio_envio AS Precio_del_Envio FROM carrito AS T1 INNER JOIN Users AS T2 ON T1.id_usuario = T2.Id_usuario WHERE (T1.status_compra = 'pagado')">
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TiendaUGConnectionString %>" SelectCommand="SELECT DISTINCT T1.status_compra AS Estado_Compra, T1.num_pedido AS Numero_Pedido, CONCAT(T2.Nombre,' ', T2.APP,' ', T2.APM)  AS Nombre_del_Cliente, T1.fechapedido AS Fecha_del_Pedido, T1.Precio_envio AS Precio_del_Envio FROM carrito AS T1 INNER JOIN Users AS T2 ON T1.id_usuario = T2.Id_usuario WHERE (T1.status_compra = 'pagado' OR T1.status_compra = 'Enviado')  ORDER BY T1.status_compra DESC">
                     </asp:SqlDataSource>
         
                 </div>
@@ -152,22 +152,22 @@
                               </tbody>
                           </table>  
                </div>
-                <div class="container-contact100-form-btn" >
-					<button ID="envio_pedido" class="contact100-form-btn" runat="server" >
-						<span>
-							Confirmar envio de pedido
-							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-						</span>
-					</button>
-				</div>
-                <div class="container-contact100-form-btn" >
-					<button ID="Borrar_pedido" class="contact100-form-btn" runat="server" >
-						<span>
-							Cancelar pedido
-							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-						</span>
-					</button>
-				</div>
+                        <div class="container-contact100-form-btn" id="BTEnviado" style="display:none;">
+					        <button ID="envio_pedido" class="contact100-form-btn"  >
+						        <span>
+							        Confirmar envio de pedido
+							        <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						        </span>
+					        </button>
+				        </div>
+                        <div class="container-contact100-form-btn" id="BTBorrado" style="display:none;" >
+					        <button ID="Borrar_pedido" class="contact100-form-btn" runat="server" >
+						        <span>
+							        Cancelar pedido
+							        <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						        </span>
+					        </button>
+				        </div>
 			</form>
 		</div>
 	</div>

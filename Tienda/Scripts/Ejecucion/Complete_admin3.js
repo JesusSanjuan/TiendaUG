@@ -21,21 +21,23 @@
                             var resultado1 = valor[0];
                             var resultado2 = valor[1];
                             $('#myModal').modal({ show: true });
-                            if (resultado1 == "true") {
-
+                            if (resultado1 === "true") {
+                                alert("Verdad");
                                 $('#imgmodal').html('<img src="../Scripts/Plantilla/images/correcto.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
                                 $('#txtmodatitle').html("<strong style='vertical - align: middle;'> Cambio de status</strong>");
                                 $('#texmodal').html("<strong style='vertical - align: middle;'> El pedido se ha notificado exitosamente como ENVIADO</strong>");
 
                                 $('#cerrar').click(function () {
-                                    location.href = "carrito.aspx";
+                                    location.href = "Admin3.aspx";
                                 });
                                 $("#myModal").on('hide.bs.modal', function () {
-                                    location.href = "carrito.aspx";
+                                    location.href = "Admin3.aspx";
                                 });
+                                location.href = "Admin3.aspx";
 
                             }
                             else {
+                                alert("Error");
                                 $('#imgmodal').html('<img src="../Scripts/plantilla/images/alerta.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
                                 $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Error de status </strong>");
                                 $('#texmodal').html("<strong style='vertical - align: middle;'> El pedido no se a podico cambiar de status, intente nuevamente, error ->" + resultado2 + " </strong>");
