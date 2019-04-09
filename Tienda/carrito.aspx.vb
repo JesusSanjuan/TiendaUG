@@ -69,8 +69,8 @@ Public Class cart
 
         Dim TestDateTime As Date = Date.Now
         Dim TestStr As String
-        TestStr = Format(TestDateTime, "yyMMddHHmmss")
-        System.Web.HttpContext.Current.Session("numero_pedido") = "CP" & TestStr
+        TestStr = Format(TestDateTime, "MMddHHmmss")
+        System.Web.HttpContext.Current.Session("numero_pedido") = TestStr
         Dim script As String = "operacion(" & ResultadoF & "," & ResultadoF2 & "," & TestStr & ");"
         ScriptManager.RegisterStartupScript(Page, GetType(Page), "operacion", script, True)
     End Sub

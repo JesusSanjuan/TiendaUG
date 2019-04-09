@@ -56,8 +56,7 @@ Public Class checkout
         Dim ResultConsulta(1) As String
         Try
             Dim ObjetoAdapador As New DataSet1TableAdapters.carritoTableAdapter
-            MsgBox(Num_pedido)
-            ObjetoAdapador.ActualizaEstatusCompra("pagado", TestStr, Num_pedido.ToString, id_user_number)
+            ObjetoAdapador.ActualizaEstatusCompra("pagado", TestStr, Num_pedido, id_user_number)
             ResultConsulta(0) = "true"
             ResultConsulta(1) = "ninguno"
             obj = JsonConvert.SerializeObject(ResultConsulta)
