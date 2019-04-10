@@ -2,7 +2,6 @@
         $(document).on('click', 'input[type="button"]', function (event) {
             let name = this.name;
             //console.log("Se presionó el Boton con Id :" + name);
-
             $('#O1').show();
             $('#O2').show();
             $.ajax({
@@ -13,6 +12,7 @@
                 async: false,
                 data: JSON.stringify({ numpedido: name}),
                 success: function (result) {
+                    $("#PedidosLista2").html("");
                     var MatrizProductos = JSON.parse(result.d);
                     var j = 1;
                     for (var i = 0; i < MatrizProductos.length; i++) {
