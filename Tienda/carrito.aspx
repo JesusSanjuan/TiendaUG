@@ -138,7 +138,7 @@
                               <div class="col-sm-1"> </div>
 
                             </div>
-                            <div class="row" style="padding-bottom:50px">
+                            <div class="row" style="padding-bottom:30px">
                             </div>
 							<!-- Cart Bar -->
 							<div class="cart_bar">

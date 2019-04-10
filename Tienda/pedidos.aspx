@@ -17,7 +17,7 @@
 <link rel="stylesheet" type="text/css" href="Scripts/littlecloset/styles/cart.css">
 <link rel="stylesheet" type="text/css" href="Scripts/littlecloset/styles/cart_responsive.css">
 <link href="Content/bootstrap.css" rel="stylesheet" />
-<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">
+<link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">    
 <script src="Scripts/jquery-3.3.1.js"></script>
 <script src="Scripts/Ejecucion/LoadComplete_pedido.js"></script>
 </head>
@@ -129,31 +129,64 @@
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						<div class="">
-                            <div class="row" style="padding-bottom:20px">   
-                              <div class="col-sm-6 cart_extra_title">Historial de pedidos </div>
-                              <div class="col-sm-2"></div>
-                              <div class="col-sm-2"> </div> 
-                              <div class="col-sm-2"></div>                              
+                             <div class="row" style="padding-bottom:0px">   
+                                  <div class="col-sm-6 cart_extra_title">Historial de pedidos </div>
+                                  <div class="col-sm-2"></div>
+                                  <div class="col-sm-2"> </div> 
+                                  <div class="col-sm-2"></div>                              
+                             </div>
+                             <div class="row" style="padding-bottom:15px">   
+                                  <div class="col-sm-6 footer_about_text"><p>Selecciones un pedido para ver sus detalles</></div>
+                                  <div class="col-sm-2"></div>
+                                  <div class="col-sm-2"> </div> 
+                                  <div class="col-sm-2"></div>                              
+                             </div>    
+                             <div class="row" style="padding-bottom:25px">
+                                 <div class="table-responsive">       
+                                     <table class="table table-striped">
+                                              <thead>
+                                                <tr>
+                                                    <th scope="col">Seleccion</th>
+                                                    <th scope="col">Numero</th>
+                                                    <th scope="col">Estado_Compra</th>
+                                                    <th scope="col">Numero Pedido</th>
+                                                    <th scope="col">Fecha del pedido</th>
+                                                    <th scope="col">Tipo de envio</th>
+                                                    <th scope="col">Precio del envio</th>
+                                                    <th scope="col">Cantidad de productos</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody id="PedidosLista">  
+                                              </tbody>
+                                      </table>  
+                                </div>
+                             </div>
+                            <div class="row" style="padding-bottom:20px; display:none;" id="O1" >   
+                                  <div class="col-sm-6 cart_extra_title">Detalles del pedido</div>
+                                  <div class="col-sm-2"></div>
+                                  <div class="col-sm-2"> </div> 
+                                  <div class="col-sm-2"></div>                              
                             </div>
-                            <div class="row" style="padding-bottom:50px">
-                            </div>
-							<!-- Cart Bar -->
-							<div class="cart_bar">
-								<ul class="cart_bar_list item_list d-flex flex-row align-items-center justify-content-end">
-									<li class="mr-auto">Numero pedido</li>
-									<li>Fecha</li>
-									<li>Status</li>
-								</ul>
-							</div>
-
-							<!-- Cart Items -->
-							<div class="cart_items" id="Lista">
-								
-
-							</div>
-                            <!-- Cart Items -->
-						</div>
+                            <div class="row" style="padding-bottom:30px; display:none;" id="O2">
+                                 <div class="table-responsive">       
+                                     <table class="table table-striped">
+                                              <thead>
+                                                <tr>
+                                                    <th scope="col">Numero</th>
+                                                    <th scope="col">Descripcion</th>
+                                                    <th scope="col">Precio</th>
+                                                    <th scope="col">Talla</th>
+                                                    <th scope="col">Color</th>
+                                                    <th scope="col">Codigo</th>
+                                                    <th scope="col">Cantidad compradas</th>
+                                                    <th scope="col">Imagen</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody id="PedidosLista2">  
+                                              </tbody>
+                                      </table>  
+                                </div>
+                             </div>
 					</div>
 				</div>              
 			</div>
