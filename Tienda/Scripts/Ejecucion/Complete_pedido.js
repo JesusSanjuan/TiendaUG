@@ -30,11 +30,11 @@
                     }
                 },
                 error: function (result) {
-                    console.log(result.responseText);
+                   console.log(result.responseText);
                 }
 
             }).done(function (data) {
-                console.log(data);
+                //console.log(data);
             }).fail(function (data) {
                 console.log("Error: " + data);
             });
