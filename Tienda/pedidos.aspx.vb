@@ -88,7 +88,6 @@ Public Class pedidos
             Contador = Contador + 1
         End While
         ResultadoFinal = JsonConvert.SerializeObject(obj)
-        MsgBox(ResultadoFinal)
         Return ResultadoFinal
     End Function
 End Class

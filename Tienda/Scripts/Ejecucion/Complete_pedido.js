@@ -13,29 +13,21 @@
                 async: false,
                 data: JSON.stringify({ numpedido: name}),
                 success: function (result) {
-                    var valor = JSON.parse(result.d);
-                    alert(valor);
-                    var resultado1 = valor[0];
-                  /*   var resultado2 = valor[1];
-                    $('#myModal').modal({ show: true });
-                    if (resultado1 == "true") {
-                        $('#imgmodal').html('<img src="../Scripts/Plantilla/images/correcto.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
-                        $('#txtmodatitle').html("<strong style='vertical - align: middle;'> Pago Exitoso</strong>");
-                        $('#texmodal').html("<strong style='vertical - align: middle;'> Se ha realizado el pago Exitosamente </strong>");
-
-                        $('#cerrar').click(function () {
-                            location.href = "tiendaug.aspx";
-                        });
-                        $("#myModal").on('hide.bs.modal', function () {
-                            location.href = "tiendaug.aspx";
-                        });
-
+                    var MatrizProductos = JSON.parse(result.d);
+                    var j = 1;
+                    for (var i = 0; i < MatrizProductos.length; i++) {
+                        $("#PedidosLista2").append(
+                            " <tr>" +" <th scope='row'>" + j + "</th>" +
+                            " <td>" + MatrizProductos[i][0] + "</td>" +
+                            " <td>" + MatrizProductos[i][1] + "</td>" +
+                            " <td>" + MatrizProductos[i][2] + "</td>" +
+                            " <td>" + MatrizProductos[i][3] + "</td>" +
+                            " <td>" + MatrizProductos[i][4] + "</td>" +
+                            " <td>" + MatrizProductos[i][5] + "</td>" +
+                            " <td> <img src='Scripts/littlecloset/images/" + MatrizProductos[i][6] + "' alt='Imagen del producto' width='50' height='50'></td>" +
+                            " </tr> ");
+                        j++;
                     }
-                    else {
-                        $('#imgmodal').html('<img src="../Scripts/plantilla/images/alerta.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
-                        $('#txtmodatitle').html("<strong style='vertical - align: middle;'>Error en el pago </strong>");
-                        $('#texmodal').html("<strong style='vertical - align: middle;'> Intente realizar mas tarde su pago, error ->" + resultado2 + " </strong>");
-                    }*/
                 },
                 error: function (result) {
                     console.log(result.responseText);
