@@ -22,7 +22,6 @@
                             var resultado2 = valor[1];
                             $('#myModal').modal({ show: true });
                             if (resultado1 === "true") {
-                                alert("Verdad");
                                 $('#imgmodal').html('<img src="../Scripts/Plantilla/images/correcto.gif" class="img-fluid" width="100" height="100" alt="Responsive image"/>');
                                 $('#txtmodatitle').html("<strong style='vertical - align: middle;'> Cambio de status</strong>");
                                 $('#texmodal').html("<strong style='vertical - align: middle;'> El pedido se ha notificado exitosamente como ENVIADO</strong>");

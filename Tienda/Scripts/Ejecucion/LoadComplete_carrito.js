@@ -14,13 +14,14 @@
 
     } else {
         $('#limpiarcompras').show();
+        var j = 1;
         for (var i = 0; i < VectorProductos.length; i++) {
             var totalporproducto = VectorProductos[i][3] * VectorProductos[i][6];
             subtotal = subtotal + VectorProductos[i][3] * VectorProductos[i][6];
             $("#Lista").append("<ul class= 'cart_items_list'>" +
                 "<li class='cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-end justify-content-start'> " +
                 "<div class='product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto'>" +
-                "<div><div class='product_number'>1</div></div>" +
+                "<div><div class='product_number'>"+ j +"</div></div>" +
                 "<div><div class='product_image'><img src='Scripts/littlecloset/images/" + VectorProductos[i][5] + "' alt=''></div></div>" +
                 "<div class='product_name_container'>" +
                 "<div class='product_name'><a href='#'>" + VectorProductos[i][0] + "</a></div>" +
@@ -40,6 +41,7 @@
                 "<div class='product_total product_text' data-role" + i + "='" + totalporproducto + "'><span>Total: </span>$" + totalporproducto + "</div>" +
                 "</li>" +
                 "</ul>");
+            j++;
         }
     }
     $('#Subtotal').append("<div id='valorsubtotal' data-subtotal='" + subtotal +"'> $" + subtotal+".00</div>");
