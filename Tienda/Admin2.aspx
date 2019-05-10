@@ -33,7 +33,7 @@
      <link href="Scripts/Folepond/filepond.css" rel="stylesheet" />
     <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
 
-    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
     <script src="Scripts/Ejecucion/admin2_actualizacion.js"></script>
 <!--===============================================================================================-->
 </head>
@@ -251,7 +251,7 @@
 
 
 <!--===============================================================================================-->
-	<script src="Scripts/jquery-3.3.1.min.js"></script>
+	<script src="Scripts/jquery-3.4.1.min.js"></script>
 <!--===============================================================================================-->
     <script src="Scripts/bootstrap.min.js"></script>
 	<script src="Scripts/Plantilla/vendor/daterangepicker/moment.min.js"></script>

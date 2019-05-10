@@ -18,7 +18,7 @@
 <link rel="stylesheet" type="text/css" href="Scripts/littlecloset/styles/cart_responsive.css">
 <link href="Content/bootstrap.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="Scripts/Plantilla/css/util.css">    
-<script src="Scripts/jquery-3.3.1.js"></script>
+<script src="Scripts/jquery-3.4.1.js"></script>
 <script src="Scripts/Ejecucion/LoadComplete_pedido.js"></script>
 </head>
 <body>
@@ -346,7 +346,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 </div>
 <!-- Borrador --> 
 </form>
-<script src="Scripts/jquery-3.3.1.min.js"></script>
+<script src="Scripts/jquery-3.4.1.min.js"></script>
 <script src="Scripts/popper.js"></script>
 <script src="Scripts/bootstrap.min.js"></script>
 <script src="Scripts/littlecloset/plugins/greensock/TweenMax.min.js"></script>
