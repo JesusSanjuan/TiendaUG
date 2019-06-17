@@ -107,6 +107,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin3.aspx" />
+    <Content Include="AppData\TiendaUG.ldf">
+      <DependentUpon>TiendaUG.mdf</DependentUpon>
+    </Content>
+    <Content Include="AppData\TiendaUG.mdf" />
     <Content Include="pedidos.aspx" />
     <Content Include="carrito.aspx" />
     <Content Include="pago.aspx" />
